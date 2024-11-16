@@ -20,7 +20,7 @@
         
 
         <div class="mb-3">
-            <label for="image" class="form-label">Image *</label>
+            <label for="image" class="form-label">Image(316*365) *</label>
             <input type="file" id="image" wire:model="image" class="form-control">
 
             @error('image') <span class="text-danger">{{ $message }}</span> @enderror

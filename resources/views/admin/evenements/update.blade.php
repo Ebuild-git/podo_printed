@@ -49,7 +49,7 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="mb-3">
-                                                <label for="">Nouvelle photo</label>
+                                                <label for="">Nouvelle photo(600*692)</label>
                                                 <input type="file" name="image"    class="form-control">
                                                 @error('image')
                                                     <span class="small text-danger"> {{ $message }} </span>

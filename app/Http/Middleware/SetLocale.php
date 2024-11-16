@@ -18,7 +18,8 @@ class SetLocale
     public function handle(Request $request, Closure $next): Response
     {
         // Récupérer la langue depuis la session ou utiliser la langue par défaut (config locale)
-        $locale = Session::get('locale', config('app.locale'));
+    //    $locale = Session::get('locale', config('app.locale'));
+    $locale = Session::get('locale', 'fr');
         
         // Définir la langue de l'application
         App::setLocale($locale);

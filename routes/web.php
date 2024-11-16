@@ -23,6 +23,7 @@ use App\Http\Controllers\Front\{
 };
 use App\Http\Controllers\panier_client;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\LocaleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,8 @@ use App\Http\Controllers\CustomerController;
 |
 */
 // Dans routes/web.php
+
+Route::post('/locale', [LocaleController::class ,'change'])->name("locale.change");
 Route::get('/video/{id}', [VideoController::class, 'play'])->name('video.play');
 Route::post('/video/view/{id}', [VideoController::class, 'incrementViewCount'])->name('video.incrementViewCount');
 
@@ -193,16 +196,16 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/event_update/{id}', [ EventController::class, 'event_update'])
             ->name('event_update');
           
-         ////////////////////////Coachs/////////////////////
-         Route::get('/admin/coachs', [CoachController::class, 'coachs'])
-            ->name('coachs');
-            Route::get('/admin/coach_update/{id}', [ CoachController::class, 'coach_update'])
-            ->name('coach_update');
+         ////////////////////////Doctorss/////////////////////
+         Route::get('/admin/doctors', [CoachController::class, 'coachs'])
+            ->name('doctors');
+            Route::get('/admin/doctor_update/{id}', [ CoachController::class, 'coach_update'])
+            ->name('doctor_update');
            
             
-            route::resource('coachs', CoachController::class);
-            Route::get('/admin/coach_update/{id}', [CoachController::class, 'coach_update'])
-            ->name('coach_update');
+            route::resource('doctors', CoachController::class);
+            Route::get('/admin/doctor_update/{id}', [CoachController::class, 'coach_update'])
+            ->name('doctor_update');
 
         ///////////////////les  clients////////////////////////////////////////////////   
 

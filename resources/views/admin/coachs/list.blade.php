@@ -38,7 +38,7 @@
                                                 <a href="javascript: void(0);">{{ config('app.name') }}</a>
                                             </li>
                                             <li class="breadcrumb-item">
-                                                <a href="{{ route('coachs') }}">Docteurs</a>
+                                                <a href="{{ route('doctors') }}">Docteurs</a>
                                             </li>
                                             <li class="breadcrumb-item active">Liste</li>
                                         </ol>
@@ -134,7 +134,7 @@
 
                                                         <div class="row">
                                                             <div class="col">
-                                                                <form action="{{ route('coachs.destroy',$coach->id) }}" method="POST">
+                                                                <form action="{{ route('doctors.destroy',$coach->id) }}" method="POST">
                                                                     @csrf
                                                                     <input name="_method" type="hidden" value="DELETE">
                                                                     <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip"
@@ -150,7 +150,7 @@
                                                                     </form>
                                                             </div>
                                                                 <div class="col">
-                                                                    <a href="{{ route('coach_update',['id'=>$coach->id]) }}">
+                                                                    <a href="{{ route('doctor_update',['id'=>$coach->id]) }}">
                                                                         <svg xmlns="http://www.w3.org/2000/svg"
                                                                         viewBox="0 0 24 24" width="35" hight="38"
                                                                         fill="currentColor">

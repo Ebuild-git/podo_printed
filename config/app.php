@@ -87,6 +87,7 @@ return [
 
    
   
+   
     'locale' => 'fr',
     'locales' => [
         'fr',

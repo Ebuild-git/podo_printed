@@ -38,7 +38,7 @@
                     <div class="col-sm-6">
                         <div class="mb-3">
                             <label for="name" class="form-label">
-                                Image
+                                Image(1366*768)
                             </label>
                             <input type="file" class="form-control" wire:model="image">
                             @error('image')

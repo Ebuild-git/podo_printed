@@ -2,14 +2,6 @@
 @section('titre', 'Accueil')
 @section('body')
     <main>
-    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
 
 
 
@@ -17,530 +9,751 @@
             $config = DB::table('configs')->first();
 
         @endphp
-        <style>
-            .slide2 {
-                background-size: cover;
-
-                background-position: center;
-
-                background-repeat: no-repeat;
-
-            }
-        </style>
-
-        <style>
-   .title {
-    color: white;
-    text-align: center;
-}
-
-
-
-
-
-        </style>
-
-{{-- 
-<div id="rs-slider" class="rs-slider home-slider slider-navigation">
-    <div class="slider">
-       
-        <div class="single-slider">
-            <div class="container">
-                <div class="text-part">
-                    <h2 class="sub-title wow fadeInLeft" data-wow-delay="1s">Welcome to Khelo</h2>
-                    <h1 class="title wow fadeInRight" data-wow-delay="1s"><span class="primary-color">Sporting</span> Club</h1>
-                    <div class="desc wow fadeInLeft" data-wow-delay="1s">We denounce with righteous indignation and dislike men who are so beguiled <br> and demoralized by the charms of pleasure of the moment.</div>
-                    <div class="slider-btn wow fadeInRight" data-wow-delay="1s">
-                        <a class="readon" href="#">Book a ticket</a>
-                    </div>
-                </div>
-                <div class="fly-layer">
-                    <div class="layer-image">
-                        <div class="parallax-ball">
-                            <img class="animate3" src="images/slider/ball1.png" alt="img">
-                        </div>
-                        <div class="animate4">
-                            <img src="images/slider/h1-layer1.png" alt="Slider Layer Image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         
-      
-    </div>
-</div> --}}
-<!-- Slider Section End -->
 
 
-<div id="rs-slider" class="rs-slider home-slider slider-navigation">
+    <!-- Hero Section Start -->
+    <div class="hero bg-image hero-video">
+        <!-- Video Start -->
+		<div class="hero-bg-video">
+			<!-- Selfhosted Video Start -->
+			<video autoplay muted loop id="myVideo"><source src="images/hero-bg-video.mp4" type="video/mp4"></video>
+			<!-- Selfhosted Video End -->
 
-     <div class="slider ">
-        @foreach ($banners as $banner)
-        <div class="single-slider slide2"
-            style="background-image: url('{{ Storage::url($banner->image) }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-            <div class="container">
-                <div class="image-part common">
-                  
-                </div>
-              
-                <h2 class="title"><span class="primary-color"></span> {{ $banner->titre ?? '' }}</h>
-                <br>
-                <div class="desc"> <br> {{ $banner->sous_titre ?? '' }}</div>
-                <br><br>
-                <div class="text-part common">
-               
-                </div>
+			<!-- Youtube Video Start -->
+			<!-- <div id="herovideo" class="player" data-property="{videoURL:'74DWwSxsVSs',containment:'.hero-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> -->
+			<!-- Youtube Video End -->
+		</div>
+		<!-- Video End -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <!-- Hero Content Start -->
+                    <div class="hero-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">welcome to physiocare</h3>
+                            <h1 class="text-anime-style-2" data-cursor="-opaque"><span>Destination</span> For Relief & Wellness</h1>
+                            <p class="wow fadeInUp" data-wow-delay="0.25s">It is a long established fact that a reader will be distracted the readable content of a page when looking at layout the point of using lorem the Ipsum less normal distribution of letters.</p>
+                        </div>
+                        <!-- Section Title End -->
 
-                <div class="slider-btn contact text-center">
-                    <a class="readon" href="{{ route('contact') }}">Contactez nous</a>
+                        <!-- Hero Content Body Start -->
+                        <div class="hero-content-body wow fadeInUp" data-wow-delay="0.5s">
+                            <a href="#" class="btn-default">explore services</a>
+                            <a href="#" class="btn-default btn-highlighted">book appointment</a>
+                        </div>
+                        <!-- Hero Content Body End -->
+                    </div>
+                    <!-- Hero Content End -->
                 </div>
             </div>
         </div>
-        @endforeach
-
     </div>
-</div> 
-    
+    <!-- Hero Section End -->
 
-
-        <!-- About Us Section Start -->
-        <div class="rs-about pt-92 pb-78 md-pt-64 md-pb-58">
-            <div class="container">
-                <div class="row rs-vertical-middle">
-                    <div class="col-lg-5 pl-40 col-padding-md md-mb-25">
-                        <div class="contant-part">
-                            <div class="title-style mb-14">
-                                <div class="sub-title black-color mb-10"></div>
-                                <h2 class="margin-0 uppercase">{{ $config->titre_apropos }}</h2>
-                            </div>
-                            <div class="description">
-                                {{ $config->des_apropos }}
-                            </div>
-                            <div class="read-btn mt-39">
-                                <a class="readon" href="{{ route('contact') }}">Contact</a>
-                            </div>
+    <!-- Home Contact Us Start -->
+    <div class="home-contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <!-- Contact Item Start -->
+                    <div class="home-contact-item wow fadeInUp">
+                        <!-- Icon Box Start -->
+                        <div class="icon-box">
+                            <img src="images/icon-home-contact-us-1.svg" alt="">
                         </div>
-                    </div>
-                    <div class="col-lg-7 margin-0 pl-50 col-padding-md">
-                        <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="3000">
-                            <div class="carousel-inner">
-                                @if ($config && $config->photos)
-                                    @foreach (json_decode($config->photos, true) as $index => $photo)
-                                        <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                            <img src="{{ Storage::url($photo) }}" class="d-block " alt="Image">
-                                        </div>
-                                    @endforeach
-                                @else
-                                    <div class="carousel-item active">
-                                        <p class="text-center">Aucune image disponible</p>
-                                    </div>
-                                @endif
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Précédent</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Suivant</span>
-                            </a>
-                        </div>
+                        <!-- Icon Box End -->
 
+                        <!-- Home Contact Content Start -->
+                        <div class="home-contact-content">
+                            <h3>expert therapists</h3>
+                            <p>Our team of licensed and certified physiotherapists</p>
+                        </div>
+                        <!-- Home Contact Content End -->
                     </div>
+                    <!-- Contact Item End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- Contact Item Start -->
+                    <div class="home-contact-item wow fadeInUp" data-wow-delay="0.25s">
+                        <!-- Icon Box Start -->
+                        <div class="icon-box">
+                            <img src="images/icon-home-contact-us-2.svg" alt="">
+                        </div>
+                        <!-- Icon Box End -->
+
+                        <!-- Home Contact Content Start -->
+                        <div class="home-contact-content">
+                            <h3>emergency service</h3>
+                            <p>Our emergency physiotherapy services are designed to address</p>
+                        </div>
+                        <!-- Home Contact Content End -->
+                    </div>
+                    <!-- Contact Item End -->
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <!-- Contact Item Start -->
+                    <div class="home-contact-item wow fadeInUp" data-wow-delay="0.5s">
+                        <!-- Icon Box Start -->
+                        <div class="icon-box">
+                            <img src="images/icon-home-contact-us-3.svg" alt="">
+                        </div>
+                        <!-- Icon Box End -->
+
+                        <!-- Home Contact Content Start -->
+                        <div class="home-contact-content">
+                            <h3>free consultant</h3>
+                            <p>Our mission is to enhance the quality of life of our patients</p>
+                        </div>
+                        <!-- Home Contact Content End -->
+                    </div>
+                    <!-- Contact Item End -->
                 </div>
             </div>
         </div>
-        <!-- About Us Section End -->
-        <!-- About Us Section End -->
-        <!-- Upcomming Match & Video Section Start -->
-        <div class="couter-and-upcomming pt-100 md-pt-80 mb-30">
-            <div class="container">
+        </div>
+    <!-- Home Contact Us End -->
 
-                <div class="row">
+    <!-- About Us Start -->
+    <div class="about-us">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- About Image Start -->
+                    <div class="about-us-image">
+                        <div class="about-img">
+                            <figure class="reveal image-anime">
+                                <img src="images/about-img.jpg" alt="">
+                            </figure>
 
-
-                    <style>
-                        .rs-upcoming-match.bg1 {
-                            background-image: url('{{ Storage::url($lastVideo->image ?? ' ') }}');
-                            background-size: cover;
-                            background-position: center;
-                            background-repeat: no-repeat;
-
-                        }
-                    </style>
-                    <div class="col-lg-4 pr-0 col-padding-md md-mb-30">
-                        <div class="rs-upcoming-match bg1 text-center">
-                            <div class="title-style">
-                                <h4 class="margin-0 white-color">{{ $lastVideo->titre ?? '' }}</h4>
-                                <a class="readon" href="{{ route('evenements') }}">Voir plus </a>
-                                
-                                <span class="line-bg pt-18 y-w"></span>
-                            </div>
-
-                            <div class="teams mt-25 md-mt-50">
-                                <div class="row rs-vertical-middle">
-                                    <div class="col-md-4 col-sm-4 col-4">
-                                        <div class="team-logo">
-                                           {{--  <img class="size-80" src="{{ Storage::url($lastVideo->image ?? ' ') }}"
-                                                alt="Valencia"> --}}
-                                            <div class="name white-color">{{ $lastVideo->titre ?? '' }}</div>
-                                        </div>
-                                    </div>
-
+                            <!-- Company Experience Box Start -->
+                            <div class="company-experience">
+                                <div class="icon-box">
+                                    <img src="images/icon-experience.svg" alt="">
+                                </div>
+                                <div class="company-experience-content">
+                                    <h3><span class="counter">15</span>+</h3>
+                                    <p>years of experience</p>
                                 </div>
                             </div>
-
+                            <!-- Company Experience Box End -->
                         </div>
                     </div>
-
-
-                    <div class="col-lg-8 pl-30 col-padding-md">
-                        <div class="rs-video rs-upcoming-match big-space bg1 bdru-4 text-center">
-                            <div class="video-contents">
-                                {{-- <a class="popup-videos play-btn"
-                                    onclick="playVideoInSmallPlayer('{{ Storage::url($lastVideo->path ?? '') }}')"><i
-                                        class="fa fa-play"></i>  </a> --}}
-
-                                        @if($lastVideo->path ?? '')
-                                        <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-                                            <iframe src="{{ $lastVideo->path }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
-                                        </div>
-                                        @endif
-                                        
-                                <h3 class="title white-color mt-18 mb-0">{{ $lastVideo->tittre ?? '' }}</h3>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- About Image End -->
                 </div>
+                <div class="col-lg-6">
+                    <!-- About Us Content Start -->
+                        <div class="about-content">
+                        <!-- Section Title Start -->
+                            <div class="section-title">
+                            <h3 class="wow fadeInUp">about us</h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">We Are The Best For <span>Physiotherapy</span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.25s">We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt and effective care to help you manage pain, prevent further injury, and start your recovery process as quickly as possible.</p>
+                            </div>
+                        <!-- Section Title End -->
 
+                        <!-- About Us Body Start -->
+                        <div class="about-us-body">
+                            <!-- About List Item Start -->
+                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="icon-box">
+                                    <img src="images/icon-about-us-1.svg" alt="">
+                                </div>
+                                <div class="about-list-content">
+                                    <h3>nutrition strategies</h3>
+                                </div>
+                            </div>
+                            <!-- About List Item End -->
+
+                            <!-- About List Item Start -->
+                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="icon-box">
+                                    <img src="images/icon-about-us-2.svg" alt="">
+                                </div>
+                                <div class="about-list-content">
+                                    <h3>be pro active</h3>
+                                </div>
+                            </div>
+                            <!-- About List Item End -->
+
+                            <!-- About List Item Start -->
+                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
+                                <div class="icon-box">
+                                    <img src="images/icon-about-us-3.svg" alt="">
+                                </div>
+                                <div class="about-list-content">
+                                    <h3>workout routines</h3>
+                                </div>
+                            </div>
+                            <!-- About List Item End -->
+
+                            <!-- About List Item Start -->
+                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
+                                <div class="icon-box">
+                                    <img src="images/icon-about-us-4.svg" alt="">
+                                </div>
+                                <div class="about-list-content">
+                                    <h3>support & motivation</h3>
+                                </div>
+                            </div>
+                            <!-- About List Item End -->
+                        </div>
+                        <!-- About Us Body End -->
+
+                        <!-- About Us Footer Start -->
+                        <div class="about-us-footer">
+                            <!-- Doctor Info Start -->
+                            <div class="doctor-info wow fadeInUp" data-wow-delay="1s">
+                                <div class="doctor-info-item">
+                                    <div class="image-box">
+                                        <figure class="image-anime">
+                                            <img src="images/about-doctor-img.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="doctor-info-content">
+                                        <h3>dr. jamie smith</h3>
+                                        <p>Physiotherapy</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Doctor Info End -->
+
+                            <!-- Appointment Button Start -->
+                            <div class="appointment-btn wow fadeInUp" data-wow-delay="1s">
+                                <a href="#" class="btn-default">Make an appointment</a>
+                            </div>
+                            <!-- Appointment Button End -->
+                        </div>
+                        <!-- About Us Footer End -->
+                        </div>
+                    <!-- About Us Content End -->
+                </div>
+            </div>
+        </div>
+        </div>
+    <!--  About Us End -->
+
+    <!-- Gallery Carousel Section Start -->
+    <div class="gallery-carousel">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Scrolling Content Start -->
+                    <div class="gallery-carousel-box">
+                        <div class="gallery-scrolling-content">
+                            <!-- Image Item Start -->
+                             @foreach ($images as $image)
+                          
+                            <div class="gallery-image">
+                                <figure class="image-anime">
+                                    <img src="{{ Storage::url($image->image ?? ' ') }}"  alt="">
+                                </figure>
+                            </div>
+                          
+                            @endforeach
+                            <!-- Image Item End -->
+
+                        </div>
+
+                        <div class="gallery-scrolling-content">
+                            <!-- Image Item Start -->
+                            @foreach ($images as $image)
+                          
+                            <div class="gallery-image">
+                                <figure class="image-anime">
+                                    <img src="{{ Storage::url($image->image ?? ' ') }}"  alt="">
+                                </figure>
+                            </div>
+                          
+                            @endforeach
+                            <!-- Image Item End -->
+
+                            <!-- Image Item Start -->
+                            
+                        </div>
+                    </div>
+                    <!-- Scrolling Content End -->
+                </div>
             </div>
         </div>
 
-        <!-- Petit Lecteur Vidéo Fixe -->
-        <div id="smallVideoPlayer" class="small-video-player">
-            <video id="smallVideo" controls></video>
-            
-            <button class="close-btn" onclick="closeSmallVideoPlayer()">X</button>
-        </div>
-
-        <script>
-            function playVideoInSmallPlayer(videoUrl) {
-                var player = document.getElementById('smallVideoPlayer');
-                var video = document.getElementById('smallVideo');
-                video.src = videoUrl;
-                player.style.display = 'block';
-
-            }
+    </div>
+    <!-- Gallery Carousel Section End -->
 
 
-
-            function closeSmallVideoPlayer() {
-                var player = document.getElementById('smallVideoPlayer');
-                var video = document.getElementById('smallVideo');
-                video.pause();
-                video.src = '';
-                player.style.display = 'none';
-            }
-        </script>
-
-        <style>
-            .small-video-player {
-                display: none;
-                position: fixed;
-                bottom: 20px;
-                width: 500px;
-                /* Augmentation de la largeur */
-                height: 300px;
-                /* Augmentation de la hauteur */
-                right: 20px;
-                width: 300px;
-                background-color: #000;
-                border-radius: 10px;
-                overflow: hidden;
-                z-index: 1000;
-            }
-
-            .small-video-player video {
-                width: 100%;
-                height: 100%;
-                /* S'assurer que la vidéo occupe toute la hauteur du lecteur */
-            }
-
-            .small-video-player .close-btn {
-                position: absolute;
-                top: 5px;
-                right: 5px;
-                background-color: red;
-                color: white;
-                border: none;
-                border-radius: 50%;
-                cursor: pointer;
-                width: 30px;
-                height: 30px;
-                text-align: center;
-                line-height: 25px;
-            }
-        </style>
-
-        <!-- Match Result Section Start -->
-        <div class="rs-match-result style1 nav-style pb-100 md-pb-80">
-
-            <style>
-                .rs-carousel .owl-item {
-                    margin-right: 0px;
-                    /* Ajustez cette valeur selon vos besoins */
-                    padding: 0;
-                }
-
-                .rs-carousel .items {
-                    padding: 0;
-                    margin: 0;
-                }
-            </style>
-            <br><br>
-
-
-            <div class="rs-match-result style1 nav-style pb-100 md-pb-80">
-                <div class="container">
-                    <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30"
-                        data-autoplay="true" data-autoplay-timeout="8000" data-smart-speed="2000" data-dots="false"
-                        data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="false"
-                        data-mobile-device-dots="false" data-ipad-device="2" data-ipad-device-nav="false"
-                        data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="false"
-                        data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="true"
-                        data-md-device-dots="false">
-                        @foreach ($latestVideos as $latestVideo)
-                            
-                            <div class="rs-video   bdru-4 text-center p-10"
-                                style="background-image: url('{{ Storage::url($latestVideo->path ?? '') }}'); background-size: cover; background-position: center; width: 400px; height: 300px; padding: 0px;">
-
-                                <div class="video-contents">
-                                    {{--  @if($lastVideo->path)
-                                    <a class="popup-videos play-btn"
-                                    onclick="playVideoInSmallPlayer('{{ Storage::url($latestVideo->path ?? '') }}')">
-                                    <i class="fa fa-play"></i>
-                                </a>
-                                    @endif  --}} 
-                                      @if($latestVideo->path ?? '')
-                                    <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-                                        <iframe   id="video-player" src="{{ $latestVideo->path }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
-                                    </div>
-                                    @endif  
-                                    <script>
-                                        document.addEventListener('DOMContentLoaded', function() {
-                                            const videoPlayers = document.querySelectorAll('iframe.video-player');
-                                            
-                                            videoPlayers.forEach(video => {
-                                                video.addEventListener('load', function() {
-                                                    // When a video starts to play, pause other videos
-                                                    videoPlayers.forEach(otherVideo => {
-                                                        if (otherVideo !== video) {
-                                                            const src = otherVideo.src;
-                                                            otherVideo.src = '';
-                                                            otherVideo.src = src;
-                                                        }
-                                                    });
-                                                });
-                                            });
-                                        });
-                                        </script>
-                                        
-                                        
-
-
-
-                              
-                                
  
 
-
-
-
-
-                                    
-                                </div>
-                            </div>
-
-                        @endforeach
-
+    <!-- Our Team Start -->
+    <div class="our-team">
+        <div class="container">
+            <div class="row align-items-center section-row">
+                <div class="col-lg-9">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('Equipe des docteurs') }}</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Notre équipe de docteurs dévoués') }}</span> & {{ \App\Helpers\TranslationHelper::TranslateText('expérimentés') }}</h2>
                     </div>
+                    <!-- Section Title End -->
+                </div>
+
+                <div class="col-lg-3">
+                    <!-- Section Button Start -->
+                    <div class="section-btn wow fadeInUp" data-wow-delay="0.25s">
+                        <a href="#" class="btn-default">{{ \App\Helpers\TranslationHelper::TranslateText('Voir tout') }}</a>
+                    </div>
+                    <!-- Section Button End -->
                 </div>
             </div>
-            <br>
-            <br>
-            <style>
-                .rs-counter.bg5 {
-                    background-image: url('/assets/counter/1.png');
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    margin-top: -30px;
-                    /* Réduction de l'espace avec le header */
-                    padding-top: 50px;
-                    padding-bottom: 30px;
-                }
-            </style>
 
-            <div class="rs-counter bg5 style1 pt-103 pb-92 md-pt-80 md-pb-70 sm-pt-73">
-                <div class="container">
-                    <div class="rs-count">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 md-mb-30">
-                                <div class="rs-counter-list text-center">
-                                    <h2 class="counter-number primary-color">{{ $config->coach }}</h2>
-                                    <h3 class="counter-text uppercase white-color"> Coachs</h3>
-                                </div>
+            <div class="row">
+                @foreach ($coachs as $coach)
+                @if ($coachs)
+                <div class="col-lg-3 col-md-6">
+                    <!-- Team Member Item Start -->
+                    <div class="team-member-item wow fadeInUp">
+                        <!-- Team Image Start -->
+                        <div class="team-image">
+                            <figure class="image-anime">
+                                <img src="{{ Storage::url($coach->photo ?? ' ') }}" alt="">
+                            </figure>
+                
+                            <!-- Team Social Icon Start -->
+                            <div class="team-social-icon">
+                                <ul>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                </ul>
                             </div>
-
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 md-mb-30">
-                                <div class="rs-counter-list text-center">
-                                    <h2 class="counter-number primary-color">{{ $config->seance }}</h2>
-                                    <h3 class="counter-text uppercase white-color">Séances</h3>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <div class="rs-counter-list text-center">
-                                    <h2 class="counter-number primary-color">{{ $config->adherent }}</h2>
-                                    <h3 class="counter-text uppercase white-color">Adhérents</h3>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
-                                <div class="rs-counter-list text-center">
-                                    <h2 class="counter-number primary-color">{{ $config->tounoir }}</h2>
-                                    <h3 class="counter-text uppercase white-color">Tounoirs</h3>
-                                </div>
-                            </div>
+                            <!-- Team Social Icon End -->
                         </div>
+                        <!-- Team Image End -->
+                
+                        <!-- Team Content Start -->
+                        <div class="team-content">
+                            <h3>{{ $coach->prenom  ??  ''}} {{ $coach->nom ?? '' }}</h3>
+                            <p>senior physiotherapist</p>
+                        </div>
+                        <!-- Team Content End -->
                     </div>
+                    <!-- Team Member Item End -->
                 </div>
+                @endif
+                @endforeach
+
             </div>
-            <!-- Counter Section End -->
+        </div>
+        </div>
+    <!-- Our Team End -->
 
-
-            <!-- Team Pyaler Section Start -->
-            <div class="rs-team style1 nav-style pt-92 pb-100 md-pt-72 md-pb-80">
-                <div class="container">
-                    <div class="title-style text-center mb-50 md-mb-30">
-                        <h2 class="margin-0 uppercase">Le coachs</h2>
-                        <span class="line-bg y-b pt-10"></span>
+    <!-- Client Testimonial Start -->
+    <div class="our-testimonial parallaxie">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">review</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>What</span> Our Client Say</h2>
                     </div>
-                    <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30"
-                        data-autoplay="true" data-autoplay-timeout="8000" data-smart-speed="2000" data-dots="false"
-                        data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="false"
-                        data-mobile-device-dots="false" data-ipad-device="2" data-ipad-device-nav="false"
-                        data-ipad-device-dots="false" data-ipad-device2="2" data-ipad-device-nav2="false"
-                        data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="true"
-                        data-md-device-dots="false">
-
-                        @foreach ($coachs as $coach)
-                            @if ($coachs)
-                                <div class="player-item">
-                                    {{--    <div class="player-img">
-                        <img src="{{ Storage::url($coach->photo ?? ' ')  }}"  height="300" width="250" alt="">
-                    </div> --}}
-                                    <div class="player-img" style="width: 400px; height: 500px; overflow: hidden;">
-                                        <img src="{{ $coach->photo ? Storage::url($coach->photo) : asset('images/default-avatar.png') }}"
-                                            style="width: 100%; height: 100%; object-fit: cover;" alt="Photo du coach">
-                                    </div>
-
-                                    <div class="detail-wrap">
-                                        <div class="person-details">
-                                            <h3 class="player-title"><span class="squad-numbers"></span>
-                                                <a href="#">{{ $coach->nom }} {{ $coach->prenom }}</a>
-                                                <span class="player-position">Coach</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
-
-
-                    </div>
-                </div>
-            </div>
-            <!-- Team Pyaler Section End -->
-
-            <div class="rs-gallery style1 pt-92 pb-100 md-pt-72 md-pb-80">
-                <div class="container">
-                    <div class="title-style text-center mb-50 md-mb-30">
-                        <h2 class="margin-0 uppercase">Notre gallerie</h2>
-                        <span class="line-bg y-b pt-10"></span>
-                    </div>
-                    <div class="row pl-15 pr-15">
-                        @foreach ($images as $image)
-                            <div class="col-lg-4 col-md-6 padding-0 sm-mb-30">
-                                <div class="gallery-grid"
-                                    style="background-image: url('{{ Storage::url($image->image ?? ' ') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-                                    <a class="image-popup view-btn" href="{{ Storage::url($image->image ?? ' ') }}"  >
-                                        <i class="flaticon-add-circular-button"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <style>
-                                .gallery-grid {
-                                    position: relative;
-                                    overflow: hidden;
-                                    height: 250px;
-                                    /* Vous pouvez ajuster cette hauteur selon vos besoins */
-                                }
-
-                                .view-btn {
-                                    position: absolute;
-                                    top: 50%;
-                                    left: 50%;
-                                    transform: translate(-50%, -50%);
-                                    color: white;
-                                    font-size: 2px;
-                                    /*  background-color: rgba(0, 0, 0, 0.6); */
-                                    padding: 10px;
-                                    border-radius: 50%;
-                                    display: none;
-                                }
-
-                                .gallery-grid:hover .view-btn {
-                                    display: block;
-                                }
-                            </style>
-                        @endforeach
-
-
-
-
-
-                    </div>
+                    <!-- Section Title End -->
                 </div>
             </div>
 
-
-            <div class="rs-sponsor pb-35 md-pb-60 sm-pb-50">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2">
-                            <div class="row">
-                                @foreach ($sponsors as $sponsor)
-                                    @if ($sponsors)
-                                        <div class="col-lg-3 col-md-4 col-6">
-                                            <div class="logos">
-                                                <a href="#"><img src="{{ Storage::url($sponsor->image) }}"
-                                                        alt=""></a>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Testimonial Slider Start -->
+                    <div class="testimonial-slider">
+                        <div class="swiper">
+                            <div class="swiper-wrapper" data-cursor-text="Drag">
+                                <!-- Testimonial Slide Start -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="testimonial-header">
+                                            <div class="testimonial-rating">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div class="testimonial-content">
+                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>									
                                             </div>
                                         </div>
-                                    @endif
-                                @endforeach
+                                        <div class="testimonial-body">
+                                            <div class="author-image">
+                                                <figure class="image-anime">
+                                                    <img src="images/author-1.jpg" alt="">
+                                                </figure>
+                                            </div>            
+                                            <div class="author-content">
+                                                <h3>johan duo</h3>
+                                                <p>professional athlete</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Slide End -->
+            
+                                <!-- Testimonial Slide Start -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="testimonial-header">
+                                            <div class="testimonial-rating">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div class="testimonial-content">
+                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>	
+                                            </div>
+                                        </div>
+                                        <div class="testimonial-body">
+                                            <div class="author-image">
+                                                <figure class="image-anime">
+                                                    <img src="images/author-2.jpg" alt="">
+                                                </figure>
+                                            </div>            
+                                            <div class="author-content">
+                                                <h3>jane smith</h3>
+                                                <p>retired teacher</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Slide End -->
 
+                                <!-- Testimonial Slide Start -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="testimonial-header">
+                                            <div class="testimonial-rating">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div class="testimonial-content">
+                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>	
+                                            </div>
+                                        </div>
+                                        <div class="testimonial-body">
+                                            <div class="author-image">
+                                                <figure class="image-anime">
+                                                    <img src="images/author-3.jpg" alt="">
+                                                </figure>
+                                            </div>            
+                                            <div class="author-content">
+                                                <h3>robert lee</h3>
+                                                <p>construction worker</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Slide End -->
 
-
-
+                                <!-- Testimonial Slide Start -->
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="testimonial-header">
+                                            <div class="testimonial-rating">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div class="testimonial-content">
+                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>	
+                                            </div>
+                                        </div>
+                                        <div class="testimonial-body">
+                                            <div class="author-image">
+                                                <figure class="image-anime">
+                                                    <img src="images/author-4.jpg" alt="">
+                                                </figure>
+                                            </div>            
+                                            <div class="author-content">
+                                                <h3>banson doe</h3>
+                                                <p>marathon runner</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Testimonial Slide End -->
                             </div>
+                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
+
+                    <br><br>
+            <br>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="form-group mb--0">
+                    <button class="axil-btn btn-bg-primary2" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">
+                        <span> {{ \App\Helpers\TranslationHelper::TranslateText('Laisser un témoignage') }}</span>
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div id="successMessage" class="alert alert-success" style="display:none;"></div>
+            <div id="errorMessage" class="alert alert-danger" style="display:none;"></div>
+
+                    <!-- Testimonial Slider End -->
                 </div>
             </div>
-            <!-- Sponsor Logo Section End -->
+        </div>
+        </div>
+
+
+
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> {{ \App\Helpers\TranslationHelper::TranslateText('Témoignage') }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+
+
+                    <div class="modal-body">
+                        <form id="testimonialForm" action="{{ route('testimonial.store') }}" method="POST" class="testimonial-form p-4 rounded shadow-sm bg-light">
+                            @csrf
+                            <div class="form-group mb-4">
+                                <label for="name" class="form-label text-muted"> {{ \App\Helpers\TranslationHelper::TranslateText('Nom') }}</label>
+                                <input type="text" class="form-control border-0 rounded-pill shadow-sm" id="name" name="name" required>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="testimonial" class="form-label text-muted"> {{ \App\Helpers\TranslationHelper::TranslateText('Message') }}</label>
+                                <textarea class="form-control border-0 rounded-3 shadow-sm" id="testimonial" name="message" rows="8" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-bg-primary2 rounded-pill shadow"> {{ \App\Helpers\TranslationHelper::TranslateText('Envoyer') }}</button>
+                            </div>
+                        </form>
+
+                        @if ($errors->any())
+                        <div class="alert alert-danger mt-4">
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+
+                        @if (session('success'))
+                        <div class="alert alert-success mt-4">
+                            {{ session('success') }}
+                        </div>
+                        @endif
+                        <style>
+                            .testimonial-form {
+                                max-width: 600px;
+                                margin: 0 auto;
+                                background-color: #f8f9fa;
+                            }
+
+                            .form-group {
+                                margin-bottom: 1.5rem;
+                            }
+
+                            .form-label {
+                                font-weight: 600;
+                                font-size: 1rem;
+                            }
+
+                            .form-control {
+                                padding: 0.75rem 1rem;
+                                font-size: 1rem;
+                                color: #495057;
+                                background-color: #fff;
+                                border-radius: 25px;
+                            }
+
+                            textarea.form-control {
+                                border-radius: 15px;
+                            }
+
+                            button.btn {
+                                padding: 0.5rem 2rem;
+                                font-size: 1.125rem;
+                                transition: background-color 0.3s ease;
+                            }
+
+                            button.btn-primary {
+                                background-color: #EFB121;
+                                border-color: #EFB121;
+                            }
+
+                            button.btn-primary:hover {
+                                background-color: #EFB121;
+                                border-color: #EFB121;
+                            }
+
+                            .alert {
+                                max-width: 600px;
+                                margin: 1rem auto;
+                            }
+
+                        </style>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#testimonialForm').on('submit', function(e) {
+                    e.preventDefault(); // Empêcher l'envoi classique du formulaire
+
+                    $.ajax({
+                        url: $(this).attr('action')
+                        , method: $(this).attr('method')
+                        , data: $(this).serialize()
+                        , success: function(response) {
+                            // Afficher le message de succès
+                            $('#testimonialModal').modal('hide'); // Fermer le modal
+
+                            $('#successMessage').text(
+                                'Témoignage créé avec succès! Il sera valide après confirmation des administrateurs'
+
+                            ).show();
+
+                            setTimeout(function() {
+                                location.reload();
+                            }, 5000);
+                        }
+                        , error: function(response) {
+                            // Afficher un message d'erreur si nécessaire
+                            $('#errorMessage').text('Une erreur est survenue.')
+                                .show(); // Afficher le message d'erreur
+                        }
+                    });
+                });
+            });
+
+        </script>
+
+
+
+        <style>
+            .btn-bg-primary2 {
+                background-color: #a8cc1b;
+                color: #ffffff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+
+        </style>
+    <!-- Client Testimonial End -->
+    
+    <!-- Our Blog Section End -->
+    <div class="our-blog">
+        <div class="container">
+            <div class="row section-row align-items-center">
+                <div class="col-lg-9">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('Les actualités') }}</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Nos dernières') }}  </span>{{ \App\Helpers\TranslationHelper::TranslateText('Informations et mises à jour') }}</h2>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                   
+                    <div class="section-btn wow fadeInUp" data-wow-delay="0.25s">
+                        <a  href="{{ route('evenements') }}" class="btn-default"> {{ \App\Helpers\TranslationHelper::TranslateText('Voir tout') }}</a>
+                    </div>
+             
+                </div>
+            </div>
+
+            <div class="row">
+                @foreach ($events as $event)
+                                @if ($events)
+                <div class="col-lg-4 col-md-6">
+                   
+                    <div class="blog-item wow fadeInUp">
+                      
+                        <div class="post-featured-image" data-cursor-text="View">
+                            <figure>
+                                <a href="#" class="image-anime">
+                                    <img src="{{ Storage::url($event->image ?? ' ') }}" alt="">
+                                </a>
+                            </figure>
+                        </div>
+       
+                        <div class="post-item-content">
+                        
+                            <div class="post-item-body">
+                                <h2><a href="#">{{ \App\Helpers\TranslationHelper::TranslateText($event->titre ?? ' ') }} </a></h2>
+                            </div>
+                       
+
+                       
+                            <div class="post-item-footer">
+                                <a href="#" class="readmore-btn">{{ \App\Helpers\TranslationHelper::TranslateText('Voir plus') }}</a>
+                            </div>
+                           
+                        </div>
+                     
+                    </div>
+                    
+                </div>
+                @endif
+                @endforeach
+
+                
+            </div>
+        </div>
+    </div>
+    <!-- Our Blog End -->
+
+    <!-- Our Scrolling Ticker Section Start -->
+    <div class="our-scrolling-ticker">
+        <!-- Scrolling Ticker Start -->
+        <div class="scrolling-ticker-box">
+            <div class="scrolling-content">
+      
+                <span><img src="images/icon-sparkles.svg" alt="">{{ \App\Helpers\TranslationHelper::TranslateText('Pour toute demande complémentaire') }} : {{ $config->email ?? '' }}</span>
+                <span><img src="images/icon-sparkles.svg" alt="">{{ \App\Helpers\TranslationHelper::TranslateText('Prendre rendez-vous') }}: {{ $config->telephone ?? '' }}</span>
+                <span><img src="images/icon-sparkles.svg" alt=""> {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 10:00 à 18:00') }} </span>
+            </div>
+
+            <div class="scrolling-content">
+             
+                <span><img src="images/icon-sparkles.svg" alt=""> {{ \App\Helpers\TranslationHelper::TranslateText('Pour toute demande complémentaire') }} : {{ $config->email ?? '' }}</span>
+                <span><img src="images/icon-sparkles.svg" alt=""> {{ \App\Helpers\TranslationHelper::TranslateText('Prendre rendez-vous') }}: {{ $config->telephone ?? '' }}</span>
+                <span><img src="images/icon-sparkles.svg" alt=""> {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 10:00 à 18:00') }} </span>
+            </div>
+        </div>
+    </div>
+	<!-- Scrolling Ticker Section End -->  
+
+     
+
+
 
 
     </main>

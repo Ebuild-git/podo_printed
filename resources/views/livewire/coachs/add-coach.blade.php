@@ -62,7 +62,7 @@
                  <div class="col-sm-6">
                     <div class="mb-3">
                         <label for="photo" class="form-label">
-                            Photo
+                            Photo(600*692)
                         </label>
                         <input type="file" class="form-control" wire:model="photo">
                         @error('photo')

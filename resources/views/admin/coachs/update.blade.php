@@ -15,7 +15,7 @@
                                             <a href="javascript: void(0);">{{ config('app.name') }}</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="{{ route('coachs') }}">Docteurs</a>
+                                            <a href="{{ route('doctors') }}">Docteurs</a>
                                         </li>
                                         <li class="breadcrumb-item active">Liste</li>
                                     </ol>
@@ -28,7 +28,7 @@
                         <div class="card radius-15">
                             <div class="card-body">
                             <hr />
-                            <form action="{{ route('coachs.update', $coach->id) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('doctors.update', $coach->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="row">
@@ -107,7 +107,7 @@
                                                 </button>
                                                 &nbsp; &nbsp;
                                               {{--   <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fermer</button> --}}
-                                                <a class="btn btn-sm btn-secondary"  href="{{ route('coachs') }}">Renourner à la liste</a>
+                                                <a class="btn btn-sm btn-secondary"  href="{{ route('doctors') }}">Renourner à la liste</a>
                                                 
                                             </div>
                                            

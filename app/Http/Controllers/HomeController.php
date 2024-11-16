@@ -33,6 +33,7 @@ class HomeController extends Controller
        $videos = Video::select('*')->latest()->take(20)->get();
        $events = Event::select('*')->latest()->take(20)->get();
        $images = Image::select('*')->latest()->take(20)->get();
+       ///dd($images);
        $sponsors =Sponsor::select('*')->latest()->take(20)->get();
        $coachs = Coach::select('*')->latest()->take(20)->get();
 

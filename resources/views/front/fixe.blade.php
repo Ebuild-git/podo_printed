@@ -1,222 +1,156 @@
+
 @include('sweetalert::alert')
 @php
     $config = DB::table('configs')->first();
-
+    $service = DB::table('services')->get();
+    $produit = DB::table('produits')->get();
 @endphp
-<!doctype html>
-
-
+<!DOCTYPE html>
+<html lang="zxx">
 <head>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="Awaiken">
+	<!-- Page Title -->
+    <title>PODO-PRINTED</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+	<!-- Favicon Icon -->
+	<link rel="shortcut icon" type="image/x-icon"  src="{{ Storage::url($config->logo) }}">
+	<!-- Google Fonts Css-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+	<!-- Bootstrap Css -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<!-- SlickNav Css -->
+	<link href="css/slicknav.min.css" rel="stylesheet">
+	<!-- Swiper Css -->
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<!-- Font Awesome Icon Css-->
+	<link href="css/all.css" rel="stylesheet" media="screen">
+	<!-- Animated Css -->
+	<link href="css/animate.css" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- Mouse Cursor Css File -->
+	<link rel="stylesheet" href="css/mousecursor.css">
+	<!-- Main Custom Css -->
+	<link href="css/custom.css" rel="stylesheet" media="screen">
 
-    <head>
-        <!-- meta tag -->
-        <meta charset="utf-8">
-        <title> @yield('titre') - Sport Divers</title>
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="description" content="">
-        <link rel="icon" href="{{ Storage::url($config->icon) }}" type="image/png" />
-        <!-- responsive tag -->
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- favicon -->
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        {{-- <link rel="shortcut icon" type="image/x-icon" href="images/fav.png"> --}}
-        <!-- bootstrap v4 css -->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <!-- font-awesome css -->
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-        <!-- owl.carousel css -->
-        <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-        <!-- animate css -->
-        <link rel="stylesheet" type="text/css" href="css/animate.css">
-        <!-- Slick css -->
-        <link rel="stylesheet" type="text/css" href="css/slick.css">
-        <!-- off canvas css -->
-        <link rel="stylesheet" type="text/css" href="css/off-canvas.css">
-        <!-- flaticon css  -->
-        <link rel="stylesheet" type="text/css" href="fonts/flaticon.css">
-        <!-- magnific popup css -->
-        <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-        <!-- rsmenu CSS -->
-        <link rel="stylesheet" type="text/css" href="css/rsmenu-main.css">
-        <!-- swiper slider CSS -->
-        <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
-        <!-- rsmenu transitions CSS -->
-        <link rel="stylesheet" type="text/css" href="css/rsmenu-transitions.css">
-        <!-- rsanimations CSS -->
-        <link rel="stylesheet" type="text/css" href="css/rsanimations.css">
-        <!-- style css -->
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <!-- rs-spaceing css -->
-        <link rel="stylesheet" type="text/css" href="css/rs-spaceing.css">
-        <!-- responsive css -->
-        <link rel="stylesheet" type="text/css" href="css/responsive.css">
-    </head>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <script src="/Script.js"></script>
 
 </head>
-
-
-
 <body>
-    <!--Preloader area start here-->
-    <div id="loading" class="loading">
-        <div class="rs-loader">
-            <div class="rs-shadow"></div>
-            <div class="rs-gravity">
-                <div class="rs-ball"></div>
+
+    <!-- Preloader Start -->
+	<div class="preloader">
+		<div class="loading-container">
+			<div class="loading"></div>
+			<div id="loading-icon"><img  src="{{ Storage::url($config->logo) }}" width="100" height="100" alt=""></div>
+		</div>
+	</div>
+	<!-- Preloader End -->
+
+    <!-- Topbar Section Start -->
+    <div class="topbar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-9 col-md-12">
+                    <!-- Topbar Contact Information Start -->
+                    <div class="topbar-contact-info">
+                        <ul>
+                            <li><a href="#"><img src="images/icon-phone.svg" alt=""> {{ $config->telephone ?? '' }}</a></li>
+                            <li><a href="#"><img src="images/icon-mail.svg" alt=""> {{ $config->email ?? ' ' }}</a></li>
+                            <li class="hide-mobile"><a href="#"><img src="images/icon-location.svg" alt=""> {{ $config->addresse ?? ' ' }}</a></li>
+                        </ul>
+                    </div>
+                    <!-- Topbar Contact Information End -->
+                </div>
+
+                <div class="col-lg-3 col-md-0">
+                    <!-- Topbar Social Links Start -->
+                    <div class="topbar-social-links">
+                        <ul>
+                            <li><a href="{{ $config->facebook  ?? ' '}}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="{{ $config->twitter ?? ' ' }}"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="{{ $config->instagram ?? ' ' }}"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="{{ $config->youtube ?? ' ' }}"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- Topbar Social Links End -->
+                </div>
             </div>
         </div>
     </div>
-    <!--Preloader area End here-->
+    <!-- Topbar Section End -->
 
-    <!--Full width header Start-->
-    <div class="full-width-header">
-        <!--Header Start-->
-        <header id="rs-header" class="rs-header homestyle">
-            <!-- Menu Start -->
-            <div class="menu-area menu-sticky">
-                <div class="container-fluid">
-                    <div class="row rs-vertical-middle">
-                        <div class="col-lg-2">
-                            <div class="logo-area"> <a class="menu-logo" href="{{ route('home') }}"><img
-                                        src="{{ Storage::url($config->logoHeader ?? ' ') }}" alt="Logo" height="80"
-                                        width="80" /></a>
-                            </div>
+    <!-- Header Start -->
+	<header class="main-header">
+		<div class="header-sticky">
+			<nav class="navbar navbar-expand-lg">
+				<div class="container">
+					<!-- Logo Start -->
+					<a class="navbar-brand" href="{{ route('home') }}">
+						<img  src="{{ Storage::url($config->logo) }}"  height="50" width="50" alt="Logo">
+					</a>
+					<!-- Logo End -->
+
+					<!-- Main Menu Start -->
+					<div class="collapse navbar-collapse main-menu">
+                        <div class="nav-menu-wrapper">
+                            <ul class="navbar-nav mr-auto" id="menu">
+                                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">{{ __('accueil') }}</a>
+                                   
+                                </li>                                
+                                <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('evenements') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Actualités') }}</a></li>
+                              
+                                <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
+                              
+                              
+                                
+
+                           
+                          
                         </div>
-                        <div class="col-lg-10 mobile-menu-area">
-                            <div class="rs-menu-area display-flex-center">
-                                <div class="main-menu">
-                                    <a class="rs-menu-toggle">
-                                        <i class="fa fa-bars"></i>
-                                    </a>
-                                    <nav class="rs-menu">
-                                        <div class="expand-btn">
-                                            <span class="search-parent">
-                                                <a class="hidden-xs rs-search" href="#">
-                                                    <i class="flaticon-search"></i>
-                                                </a>
-                                                <div class="sticky_form">
-                                                    <form role="search" class="bs-search search-form" method="get">
-                                                        <div class="search-wrap">
-                                                            <input class="search-input" type="text" name="fname"
-                                                                placeholder="Search...">
-                                                            <button type="submit" value="Search"><i
-                                                                    class="flaticon-search"></i></button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </span>
-                                            {{--  <span class="menu-cart-area mini-cart-active">
-                                                <a href="#">
-                                                    <i class="fa fa-shopping-cart"></i>
-                                                    <span class="icon-num">0</span>
-                                                </a>
-                                                <!-- woocommerce-mini -->
-                                                <div class="woocommerce-mini-cart text-left">
-                                                    <div class="cart-bottom-part">
-                                                        <h2 class="widget-title">No products in the cart.</h2>
-                                                    </div>
-                                                </div> 
-                                            </span> --}}
-                                            <span>
-                                                <a id="nav-expander" class="nav-expander">
-                                                    <ul class="offcanvas-icon">
-                                                        <li>
-                                                            <span class="hamburger1"></span>
-                                                            <span class="hamburger2"></span>
-                                                            <span class="hamburger3"></span>
-                                                        </li>
-                                                    </ul>
-                                                </a>
-                                            </span>
-                                        </div>
-                                        <ul class="nav-menu text-right">
-                                            <!-- Home -->
-                                        <li class="current-menu-item current_page_item menu-item-has-children"> <a
-                                                    href="{{ route('home') }}" class="home">Accueil</a>
 
-                                            </li> 
-                                            <!-- End Home -->
+                     
 
-                                            <!--Contact Menu Start-->
-                                            <li><a href="{{ route('evenements') }}">Evènements</a></li> 
-                                              {{--  <li class="last-item"><a href="{{ route('about') }}">A propos</a></li>  --}}
-                                            <li class="last-item"><a href="{{ route('contact') }}">Contact</a></li>
-                                            <li class="last-item"><a href="{{ route('inscription') }}">Inscription</a></li>
-
-                                            <!--Contact Menu End-->
-
-                                            @guest
-
-
-                                                {{-- <li>
-                                                    <a href="{{ url('login') }}">Connexion</a>
-                                                </li> --}}
-                                            @else
-                                                @if (auth()->user()->role != 'client')
-                                                    <li><a href="{{ url('dashboard') }}"
-                                                            class="nav-item nav-link">Dashboard</a>
-                                                    </li>
-                                                @endif
-
-                                            @endguest
-
-                                        </ul> <!-- //.nav-menu -->
-                                    </nav>
-                                </div> <!-- //.main-menu -->
-                            </div>
+                        <!-- Let’s Start Button Start -->
+                        <div class="header-btn d-inline-flex">
+                            <a href="#" class="btn-default">{{ $config->telephone ?? ' ' }}</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Menu End -->
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
 
-            <!-- Canvas Menu start -->
-            <nav class="right_menu_togle hidden-md">
-                <div class="close-btn"><span id="nav-close" class="text-center"><i
-                            class="flaticon-cross"></i></span></div>
-                <div class="canvas-logo">
-                    <a href="{{ route('home') }}"><img src="{{ Storage::url($config->logo ?? ' ') }}" alt="logo"></a>
-                </div>
-                <div class="sidebarnav_menu">
-                    <ul>
-                        <li class="active"><a href="{{ route('home') }}">Accueil</a></li> 
+                        <form action="{{ route('locale.change') }}" method="POST">
+                            @csrf
+                            <select name="locale" onchange="this.form.submit()">
+                                <option value="fr"{{ app()->getLocale() == 'fr' ? ' selected' : '' }}>Français</option>
+                                <option value="en"{{ app()->getLocale() == 'en' ? ' selected' : '' }}>Anglais</option>
+                                <option value="ar"{{ app()->getLocale() == 'ar' ? ' selected' : '' }}>Arabe</option>
+                            
+                            </select>
+                        </form>
 
-                        <li><a href="{{ route('evenements') }}">Evènements</a></li> 
-                        <li><a href="{{ route('contact') }}">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="canvas-contact">
-                    <h5 class="canvas-contact-title">Contact Info</h5>
-                    <ul class="contact">
-                        <li><i class="fa fa-globe"></i>{{ $config->addresse }}</li>
-                        <li><i class="fa fa-phone"></i><a href="#">{{ $config->telephone }}</a></li>
-                        <li><i class="fa fa-envelope"></i><a href="#">{{ $config->email }}</a></li>
-                    </ul>
-                    <ul class="social">
-                        <li><a href="{{ $config->facebook }}"><i class="fa fa-facebook"></i></a></li>
-
-
-
-                        <li><a href="{{ $config->instagram }}"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="{{ $config->youtube }}"><i class="fa fa-youtube"></i></a></li>
-
-
-                    </ul>
-                </div>
-            </nav>
-            <!-- Canvas Menu end -->
-        </header>
-        <!--Header End-->
-    </div>
-    <!--Full width header End-->
-
-
-
+                        <!-- Let’s Start Button End -->
+					</div>
+					<!-- Main Menu End -->
+					<div class="navbar-toggle"></div>
+				</div>
+			</nav>
+			<div class="responsive-menu"></div>
+		</div>
+	</header>
+	<!-- Header End -->
 
 
     <main>
@@ -229,185 +163,185 @@
 
 
     </main>
-    <footer id="rs-footer" class="rs-footer home5-footer pt-137 md-pt-70 sm-pt-65">
-        <div class="footer-top position-relative overflow-hidden z-1">
+    <!-- Footer Start -->
+     <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <!-- About Footer Start -->
+                    <div class="about-footer">
+                        <!-- Footer Logo Start -->
+                        <div class="footer-logo">
+                            <img src="{{ Storage::url($config->logo ?? ' ') }}"  width="100" height="100" alt="">
+                        </div>
+                        <!-- Footer Logo End -->
 
-            <div class="container">
-                <div class="row gx-0 gy-6 g-lg-10">
-                    <div class="col-lg-5">
-                        <style>
-                            .app-brand-link img {
-                                height: 100px;
-                                width: 100px;
-                                margin-top: -20px;
-                            }
-                        </style>
-                        <a href="{{ route('home') }}" class="app-brand-link mb-3">
-                            <img src="{{ Storage::url($config->logo ?? ' ') }}" alt="Logo" height="100"
-                                width="100" />
-
-                        </a>
-                        <p class="footer-text footer-logo-description mb-3">
-                            Téléphone: {{ $config->telephone }}
-                        </p>
-                        <p class="footer-text footer-logo-description mb-3">
-                            E-mail: {{ $config->email }}
-                        </p>
-                        <p class="footer-text footer-logo-description mb-3">
-                            Adresse: {{ $config->addresse }}
-                        </p>
+                        <!-- About Footer Content Start -->
+                        <div class="about-footer-content">
+                            <p style="text-align: justify">  {!! \App\Helpers\TranslationHelper::TranslateText($config->description) !!}</p>
+                        </div>
+                        <!-- Footer Social Links Start -->
+                        <div class="footer-social-links">
+                            <ul>
+                                <li><a href="{{ $config->facebook ?? ' ' }}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="{{ $config->twitter ?? ' ' }}"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="{{ $config->linkedin ?? ' ' }}"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="{{ $config->instagram ?? ' ' }}"><i class="fa-brands fa-instagram"></i></a></li>                                                                
+                            </ul>
+                        </div>
+                        <!-- Footer Social Links End -->
+                        
                     </div>
-                    <div class="col-lg-2 col-md-4 col-sm-6">
-                        <h6 class="footer-title mb-3 footer-link">Pages</h6>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="{{ route('home') }}" target="_blank"
-                                    class="footer-link">Accueil</a></li>
-                            <li class="mb-2"><a href="{{ route('evenements') }}" target="_blank"
-                                    class="footer-link">Evènements</a></li>
-                            <li class="mb-2"><a href="{{ route('contact') }}" target="_blank"
-                                    class="footer-link">Contact</a></li>
+                    <!-- About Footer End -->
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <!-- About Links Start -->
+                    <div class="about-working-hour">
+                        <h3> {{ \App\Helpers\TranslationHelper::TranslateText('Horaires de travail') }}</h3>
+                        <ul>
+                            <li style="font-size: 12px;">
+                                {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 10:00 à 18:00') }}
+                            </li>
+                            <li style="font-size: 12px;">
+                               
+                                    {{ \App\Helpers\TranslationHelper::TranslateText('Samedi : 10:00 à 15:00') }}
+    
+                            </li>
+                            <li>
+                                <p>{{ \App\Helpers\TranslationHelper::TranslateText('Dimanche : Fermé') }}</p>
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-sm-6">
-                        <h6 class="footer-title mb-3 footer-link">Nos liens</h6>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="{{ $config->facebook }}" class="footer-link">Facebook</a>
-                            </li>
-                            <li class="mb-2"><a href="{{ $config->instagram }}" class="footer-link">Instagram</a>
-                            </li>
-                            <li class="mb-2"><a href="{{ $config->tiktok }}" class="footer-link">TikTok</a></li>
-                            <li class="mb-2"><a href="{{ $config->youtube }}" class="footer-link">YouTube</a></li>
+                    <!-- About Links End -->
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <!-- About Links Start -->
+                    <div class="about-service-list">
+                        <h3>{{ \App\Helpers\TranslationHelper::TranslateText(' Pages') }}</h3>
+                        <ul>
+                            <li><a href="{{ route('home') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+                            <li><a href="{{ route('about') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
+                                 <li><a href="{{ route('contact') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
+                                 <li><a href="{{ route('evenements') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('Actualités') }}</a></li>
+          
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-4">
-                        <h6 class="footer-title mb-3 footer-link">Téléchargez notre application sur :</h6>
-                        <a href="javascript:void(0);" class="d-block mb-2"><img
-                                src="../../assets/img/front-pages/landing-page/apple-icon.png" alt="apple icon" /></a>
-                        <a href="javascript:void(0);" class="d-block"><img
-                                src="../../assets/img/front-pages/landing-page/google-play-icon.png"
-                                alt="google play icon" /></a>
+                    <!-- About Links End -->
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <!-- About Links Start -->
+                    <div class="footer-contact">
+                        <h3>  {{ \App\Helpers\TranslationHelper::TranslateText('Contact info') }}</h3>
+                        <!-- Footer Contact Details Start -->
+                        <div class="footer-contact-details">
+                            <!-- Footer Info Box Start -->
+                            <div class="footer-info-box">
+                                <div class="icon-box">
+                                    <img src="images/icon-phone.svg" alt="">
+                                </div>
+                                <div class="footer-info-box-content">
+                                    <p>{{ $config->telephone ?? ' ' }}</p>
+                                </div>                                
+                            </div>
+                            <!-- Footer Info Box End -->
+
+                            <!-- Footer Info Box Start -->
+                            <div class="footer-info-box">
+                                <div class="icon-box">
+                                    <img src="images/icon-mail.svg" alt="">
+                                </div>
+                                <div class="footer-info-box-content">
+                                    <p>{{ $config->email ?? ' ' }}</p>
+                                </div>
+                            </div>
+                            <!-- Footer Info Box End -->
+
+                            <!-- Footer Info Box Start -->
+                            <div class="footer-info-box">
+                                <div class="icon-box">
+                                    <img src="images/icon-location.svg" alt="">
+                                </div>
+                                <div class="footer-info-box-content">
+                                    <p>{{ $config->addresse ?? ' ' }}</p>
+                                </div>                                
+                            </div>
+                            <!-- Footer Info Box End -->
+                        </div>
+                        <!-- Footer Contact Details End -->
                     </div>
+                    <!-- About Links End -->
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom py-0 py-md-1">
-            <div class="footer-bootom">
-                <div class="container custom">
-                    <div class="row rs-vertical-middle">
-                        <div class="col-md-7">
-                            <div class="copyright">
-                                <p>© 2024 Sport Divers. All Rights Reserved. Designed by <a
-                                        href="https://www.e-build.tn" target="_blank"
-                                        style="color: #c71f17;">E-build</a></p>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="footer-share text-right">
-                                <ul>
-                                    <li><a href="{{ $config->facebook }}"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="{{ $config->instagram }}"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="{{ $config->youtube }}"><i class="fa fa-youtube"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
+
+            <!-- Footer Copyright Section Start -->
+            <div class="footer-copyright">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-6">
                     </div>
+
+
+                    <div class="col-lg-4 col-md-6">
+                        <!-- Footer Copyright Start -->
+                        <div class="footer-copyright-text">
+                            <p>Copyright {{ date('Y') }} PODO PRINTED | Design By  <a href="https://www.e-build.tn" style="color: #c71f17;">
+                                <b> E-build </b>
+                            </a>.</p>
+                        </div>
+                        <!-- Footer Copyright End -->
+                    </div>
+
+                     <div class="col-lg-4 col-md-6">
+                        
+                      {{--   <div class="footer-links">
+                            <ul>
+                                <li><a href="{{ route('home') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+                                <li><a href="{{ route('about') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
+                                     <li><a href="{{ route('contact') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
+              
+                            </ul>
+                        </div> --}}
+                       
+                    </div> 
                 </div>
             </div>
+            <!-- Footer Copyright Section End -->
         </div>
-    </footer>
-    <style>
-        .footer-text {
-            margin-bottom: 0.5rem;
-            padding: 0;
-            color: white;
-            font-size: 16px;
-            text-align: justify;
-        }
-
-
-        .col-lg-2,
-        .col-md-4,
-        .col-sm-6 {
-            margin-bottom: 1rem;
-        }
-
-        .footer-top {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-
-        .footer-link {
-            color: white;
-            text-decoration: none;
-        }
-
-        .footer-link:hover {
-            color: #f1f1f1;
-        }
-
-        .rs-footer {
-            padding-top: 1rem;
-        }
-    </style>
+     </footer>
     <!-- Footer End -->
-
-    <!-- Scrool to Top Start -->
-    <div id="scrollUp">
-        <i class="fa fa-angle-up"></i>
-    </div>
-    <!-- Scrool to Top End -->
-
-    <!-- Search Modal Start -->
-    <div aria-hidden="true" class="modal fade search-modal" role="dialog" tabindex="-1">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true" class="flaticon-cross"></span>
-        </button>
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="search-block clearfix">
-                    <form>
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Search Here.." type="text">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Search Modal End -->
- 
-      
-        <script src="js/modernizr-2.8.3.min.js"></script>
-        
-        <script src="js/jquery.min.js"></script>
-        
-        <script src="js/bootstrap.min.js"></script>
-        
-        <script src="js/owl.carousel.min.js"></script>
-        
-        <script src="js/slick.min.js"></script>
-        
-        <script src="js/isotope.pkgd.min.js"></script>
-        
-        <script src="js/imagesloaded.pkgd.min.js"></script>
-        
-        <script src="js/wow.min.js"></script>
-      
-        <script src="js/jquery.magnific-popup.min.js"></script>
-       
-        <script src="js/rsmenu-main.js"></script>
-        
-        <script src="js/plugins.js"></script>
-       
-        <script src="js/jquery.counterup.min.js"></script>
-        <script src="js/waypoints.min.js"></script>
-        
-       
-        <script src="js/swiper.min.js"></script>
-       
-        <script src="js/main.js"></script>
-
-
+    
+    <!-- Jquery Library File -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="js/SmoothScroll.js"></script>
+    <!-- Parallax js -->
+    <script src="js/parallaxie.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="js/SplitText.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <!-- YTPlayer js File -->
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
+    <!-- Wow js file -->
+    <script src="js/wow.js"></script>
+    <!-- Main Custom js file -->
+    <script src="js/function.js"></script>
 </body>
-
 </html>

@@ -150,7 +150,7 @@
                         <style>
                             .small-text {
                                 font-size: 12px;
-                                /* Ajustez la taille selon vos besoins */
+                                
                             }
                         </style>
                     </a>
@@ -190,10 +190,10 @@
 
                     <!-- Components -->
                     <li class="menu-header small">
-                        <span class="menu-header-text" data-i18n="Actualités & Sponsors">Actualités & Sponsors</span>
+                        <span class="menu-header-text" data-i18n="Actualités & Sponsors">Actualités</span>
                     </li>
                     <!-- Cards -->
-                    <li class="menu-item">
+                {{--     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-id"></i>
                             <div data-i18n="Gestion des Sponsors">Gestion des sponsors</div>
@@ -208,7 +208,7 @@
 
 
                         </ul>
-                    </li>
+                    </li> --}}
                     <!-- User interface -->
                     <li class="menu-item">
                         <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -294,20 +294,13 @@
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-users"></i>
-                            <div data-i18n="Gestion du personnel">Gestion du personnel</div>
+                            <div data-i18n="Gestion  des Docteurs">Gestion des Docteurs</div>
                         </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ route('personnels') }}" class="menu-link">
-                                    <div data-i18n="Liste du personnel">Liste du personnel</div>
-                                </a>
-                            </li>
-
-                        </ul>
+                    
 
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('coachs') }}" class="menu-link">
+                                <a href="{{ route('doctors') }}" class="menu-link">
                                     <div data-i18n="Liste des docteurs">Liste des docteurs</div>
                                 </a>
                             </li>
