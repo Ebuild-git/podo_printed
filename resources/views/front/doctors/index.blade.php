@@ -60,7 +60,7 @@
                     <!-- Team Content Start -->
                     <div class="team-content">
                         <h3>{{ $coach->prenom ?? '' }} {{ $coach->nom ?? ' ' }}</h3>
-                        <p>senior physiotherapist</p>
+                        <p>{{ \App\Helpers\TranslationHelper::TranslateText($coach->poste ?? ' ') }}</p>
                     </div>
                     <!-- Team Content End -->
                 </div>
