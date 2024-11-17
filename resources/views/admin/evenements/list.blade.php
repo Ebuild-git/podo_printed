@@ -25,10 +25,10 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item">
-                                            <a href="javascript: void(0);">{{ config('app.name') }}</a>
+                                            <a href="javascript: void(0);" style="color: #9fc52e">{{ config('app.name') }}</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="{{ route('events') }}">Evènements</a>
+                                            <a href="{{ route('events') }}" style="color: #9fc52e">Actualités</a>
                                         </li>
                                         <li class="breadcrumb-item active">Liste</li>
                                     </ol>
@@ -38,12 +38,12 @@
                     </div>
                        
                         <!-- Sponsors List Table -->
-
+                      
                         <div class="card radius-15">
                           <div class="card-body">
                               <div class="d-flex justify-content-between">
                                   <div class="card-title">
-                                      <h5 class="mb-0 my-auto">
+                                      <h5 class="mb-0 my-auto" style="color: #f9faf6">
                                           Liste des actualités
                                       </h5>
                                   </div>
@@ -55,7 +55,7 @@
                                       </button> --}}
                                     
           
-                                      <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                                      <button type="button" class="btn btn-sm bg-primary2" data-bs-toggle="modal"
                                       data-bs-target="#add">
                                       <i class="ri-user-add-line"></i>
                                       Ajouter une actualité

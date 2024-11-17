@@ -35,12 +35,12 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item">
-                                                <a href="javascript: void(0);">{{ config('app.name') }}</a>
+                                                <a href="javascript: void(0);" style="color: #9fc52e">{{ config('app.name') }}</a>
                                             </li>
                                             <li class="breadcrumb-item">
-                                                <a href="{{ route('doctors') }}">Docteurs</a>
+                                                <a href="{{ route('doctors') }}" style="color: #9fc52e">Docteurs</a>
                                             </li>
-                                            <li class="breadcrumb-item active">Liste</li>
+                                            <li class="breadcrumb-item active" style="color: #9fc52e">Liste</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@
                                       </button> --}}
 
 
-                                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                                        <button type="button" class="btn btn-sm bg-primary2" data-bs-toggle="modal"
                                             data-bs-target="#add">
                                             <i class="ri-user-add-line"></i>
                                             Ajouter un docteur
@@ -213,12 +213,12 @@
             <div class="modal-content">
 
                 <style>
-                     .modal-header {
+                     .modal-title {
         background-color: #9fc52e;
     
     }
                 </style>
-                <div class="modal-header" style="background-color: #9fc52e">
+                <div class="modal-header">
                     <h6 class="modal-title" id="myCenterModalLabel">
                         Ajouter un docteur.
                     </h6>

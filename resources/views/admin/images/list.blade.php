@@ -35,12 +35,12 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item">
-                                                <a href="javascript: void(0);">{{ config('app.name') }}</a>
+                                                <a href="javascript: void(0);" style="color: #9fc52e">{{ config('app.name') }}</a>
                                             </li>
                                             <li class="breadcrumb-item">
-                                                <a href="{{ route('images') }}">Images</a>
+                                                <a href="{{ route('images') }}" style="color: #9fc52e">Images</a>
                                             </li>
-                                            <li class="breadcrumb-item active">Liste</li>
+                                            <li class="breadcrumb-item active" style="color: #9fc52e">Liste</li>
                                         </ol>
                                     </div>
                                 </div>

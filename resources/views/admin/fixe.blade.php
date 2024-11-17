@@ -135,7 +135,12 @@
         background-color: #9fc52e;
     
     }
-
+  
+                     .modal-title {
+        background-color: #9fc52e;
+    
+    }
+            
    
             .btn-default {
                 background-color: #9fc52e;

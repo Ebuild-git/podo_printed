@@ -33,12 +33,12 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item">
-                                                <a href="javascript: void(0);">{{ config('app.name') }}</a>
+                                                <a href="javascript: void(0);" style="color: #9fc52e">{{ config('app.name') }}</a>
                                             </li>
                                             <li class="breadcrumb-item">
-                                                <a href="{{ route('admin_contact_form') }}">Contacts</a>
+                                                <a href="{{ route('admin_contact_form') }}" style="color: #9fc52e">Contacts</a>
                                             </li>
-                                            <li class="breadcrumb-item active">Liste</li>
+                                            <li class="breadcrumb-item active" style="color: #9fc52e">Liste</li>
                                         </ol>
                                     </div>
                                 </div>
