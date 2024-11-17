@@ -1,13 +1,23 @@
 <div>
     @include('components.alert')
 
+    <style>
+        .bg-primary2 {
+            background-color: #9fc52e;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
 
+    </style>
     <div class="card mb-8">
         <h5 class="card-header">Les configurations</h5>
         <form class="card-body" wire:submit="update_form" enctype="multipart/form-data">
             @csrf
 
-            <div class="text-center bg-primary card my-auto p-1 mb-3">
+            <div class="text-center bg-primary2 card my-auto p-1 mb-3"  style="">
                 <h6 class="text-white">
                     Logo et images
                 </h6>
@@ -58,7 +68,7 @@
             </div>
 
             <hr class="my-6 mx-n4" />
-            <div class="text-center bg-primary card my-auto p-1 mb-3">
+            <div class="text-center bg-primary2 card my-auto p-1 mb-3">
                 <h6 class="text-white">
                     A propos de nous
                 </h6>
@@ -196,7 +206,7 @@
 
             </div>
             <hr class="my-6 mx-n4" />
-            <div class="text-center bg-primary card my-auto p-1 mb-3">
+            <div class="text-center bg-primary2 card my-auto p-1 mb-3">
                 <h6 class="text-white">
                     Les Addresses et réseaux sociaux
                 </h6>
@@ -266,7 +276,7 @@
 
 
             <hr class="my-6 mx-n4" />
-            <div class="text-center bg-primary card my-auto p-1 mb-3">
+            <div class="text-center bg-primary2 card my-auto p-1 mb-3">
                 <h6 class="text-white">
                     Les statistiques globales
                 </h6>
@@ -385,10 +395,12 @@
                     <img src="https://i.gifer.com/ZKZg.gif" height="15" alt="" srcset="">
                 </span>
                 <i class="ri-save-line me-1 fs-16 lh-1"></i>
-                <button type="submit" class="btn btn-primary me-4">Enregistrer les changements</button>
+                <button type="submit" class="btn bg-primary2 me-4">Enregistrer les changements</button>
 
             </div>
         </form>
     </div>
+
+    
 
 </div>

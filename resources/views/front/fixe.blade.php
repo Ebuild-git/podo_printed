@@ -1,45 +1,44 @@
-
 @include('sweetalert::alert')
 @php
-    $config = DB::table('configs')->first();
-    $service = DB::table('services')->get();
-    $produit = DB::table('produits')->get();
+$config = DB::table('configs')->first();
+$service = DB::table('services')->get();
+$produit = DB::table('produits')->get();
 @endphp
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="Awaiken">
-	<!-- Page Title -->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Awaiken">
+    <!-- Page Title -->
     <title>PODO-PRINTED</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-	<!-- Favicon Icon -->
+    <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ Storage::url($config->icon ?? ' ') }}">
-	<!-- Google Fonts Css-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Google Fonts Css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-	<!-- Bootstrap Css -->
-	<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<!-- SlickNav Css -->
-	<link href="/css/slicknav.min.css" rel="stylesheet">
-	<!-- Swiper Css -->
-	<link rel="stylesheet" href="/css/swiper-bundle.min.css">
-	<!-- Font Awesome Icon Css-->
-	<link href="css/all.css" rel="stylesheet" media="screen">
-	<!-- Animated Css -->
-	<link href="/css/animate.css" rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- SlickNav Css -->
+    <link href="/css/slicknav.min.css" rel="stylesheet">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+    <!-- Font Awesome Icon Css-->
+    <link href="css/all.css" rel="stylesheet" media="screen">
+    <!-- Animated Css -->
+    <link href="/css/animate.css" rel="stylesheet">
     <!-- Magnific Popup Core Css File -->
-	<link rel="stylesheet" href="/css/magnific-popup.css">
-	<!-- Mouse Cursor Css File -->
-	<link rel="stylesheet" href="/css/mousecursor.css">
-	<!-- Main Custom Css -->
-	<link href="/css/custom.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <!-- Mouse Cursor Css File -->
+    <link rel="stylesheet" href="/css/mousecursor.css">
+    <!-- Main Custom Css -->
+    <link href="/css/custom.css" rel="stylesheet" media="screen">
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -51,14 +50,35 @@
 </head>
 <body>
 
+    <style>
+        .bg-primary2 {
+            background-color: #9fc52e;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+       
+                .btn-default {
+                    background-color: #9fc52e;
+                  
+                   
+                }
+        
+            
+
+    </style>
+
     <!-- Preloader Start -->
-	<div class="preloader">
-		<div class="loading-container">
-			<div class="loading"></div>
-			<div id="loading-icon"><img  src="{{ Storage::url($config->logo) }}" width="100" height="100" alt=""></div>
-		</div>
-	</div>
-	<!-- Preloader End -->
+    <div class="preloader">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-icon"><img src="{{ Storage::url($config->logo) }}" width="100" height="100" alt=""></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
 
     <!-- Topbar Section Start -->
     <div class="topbar">
@@ -81,9 +101,9 @@
                     <div class="topbar-social-links">
                         <ul>
                             <li><a href="{{ $config->facebook  ?? ' '}}"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="{{ $config->twitter ?? ' ' }}"><i class="fa-brands fa-twitter"></i></a></li>
                             <li><a href="{{ $config->instagram ?? ' ' }}"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="{{ $config->youtube ?? ' ' }}"><i class="fa-brands fa-youtube"></i></a></li>
+
+                            <li><a href="{{ $config->linkedin ?? ' ' }}"><i class="fa-brands fa-linkedin"></i></a></li>
                         </ul>
                     </div>
                     <!-- Topbar Social Links End -->
@@ -94,36 +114,36 @@
     <!-- Topbar Section End -->
 
     <!-- Header Start -->
-	<header class="main-header">
-		<div class="header-sticky">
-			<nav class="navbar navbar-expand-lg">
-				<div class="container">
-					<!-- Logo Start -->
-					<a class="navbar-brand" href="{{ route('home') }}">
-						<img  src="{{ Storage::url($config->logo) }}"  height="50" width="50" alt="Logo">
-					</a>
-					<!-- Logo End -->
+    <header class="main-header">
+        <div class="header-sticky">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <!-- Logo Start -->
+                    <a class="navbar-brand" href="{{ route('home') }}">
+                        <img src="{{ Storage::url($config->logo) }}" height="50" width="50" alt="Logo">
+                    </a>
+                    <!-- Logo End -->
 
-					<!-- Main Menu Start -->
-					<div class="collapse navbar-collapse main-menu">
+                    <!-- Main Menu Start -->
+                    <div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
                                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">{{ __('accueil') }}</a>
-                                   
-                                </li>                                
+
+                                </li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('evenements') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Actualités') }}</a></li>
-                              
-                                <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
-                              
-                              
-                                
 
-                           
-                          
+                                <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
+
+
+
+
+
+
                         </div>
 
-                     
+
 
                         <!-- Let’s Start Button Start -->
                         <div class="header-btn d-inline-flex">
@@ -133,26 +153,111 @@
                         &nbsp;
                         &nbsp;
 
-                        <form action="{{ route('locale.change') }}" method="POST">
-                            @csrf
-                            <select name="locale" onchange="this.form.submit()">
-                                <option value="fr"{{ app()->getLocale() == 'fr' ? ' selected' : '' }}>Français</option>
-                                <option value="en"{{ app()->getLocale() == 'en' ? ' selected' : '' }}>Anglais</option>
-                                <option value="ar"{{ app()->getLocale() == 'ar' ? ' selected' : '' }}>Arabe</option>
-                            
-                            </select>
-                        </form>
+
+                        <style>
+                            .custom-dropdown {
+                                position: relative;
+                                display: inline-block;
+                            }
+
+                            .dropbtn {
+                                background-color: #ffffff;
+                                color: #000;
+                                padding: 10px 15px;
+                                font-size: 16px;
+                                border: 1px solid #ccc;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                display: flex;
+                                align-items: center;
+                            }
+
+                            .dropbtn img {
+                                margin-right: 8px;
+                            }
+
+                            .dropdown-content {
+                                display: none;
+                                position: absolute;
+                                background-color: #ffffff;
+                                min-width: 150px;
+                                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+                                z-index: 1;
+                                border: 1px solid #ccc;
+                                border-radius: 5px;
+                            }
+
+                            .dropdown-content .dropdown-item {
+                                display: flex;
+                                align-items: center;
+                                padding: 10px 15px;
+                                background-color: transparent;
+                                border: none;
+                                width: 100%;
+                                text-align: left;
+                                cursor: pointer;
+                            }
+
+                            .dropdown-content .dropdown-item img {
+                                margin-right: 8px;
+                            }
+
+                            .dropdown-content .dropdown-item:hover {
+                                background-color: #f0f0f0;
+                            }
+
+                            .dropdown:hover .dropdown-content {
+                                display: block;
+                            }
+
+                        </style>
+
+
+                        <div class="custom-dropdown">
+                            <form action="{{ route('locale.change') }}" method="POST">
+                                @csrf
+                                <div class="dropdown">
+                                    <button class="dropbtn">
+                                        {{ app()->getLocale() == 'fr' ? 'Français' : 'English' }}
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <button type="submit" name="locale" value="fr" class="dropdown-item">
+                                            <img src="https://img.icons8.com/color/20/france-circular.png" alt="fr">
+                                            Français
+                                        </button>
+                                        <button type="submit" name="locale" value="en" class="dropdown-item">
+                                            <img src="https://img.icons8.com/color/20/great-britain-circular.png" alt="en">
+                                            English
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+
+                        {{-- <form action="{{ route('locale.change') }}" method="POST">
+                        @csrf
+                        <select name="locale" onchange="this.form.submit()">
+                            <option value="fr" {{ app()->getLocale() == 'fr' ? ' selected' : '' }}>Français</option>
+                            <option value="en" {{ app()->getLocale() == 'en' ? ' selected' : '' }}>
+
+                                Anglais</option>
+                            <option value="ar" {{ app()->getLocale() == 'ar' ? ' selected' : '' }}>Arabe</option>
+
+                        </select>
+                        </form> --}}
 
                         <!-- Let’s Start Button End -->
-					</div>
-					<!-- Main Menu End -->
-					<div class="navbar-toggle"></div>
-				</div>
-			</nav>
-			<div class="responsive-menu"></div>
-		</div>
-	</header>
-	<!-- Header End -->
+                    </div>
+                    <!-- Main Menu End -->
+                    <div class="navbar-toggle"></div>
+                </div>
+            </nav>
+            <div class="responsive-menu"></div>
+        </div>
+    </header>
+    <!-- Header End -->
 
 
     <main>
@@ -166,7 +271,7 @@
 
     </main>
     <!-- Footer Start -->
-     <footer class="main-footer">
+    <footer class="main-footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -174,29 +279,29 @@
                     <div class="about-footer">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo">
-                            <img src="{{ Storage::url($config->logo ?? ' ') }}"  width="100" height="100" alt="">
+                            <img src="{{ Storage::url($config->logo ?? ' ') }}" width="100" height="100" alt="">
                         </div>
                         <!-- Footer Logo End -->
 
                         <!-- About Footer Content Start -->
                         <div class="about-footer-content">
-                            <p style="text-align: justify">  {!! \App\Helpers\TranslationHelper::TranslateText($config->description) !!}</p>
+                            <p style="text-align: justify"> {!! \App\Helpers\TranslationHelper::TranslateText($config->description) !!}</p>
                         </div>
                         <!-- Footer Social Links Start -->
                         <div class="footer-social-links">
                             <ul>
                                 <li><a href="{{ $config->facebook ?? ' ' }}"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="{{ $config->twitter ?? ' ' }}"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="{{ $config->instagram ?? ' ' }}"><i class="fa-brands fa-instagram"></i></a></li>
+
                                 <li><a href="{{ $config->linkedin ?? ' ' }}"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                <li><a href="{{ $config->instagram ?? ' ' }}"><i class="fa-brands fa-instagram"></i></a></li>                                                                
                             </ul>
                         </div>
                         <!-- Footer Social Links End -->
-                        
+
                     </div>
                     <!-- About Footer End -->
                 </div>
-                
+
                 <div class="col-lg-3 col-md-4">
                     <!-- About Links Start -->
                     <div class="about-working-hour">
@@ -206,9 +311,9 @@
                                 {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 10:00 à 18:00') }}
                             </li>
                             <li style="font-size: 12px;">
-                               
-                                    {{ \App\Helpers\TranslationHelper::TranslateText('Samedi : 10:00 à 15:00') }}
-    
+
+                                {{ \App\Helpers\TranslationHelper::TranslateText('Samedi : 10:00 à 15:00') }}
+
                             </li>
                             <li>
                                 <p>{{ \App\Helpers\TranslationHelper::TranslateText('Dimanche : Fermé') }}</p>
@@ -223,11 +328,11 @@
                     <div class="about-service-list">
                         <h3>{{ \App\Helpers\TranslationHelper::TranslateText(' Pages') }}</h3>
                         <ul>
-                            <li><a href="{{ route('home') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
-                            <li><a href="{{ route('about') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
-                                 <li><a href="{{ route('contact') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
-                                 <li><a href="{{ route('evenements') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('Actualités') }}</a></li>
-          
+                            <li><a href="{{ route('home') }}"> {{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+                            <li><a href="{{ route('about') }}"> {{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
+                            <li><a href="{{ route('contact') }}"> {{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
+                            <li><a href="{{ route('evenements') }}"> {{ \App\Helpers\TranslationHelper::TranslateText('Actualités') }}</a></li>
+
                         </ul>
                     </div>
                     <!-- About Links End -->
@@ -236,7 +341,7 @@
                 <div class="col-lg-3 col-md-4">
                     <!-- About Links Start -->
                     <div class="footer-contact">
-                        <h3>  {{ \App\Helpers\TranslationHelper::TranslateText('Contact info') }}</h3>
+                        <h3> {{ \App\Helpers\TranslationHelper::TranslateText('Contact info') }}</h3>
                         <!-- Footer Contact Details Start -->
                         <div class="footer-contact-details">
                             <!-- Footer Info Box Start -->
@@ -246,7 +351,7 @@
                                 </div>
                                 <div class="footer-info-box-content">
                                     <p>{{ $config->telephone ?? ' ' }}</p>
-                                </div>                                
+                                </div>
                             </div>
                             <!-- Footer Info Box End -->
 
@@ -268,7 +373,7 @@
                                 </div>
                                 <div class="footer-info-box-content">
                                     <p>{{ $config->addresse ?? ' ' }}</p>
-                                </div>                                
+                                </div>
                             </div>
                             <!-- Footer Info Box End -->
                         </div>
@@ -288,32 +393,32 @@
                     <div class="col-lg-4 col-md-6">
                         <!-- Footer Copyright Start -->
                         <div class="footer-copyright-text">
-                            <p>Copyright {{ date('Y') }} PODO PRINTED | Design By  <a href="https://www.e-build.tn" style="color: #c71f17;">
-                                <b> E-build </b>
-                            </a>.</p>
+                            <p>Copyright {{ date('Y') }} PODO PRINTED | Design By <a href="https://www.e-build.tn" style="color: #c71f17;">
+                                    <b> E-build </b>
+                                </a>.</p>
                         </div>
                         <!-- Footer Copyright End -->
                     </div>
 
-                     <div class="col-lg-4 col-md-6">
-                        
-                      {{--   <div class="footer-links">
+                    <div class="col-lg-4 col-md-6">
+
+                        {{-- <div class="footer-links">
                             <ul>
-                                <li><a href="{{ route('home') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
-                                <li><a href="{{ route('about') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
-                                     <li><a href="{{ route('contact') }}">  {{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
-              
-                            </ul>
-                        </div> --}}
-                       
-                    </div> 
+                                <li><a href="{{ route('home') }}"> {{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+                        <li><a href="{{ route('about') }}"> {{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
+                        <li><a href="{{ route('contact') }}"> {{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
+
+                        </ul>
+                    </div> --}}
+
                 </div>
             </div>
-            <!-- Footer Copyright Section End -->
         </div>
-     </footer>
+        <!-- Footer Copyright Section End -->
+        </div>
+    </footer>
     <!-- Footer End -->
-    
+
     <!-- Jquery Library File -->
     <script src="/js/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap js file -->

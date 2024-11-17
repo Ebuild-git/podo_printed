@@ -399,7 +399,7 @@
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Language -->
-                            <li class="nav-item dropdown-language dropdown">
+                          {{--   <li class="nav-item dropdown-language dropdown">
                                 <a class="nav-link btn btn-text-secondary btn-icon rounded-pill dropdown-toggle hide-arrow"
                                     href="javascript:void(0);" data-bs-toggle="dropdown">
                                     <i class="ti ti-language rounded-circle ti-md"></i>
@@ -425,7 +425,7 @@
                                     </li>
 
                                 </ul>
-                            </li>
+                            </li> --}}
                             <!--/ Language -->
 
                             <!-- Style Switcher -->
@@ -460,7 +460,7 @@
 
 
                             <!-- Notification -->
-                            <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
+                           {{--  <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
                         
                                 <a class="nav-link btn btn-text-secondary btn-icon rounded-pill dropdown-toggle hide-arrow"
                                 href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside"
@@ -485,7 +485,7 @@
                                     </a>
                                     @livewire('AdminNotifications')
                                 </div>
-                            </li>
+                            </li> --}}
                           {{--   <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
                                 <a class="nav-link btn btn-text-secondary btn-icon rounded-pill dropdown-toggle hide-arrow"
                                     href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside"
@@ -566,7 +566,7 @@
                                          {{--    <img src="{{ asset('public/avatars/' . Auth::user()->avatar) }}"
                                             alt class="rounded-circle"> --}}
 
-                                            <img src="{{ Storage::url(Auth::user()->avatar) }}"  alt class="rounded-circle" style="width: 50px; height: 50px;">
+                                            <img src="{{ Storage::url($config->icon) }}"  alt class="rounded-circle" style="width: 50px; height: 50px;">
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">

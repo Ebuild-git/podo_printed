@@ -393,7 +393,7 @@
 
                 <div class="col-lg-3">
                     <!-- Section Button Start -->
-                    <div class="section-btn wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="section-btn  wow fadeInUp" data-wow-delay="0.25s">
                         <a href="{{ route('all_doctors') }}" class="btn-default">{{ \App\Helpers\TranslationHelper::TranslateText('Voir tout') }}</a>
                     </div>
                     <!-- Section Button End -->
@@ -529,7 +529,7 @@
                     <br>
                     <div class="col-12 d-flex justify-content-center">
                         <div class="form-group mb--0">
-                            <button class="axil-btn btn-bg-primary2" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">
+                            <button class="axil-btn bg-primary2" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">
                                 <span> {{ \App\Helpers\TranslationHelper::TranslateText('Laisser un témoignage') }}</span>
                             </button>
                         </div>
@@ -572,7 +572,7 @@
                             <textarea class="form-control border-0 rounded-3 shadow-sm" id="testimonial" name="message" rows="8" required></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-bg-primary2 rounded-pill shadow"> {{ \App\Helpers\TranslationHelper::TranslateText('Envoyer') }}</button>
+                            <button type="submit" class="btn bg-primary2 rounded-pill shadow"> {{ \App\Helpers\TranslationHelper::TranslateText('Envoyer') }}</button>
                         </div>
                     </form>
 
@@ -686,18 +686,17 @@
     </script>
 
 
+<style>
+    .bg-primary2 {
+        background-color: #9fc52e;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
 
-    <style>
-        .btn-bg-primary2 {
-            background-color: #a8cc1b;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-    </style>
+</style>
     <!-- Client Testimonial End -->
 
     <!-- Our Blog Section End -->
