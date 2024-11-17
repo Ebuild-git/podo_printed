@@ -211,7 +211,14 @@
     <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
+
+                <style>
+                     .modal-header {
+        background-color: #9fc52e;
+    
+    }
+                </style>
+                <div class="modal-header" style="background-color: #9fc52e">
                     <h6 class="modal-title" id="myCenterModalLabel">
                         Ajouter un docteur.
                     </h6>

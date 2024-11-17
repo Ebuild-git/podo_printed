@@ -107,7 +107,7 @@
                                             @include('components.alert')
                             
                                             <div class="modal-footer">
-                                                <button class="btn btn-primary btn-sm px-5" type="submit" wire:loading.attr="disabled">
+                                                <button class="btn bg-primary2 btn-sm px-5" type="submit" wire:loading.attr="disabled">
                                                     {{-- <span wire:loading>
                                                         <img src="https://i.gifer.com/ZKZg.gif" height="15" alt="" srcset="">
                                                     </span> --}}

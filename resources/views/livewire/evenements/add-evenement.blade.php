@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-sm btn-primary">
+                <button type="submit" class="btn btn-sm bg-primary2">
                     <span wire:loading>
                         <img src="https://i.gifer.com/ZKZg.gif" height="15" alt="" srcset="">
                     </span>

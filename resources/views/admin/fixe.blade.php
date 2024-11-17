@@ -130,6 +130,23 @@
         setInterval(fetchNotificationsAndUpdateComponent, 6000);
     </script>
 
+<style>
+    .bg-primary2 {
+        background-color: #9fc52e;
+    
+    }
+
+   
+            .btn-default {
+                background-color: #9fc52e;
+              
+               
+            }
+    
+        
+
+</style>
+
 
 </head>
 
