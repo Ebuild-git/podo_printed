@@ -144,10 +144,11 @@
                     <div class="about-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">about us</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">We Are The Best For <span>Physiotherapy</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.25s">We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt and effective care to help you manage pain, prevent further injury, and start your recovery process as quickly as possible.</p>
-                        </div>
+                            <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos) }}</h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.25s"> {{ \App\Helpers\TranslationHelper::TranslateText($config->des_apropos) }}
+
+                              </div>
                         <!-- Section Title End -->
 
                         <!-- About Us Body Start -->
