@@ -1,30 +1,31 @@
 @extends('front.fixe')
 @section('titre', 'Accueil')
 @section('body')
-    <main>
+<main>
 
 
 
-        @php
-            $config = DB::table('configs')->first();
+    @php
+    $config = DB::table('configs')->first();
 
-        @endphp
-        
+    @endphp
+
 
 
     <!-- Hero Section Start -->
     <div class="hero bg-image hero-video">
         <!-- Video Start -->
-		<div class="hero-bg-video">
-			<!-- Selfhosted Video Start -->
-			<video autoplay muted loop id="myVideo"><source src="images/hero-bg-video.mp4" type="video/mp4"></video>
-			<!-- Selfhosted Video End -->
+        <div class="hero-bg-video">
+            <!-- Selfhosted Video Start -->
+            <video autoplay muted loop id="myVideo">
+                <source src="images/hero-bg-video.mp4" type="video/mp4"></video>
+            <!-- Selfhosted Video End -->
 
-			<!-- Youtube Video Start -->
-			<!-- <div id="herovideo" class="player" data-property="{videoURL:'74DWwSxsVSs',containment:'.hero-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> -->
-			<!-- Youtube Video End -->
-		</div>
-		<!-- Video End -->
+            <!-- Youtube Video Start -->
+            <!-- <div id="herovideo" class="player" data-property="{videoURL:'74DWwSxsVSs',containment:'.hero-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> -->
+            <!-- Youtube Video End -->
+        </div>
+        <!-- Video End -->
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
@@ -114,7 +115,7 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
     <!-- Home Contact Us End -->
 
     <!-- About Us Start -->
@@ -125,20 +126,69 @@
                     <!-- About Image Start -->
                     <div class="about-us-image">
                         <div class="about-img">
-                            <figure class="reveal image-anime">
+                            {{-- <figure class="reveal image-anime">
                                 <img src="images/about-img.jpg" alt="">
-                            </figure>
+                            </figure> --}}
+
+                            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                                <!-- Indicateurs -->
+                                <div class="carousel-indicators">
+                                    @if ($config && $config->photos)
+                                    @foreach (json_decode($config->photos, true) as $index => $photo)
+                                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="{{ $index }}" class="{{ $loop->first ? 'active' : '' }}" aria-current="{{ $loop->first ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                                    @endforeach
+                                    @endif
+                                </div>
+
+                                <!-- Images du carrousel -->
+                                <div class="carousel-inner">
+                                    @if ($config && $config->photos)
+                                    @foreach (json_decode($config->photos, true) as $index => $photo)
+                                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                        <img src="{{ Storage::url($photo) }}" class="d-block w-100" alt="Image">
+                                    </div>
+                                    @endforeach
+                                    @else
+                                    <div class="carousel-item active">
+                                        <p class="text-center">Aucune image disponible</p>
+                                    </div>
+                                    @endif
+                                </div>
+
+                                <!-- Contrôles -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Précédent</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Suivant</span>
+                                </button>
+                            </div>
+                            <style>
+                                .carousel-inner img {
+                                    height: 500px;
+                                    object-fit: cover;
+                                }
+
+                                .carousel-item {
+                                    text-align: center;
+                                    background-color: #f8f9fa;
+                                }
+
+                            </style>
+
 
                             <!-- Company Experience Box Start -->
-                            <div class="company-experience">
+                            {{-- <div class="company-experience">
                                 <div class="icon-box">
                                     <img src="images/icon-experience.svg" alt="">
                                 </div>
                                 <div class="company-experience-content">
                                     <h3><span class="counter">15</span>+</h3>
-                                    <p>years of experience</p>
+                                    <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos5 ?? ' ') }}</p>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- Company Experience Box End -->
                         </div>
                     </div>
@@ -146,13 +196,13 @@
                 </div>
                 <div class="col-lg-6">
                     <!-- About Us Content Start -->
-                        <div class="about-content">
+                    <div class="about-content">
                         <!-- Section Title Start -->
-                            <div class="section-title">
+                        <div class="section-title">
                             <h3 class="wow fadeInUp">about us</h3>
                             <h2 class="text-anime-style-2" data-cursor="-opaque">We Are The Best For <span>Physiotherapy</span></h2>
                             <p class="wow fadeInUp" data-wow-delay="0.25s">We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt and effective care to help you manage pain, prevent further injury, and start your recovery process as quickly as possible.</p>
-                            </div>
+                        </div>
                         <!-- Section Title End -->
 
                         <!-- About Us Body Start -->
@@ -160,10 +210,10 @@
                             <!-- About List Item Start -->
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
                                 <div class="icon-box">
-                                    <img src="images/icon-about-us-1.svg" alt="">
+                                    <img src="{{ Storage::url($config->image_apropos1 ?? ' ') }}" alt="">
                                 </div>
                                 <div class="about-list-content">
-                                    <h3>nutrition strategies</h3>
+                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3>
                                 </div>
                             </div>
                             <!-- About List Item End -->
@@ -171,10 +221,10 @@
                             <!-- About List Item Start -->
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
                                 <div class="icon-box">
-                                    <img src="images/icon-about-us-2.svg" alt="">
+                                    <img src="{{ Storage::url($config->image_apropos2 ?? ' ') }}" alt="">
                                 </div>
                                 <div class="about-list-content">
-                                    <h3>be pro active</h3>
+                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3>
                                 </div>
                             </div>
                             <!-- About List Item End -->
@@ -182,10 +232,10 @@
                             <!-- About List Item Start -->
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
                                 <div class="icon-box">
-                                    <img src="images/icon-about-us-3.svg" alt="">
+                                    <img src="{{ Storage::url($config->image_apropos3 ?? ' ') }}" alt="">
                                 </div>
                                 <div class="about-list-content">
-                                    <h3>workout routines</h3>
+                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos3 ?? ' ') }}</h3>
                                 </div>
                             </div>
                             <!-- About List Item End -->
@@ -193,10 +243,10 @@
                             <!-- About List Item Start -->
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
                                 <div class="icon-box">
-                                    <img src="images/icon-about-us-4.svg" alt="">
+                                    <img src="{{ Storage::url($config->image_apropos4 ?? ' ') }}" alt="">
                                 </div>
                                 <div class="about-list-content">
-                                    <h3>support & motivation</h3>
+                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos4 ?? '') }}</h3>
                                 </div>
                             </div>
                             <!-- About List Item End -->
@@ -206,7 +256,7 @@
                         <!-- About Us Footer Start -->
                         <div class="about-us-footer">
                             <!-- Doctor Info Start -->
-                            <div class="doctor-info wow fadeInUp" data-wow-delay="1s">
+                            {{-- <div class="doctor-info wow fadeInUp" data-wow-delay="1s">
                                 <div class="doctor-info-item">
                                     <div class="image-box">
                                         <figure class="image-anime">
@@ -218,23 +268,108 @@
                                         <p>Physiotherapy</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- Doctor Info End -->
 
                             <!-- Appointment Button Start -->
-                            <div class="appointment-btn wow fadeInUp" data-wow-delay="1s">
+                           {{--  <div class="appointment-btn wow fadeInUp" data-wow-delay="1s">
                                 <a href="#" class="btn-default">Make an appointment</a>
-                            </div>
+                            </div> --}}
                             <!-- Appointment Button End -->
                         </div>
                         <!-- About Us Footer End -->
-                        </div>
+                    </div>
                     <!-- About Us Content End -->
                 </div>
             </div>
         </div>
-        </div>
+    </div>
     <!--  About Us End -->
+
+
+    <!-- Company Counter Start -->
+    <div class="company-counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <!-- Company Counter Item Start -->
+                    <div class="company-counter-item">
+                        <!-- Icon Box Start -->
+                        <div class="icon-box">
+                            <img src="{{ Storage::url($config->icon_sta1 ?? ' ') }}" alt="">
+                        </div>
+                        <!-- Icon Box End -->
+
+                        <!-- Company Counter Content Start -->
+                        <div class="company-counter-content">
+                            <h3><span class="counter">{{ $config->number_sta1 ?? ' ' }}</span></h3>
+                            <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta1 ?? '') }}</p>
+                        </div>
+                        <!-- Company Counter Content End -->
+                    </div>
+                    <!-- Company Counter Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Company Counter Item Start -->
+                    <div class="company-counter-item">
+                        <!-- Icon Box Start -->
+                        <div class="icon-box">
+                            <img src="{{ Storage::url($config->icon_sta2 ?? ' ') }}" alt="">
+                        </div>
+                        <!-- Icon Box End -->
+
+                        <!-- Company Counter Content Start -->
+                        <div class="company-counter-content">
+                            <h3><span class="counter">{{ $config->number_sta2 ?? ' ' }}</span></h3>
+                            <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta2 ?? '') }}</p>
+                        </div>
+                        <!-- Company Counter Content End -->
+                    </div>
+                    <!-- Company Counter Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Company Counter Item Start -->
+                    <div class="company-counter-item">
+                        <!-- Icon Box Start -->
+                        <div class="icon-box">
+                            <img src="{{ Storage::url($config->icon_sta5 ?? ' ') }}" alt="">
+                        </div>
+                        <!-- Icon Box End -->
+
+                        <!-- Company Counter Content Start -->
+                        <div class="company-counter-content">
+                            <h3><span class="counter">{{ $config->number_sta3 ?? ' ' }}</span></h3>
+                            <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta3 ?? '') }}</p>
+                        </div>
+                        <!-- Company Counter Content End -->
+                    </div>
+                    <!-- Company Counter Item End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Company Counter Item Start -->
+                    <div class="company-counter-item">
+                        <!-- Icon Box Start -->
+                        <div class="icon-box">
+                            <img src="{{ Storage::url($config->icon_sta4 ?? ' ') }}" alt="">
+                        </div>
+                        <!-- Icon Box End -->
+
+                        <!-- Company Counter Content Start -->
+                        <div class="company-counter-content">
+                            <h3><span class="counter">{{ $config->number_sta4 ?? ' '  }}</span></h3>
+                            <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta4 ?? '') }}</p>
+                        </div>
+                        <!-- Company Counter Content End -->
+                    </div>
+                    <!-- Company Counter Item End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Company Counter End -->
 
     <!-- Gallery Carousel Section Start -->
     <div class="gallery-carousel">
@@ -245,14 +380,14 @@
                     <div class="gallery-carousel-box">
                         <div class="gallery-scrolling-content">
                             <!-- Image Item Start -->
-                             @foreach ($images as $image)
-                          
+                            @foreach ($images as $image)
+
                             <div class="gallery-image">
                                 <figure class="image-anime">
-                                    <img src="{{ Storage::url($image->image ?? ' ') }}"  alt="">
+                                    <img src="{{ Storage::url($image->image ?? ' ') }}" alt="">
                                 </figure>
                             </div>
-                          
+
                             @endforeach
                             <!-- Image Item End -->
 
@@ -261,18 +396,29 @@
                         <div class="gallery-scrolling-content">
                             <!-- Image Item Start -->
                             @foreach ($images as $image)
-                          
+
                             <div class="gallery-image">
                                 <figure class="image-anime">
-                                    <img src="{{ Storage::url($image->image ?? ' ') }}"  alt="">
+                                    <img src="{{ Storage::url($image->image ?? ' ') }}" alt="">
                                 </figure>
                             </div>
-                          
+
                             @endforeach
                             <!-- Image Item End -->
 
                             <!-- Image Item Start -->
-                            
+
+                            <style>
+                                .gallery-image img {
+                                    height: 200px;
+                                    width: 200%;
+                                    object-fit: cover;
+                                }
+        
+                             
+        
+                            </style>
+
                         </div>
                     </div>
                     <!-- Scrolling Content End -->
@@ -284,7 +430,7 @@
     <!-- Gallery Carousel Section End -->
 
 
- 
+
 
     <!-- Our Team Start -->
     <div class="our-team">
@@ -319,7 +465,22 @@
                             <figure class="image-anime">
                                 <img src="{{ Storage::url($coach->photo ?? ' ') }}" alt="">
                             </figure>
-                
+
+                            <style>
+                                .image-anime img {
+                                    height: 300px;
+                                    object-fit: cover;
+                                }
+
+                                .carousel-item {
+                                    text-align: center;
+                                    background-color: #f8f9fa;
+                                }
+
+                            </style>
+
+                           
+
                             <!-- Team Social Icon Start -->
                             <div class="team-social-icon">
                                 <ul>
@@ -332,7 +493,7 @@
                             <!-- Team Social Icon End -->
                         </div>
                         <!-- Team Image End -->
-                
+
                         <!-- Team Content Start -->
                         <div class="team-content">
                             <h3>{{ $coach->prenom  ??  ''}} {{ $coach->nom ?? '' }}</h3>
@@ -347,8 +508,10 @@
 
             </div>
         </div>
-        </div>
+    </div>
     <!-- Our Team End -->
+
+
 
     <!-- Client Testimonial Start -->
     <div class="our-testimonial parallaxie">
@@ -382,7 +545,7 @@
                                                 <i class="fa-solid fa-star"></i>
                                             </div>
                                             <div class="testimonial-content">
-                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>									
+                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>
                                             </div>
                                         </div>
                                         <div class="testimonial-body">
@@ -390,7 +553,7 @@
                                                 <figure class="image-anime">
                                                     <img src="images/author-1.jpg" alt="">
                                                 </figure>
-                                            </div>            
+                                            </div>
                                             <div class="author-content">
                                                 <h3>johan duo</h3>
                                                 <p>professional athlete</p>
@@ -399,7 +562,7 @@
                                     </div>
                                 </div>
                                 <!-- Testimonial Slide End -->
-            
+
                                 <!-- Testimonial Slide Start -->
                                 <div class="swiper-slide">
                                     <div class="testimonial-item">
@@ -412,7 +575,7 @@
                                                 <i class="fa-solid fa-star"></i>
                                             </div>
                                             <div class="testimonial-content">
-                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>	
+                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>
                                             </div>
                                         </div>
                                         <div class="testimonial-body">
@@ -420,7 +583,7 @@
                                                 <figure class="image-anime">
                                                     <img src="images/author-2.jpg" alt="">
                                                 </figure>
-                                            </div>            
+                                            </div>
                                             <div class="author-content">
                                                 <h3>jane smith</h3>
                                                 <p>retired teacher</p>
@@ -442,7 +605,7 @@
                                                 <i class="fa-solid fa-star"></i>
                                             </div>
                                             <div class="testimonial-content">
-                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>	
+                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>
                                             </div>
                                         </div>
                                         <div class="testimonial-body">
@@ -450,7 +613,7 @@
                                                 <figure class="image-anime">
                                                     <img src="images/author-3.jpg" alt="">
                                                 </figure>
-                                            </div>            
+                                            </div>
                                             <div class="author-content">
                                                 <h3>robert lee</h3>
                                                 <p>construction worker</p>
@@ -472,7 +635,7 @@
                                                 <i class="fa-solid fa-star"></i>
                                             </div>
                                             <div class="testimonial-content">
-                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>	
+                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>
                                             </div>
                                         </div>
                                         <div class="testimonial-body">
@@ -480,7 +643,7 @@
                                                 <figure class="image-anime">
                                                     <img src="images/author-4.jpg" alt="">
                                                 </figure>
-                                            </div>            
+                                            </div>
                                             <div class="author-content">
                                                 <h3>banson doe</h3>
                                                 <p>marathon runner</p>
@@ -495,179 +658,179 @@
                     </div>
 
                     <br><br>
-            <br>
-            <div class="col-12 d-flex justify-content-center">
-                <div class="form-group mb--0">
-                    <button class="axil-btn btn-bg-primary2" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">
-                        <span> {{ \App\Helpers\TranslationHelper::TranslateText('Laisser un témoignage') }}</span>
-                    </button>
-                </div>
+                    <br>
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="form-group mb--0">
+                            <button class="axil-btn btn-bg-primary2" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">
+                                <span> {{ \App\Helpers\TranslationHelper::TranslateText('Laisser un témoignage') }}</span>
+                            </button>
+                        </div>
 
-            </div>
+                    </div>
 
 
-            <div id="successMessage" class="alert alert-success" style="display:none;"></div>
-            <div id="errorMessage" class="alert alert-danger" style="display:none;"></div>
+                    <div id="successMessage" class="alert alert-success" style="display:none;"></div>
+                    <div id="errorMessage" class="alert alert-danger" style="display:none;"></div>
 
                     <!-- Testimonial Slider End -->
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 
 
 
-        
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"> {{ \App\Helpers\TranslationHelper::TranslateText('Témoignage') }}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> {{ \App\Helpers\TranslationHelper::TranslateText('Témoignage') }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
 
 
-                    <div class="modal-body">
-                        <form id="testimonialForm" action="{{ route('testimonial.store') }}" method="POST" class="testimonial-form p-4 rounded shadow-sm bg-light">
-                            @csrf
-                            <div class="form-group mb-4">
-                                <label for="name" class="form-label text-muted"> {{ \App\Helpers\TranslationHelper::TranslateText('Nom') }}</label>
-                                <input type="text" class="form-control border-0 rounded-pill shadow-sm" id="name" name="name" required>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label for="testimonial" class="form-label text-muted"> {{ \App\Helpers\TranslationHelper::TranslateText('Message') }}</label>
-                                <textarea class="form-control border-0 rounded-3 shadow-sm" id="testimonial" name="message" rows="8" required></textarea>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-bg-primary2 rounded-pill shadow"> {{ \App\Helpers\TranslationHelper::TranslateText('Envoyer') }}</button>
-                            </div>
-                        </form>
-
-                        @if ($errors->any())
-                        <div class="alert alert-danger mt-4">
-                            <ul class="mb-0">
-                                @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
+                <div class="modal-body">
+                    <form id="testimonialForm" action="{{ route('testimonial.store') }}" method="POST" class="testimonial-form p-4 rounded shadow-sm bg-light">
+                        @csrf
+                        <div class="form-group mb-4">
+                            <label for="name" class="form-label text-muted"> {{ \App\Helpers\TranslationHelper::TranslateText('Nom') }}</label>
+                            <input type="text" class="form-control border-0 rounded-pill shadow-sm" id="name" name="name" required>
                         </div>
-                        @endif
-
-                        @if (session('success'))
-                        <div class="alert alert-success mt-4">
-                            {{ session('success') }}
+                        <div class="form-group mb-4">
+                            <label for="testimonial" class="form-label text-muted"> {{ \App\Helpers\TranslationHelper::TranslateText('Message') }}</label>
+                            <textarea class="form-control border-0 rounded-3 shadow-sm" id="testimonial" name="message" rows="8" required></textarea>
                         </div>
-                        @endif
-                        <style>
-                            .testimonial-form {
-                                max-width: 600px;
-                                margin: 0 auto;
-                                background-color: #f8f9fa;
-                            }
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-bg-primary2 rounded-pill shadow"> {{ \App\Helpers\TranslationHelper::TranslateText('Envoyer') }}</button>
+                        </div>
+                    </form>
 
-                            .form-group {
-                                margin-bottom: 1.5rem;
-                            }
-
-                            .form-label {
-                                font-weight: 600;
-                                font-size: 1rem;
-                            }
-
-                            .form-control {
-                                padding: 0.75rem 1rem;
-                                font-size: 1rem;
-                                color: #495057;
-                                background-color: #fff;
-                                border-radius: 25px;
-                            }
-
-                            textarea.form-control {
-                                border-radius: 15px;
-                            }
-
-                            button.btn {
-                                padding: 0.5rem 2rem;
-                                font-size: 1.125rem;
-                                transition: background-color 0.3s ease;
-                            }
-
-                            button.btn-primary {
-                                background-color: #EFB121;
-                                border-color: #EFB121;
-                            }
-
-                            button.btn-primary:hover {
-                                background-color: #EFB121;
-                                border-color: #EFB121;
-                            }
-
-                            .alert {
-                                max-width: 600px;
-                                margin: 1rem auto;
-                            }
-
-                        </style>
-
+                    @if ($errors->any())
+                    <div class="alert alert-danger mt-4">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
+                    @endif
 
+                    @if (session('success'))
+                    <div class="alert alert-success mt-4">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+                    <style>
+                        .testimonial-form {
+                            max-width: 600px;
+                            margin: 0 auto;
+                            background-color: #f8f9fa;
+                        }
 
+                        .form-group {
+                            margin-bottom: 1.5rem;
+                        }
+
+                        .form-label {
+                            font-weight: 600;
+                            font-size: 1rem;
+                        }
+
+                        .form-control {
+                            padding: 0.75rem 1rem;
+                            font-size: 1rem;
+                            color: #495057;
+                            background-color: #fff;
+                            border-radius: 25px;
+                        }
+
+                        textarea.form-control {
+                            border-radius: 15px;
+                        }
+
+                        button.btn {
+                            padding: 0.5rem 2rem;
+                            font-size: 1.125rem;
+                            transition: background-color 0.3s ease;
+                        }
+
+                        button.btn-primary {
+                            background-color: #EFB121;
+                            border-color: #EFB121;
+                        }
+
+                        button.btn-primary:hover {
+                            background-color: #EFB121;
+                            border-color: #EFB121;
+                        }
+
+                        .alert {
+                            max-width: 600px;
+                            margin: 1rem auto;
+                        }
+
+                    </style>
 
                 </div>
+
+
+
             </div>
         </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#testimonialForm').on('submit', function(e) {
-                    e.preventDefault(); // Empêcher l'envoi classique du formulaire
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#testimonialForm').on('submit', function(e) {
+                e.preventDefault(); // Empêcher l'envoi classique du formulaire
 
-                    $.ajax({
-                        url: $(this).attr('action')
-                        , method: $(this).attr('method')
-                        , data: $(this).serialize()
-                        , success: function(response) {
-                            // Afficher le message de succès
-                            $('#testimonialModal').modal('hide'); // Fermer le modal
+                $.ajax({
+                    url: $(this).attr('action')
+                    , method: $(this).attr('method')
+                    , data: $(this).serialize()
+                    , success: function(response) {
+                        // Afficher le message de succès
+                        $('#testimonialModal').modal('hide'); // Fermer le modal
 
-                            $('#successMessage').text(
-                                'Témoignage créé avec succès! Il sera valide après confirmation des administrateurs'
+                        $('#successMessage').text(
+                            'Témoignage créé avec succès! Il sera valide après confirmation des administrateurs'
 
-                            ).show();
+                        ).show();
 
-                            setTimeout(function() {
-                                location.reload();
-                            }, 5000);
-                        }
-                        , error: function(response) {
-                            // Afficher un message d'erreur si nécessaire
-                            $('#errorMessage').text('Une erreur est survenue.')
-                                .show(); // Afficher le message d'erreur
-                        }
-                    });
+                        setTimeout(function() {
+                            location.reload();
+                        }, 5000);
+                    }
+                    , error: function(response) {
+                        // Afficher un message d'erreur si nécessaire
+                        $('#errorMessage').text('Une erreur est survenue.')
+                            .show(); // Afficher le message d'erreur
+                    }
                 });
             });
+        });
 
-        </script>
+    </script>
 
 
 
-        <style>
-            .btn-bg-primary2 {
-                background-color: #a8cc1b;
-                color: #ffffff;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                text-decoration: none;
-            }
+    <style>
+        .btn-bg-primary2 {
+            background-color: #a8cc1b;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
 
-        </style>
+    </style>
     <!-- Client Testimonial End -->
-    
+
     <!-- Our Blog Section End -->
     <div class="our-blog">
         <div class="container">
@@ -676,55 +839,55 @@
                     <!-- Section Title Start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('Les actualités') }}</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Nos dernières') }}  </span>{{ \App\Helpers\TranslationHelper::TranslateText('Informations et mises à jour') }}</h2>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Nos dernières') }} </span>{{ \App\Helpers\TranslationHelper::TranslateText('Informations et mises à jour') }}</h2>
                     </div>
                 </div>
 
                 <div class="col-lg-3">
-                   
+
                     <div class="section-btn wow fadeInUp" data-wow-delay="0.25s">
-                        <a  href="{{ route('evenements') }}" class="btn-default"> {{ \App\Helpers\TranslationHelper::TranslateText('Voir tout') }}</a>
+                        <a href="{{ route('evenements') }}" class="btn-default"> {{ \App\Helpers\TranslationHelper::TranslateText('Voir tout') }}</a>
                     </div>
-             
+
                 </div>
             </div>
 
             <div class="row">
                 @foreach ($events as $event)
-                                @if ($events)
+                @if ($events)
                 <div class="col-lg-4 col-md-6">
-                   
+
                     <div class="blog-item wow fadeInUp">
-                      
+
                         <div class="post-featured-image" data-cursor-text="View">
                             <figure>
-                                <a href="#" class="image-anime">
+                                <a href="{{ route('details-news', ['id' => $event->id, 'slug' => Str::slug(Str::limit($event->titre, 10))]) }}"  class="image-anime">
                                     <img src="{{ Storage::url($event->image ?? ' ') }}" alt="">
                                 </a>
                             </figure>
                         </div>
-       
-                        <div class="post-item-content">
-                        
-                            <div class="post-item-body">
-                                <h2><a href="#">{{ \App\Helpers\TranslationHelper::TranslateText($event->titre ?? ' ') }} </a></h2>
-                            </div>
-                       
 
-                       
-                            <div class="post-item-footer">
-                                <a href="#" class="readmore-btn">{{ \App\Helpers\TranslationHelper::TranslateText('Voir plus') }}</a>
+                        <div class="post-item-content">
+
+                            <div class="post-item-body">
+                                <h2><a href="{{ route('details-news', ['id' => $event->id, 'slug' => Str::slug(Str::limit($event->titre, 10))]) }}" >{{ \App\Helpers\TranslationHelper::TranslateText($event->titre ?? ' ') }} </a></h2>
                             </div>
-                           
+
+
+
+                            <div class="post-item-footer">
+                                <a href="{{ route('details-news', ['id' => $event->id, 'slug' => Str::slug(Str::limit($event->titre, 10))]) }}"  class="readmore-btn">{{ \App\Helpers\TranslationHelper::TranslateText('Voir plus') }}</a>
+                            </div>
+
                         </div>
-                     
+
                     </div>
-                    
+
                 </div>
                 @endif
                 @endforeach
 
-                
+
             </div>
         </div>
     </div>
@@ -735,28 +898,28 @@
         <!-- Scrolling Ticker Start -->
         <div class="scrolling-ticker-box">
             <div class="scrolling-content">
-      
+
                 <span><img src="images/icon-sparkles.svg" alt="">{{ \App\Helpers\TranslationHelper::TranslateText('Pour toute demande complémentaire') }} : {{ $config->email ?? '' }}</span>
                 <span><img src="images/icon-sparkles.svg" alt="">{{ \App\Helpers\TranslationHelper::TranslateText('Prendre rendez-vous') }}: {{ $config->telephone ?? '' }}</span>
                 <span><img src="images/icon-sparkles.svg" alt=""> {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 10:00 à 18:00') }} </span>
             </div>
 
             <div class="scrolling-content">
-             
+
                 <span><img src="images/icon-sparkles.svg" alt=""> {{ \App\Helpers\TranslationHelper::TranslateText('Pour toute demande complémentaire') }} : {{ $config->email ?? '' }}</span>
                 <span><img src="images/icon-sparkles.svg" alt=""> {{ \App\Helpers\TranslationHelper::TranslateText('Prendre rendez-vous') }}: {{ $config->telephone ?? '' }}</span>
                 <span><img src="images/icon-sparkles.svg" alt=""> {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 10:00 à 18:00') }} </span>
             </div>
         </div>
     </div>
-	<!-- Scrolling Ticker Section End -->  
-
-     
+    <!-- Scrolling Ticker Section End -->
 
 
 
 
-    </main>
+
+
+</main>
 
 
 @endsection

@@ -56,7 +56,7 @@
                                                 @enderror
                                             </div>
                                             <div class="mb-3">
-                                                <label for="">Nom</label>
+                                                <label for="">Titre</label>
                                                 <input type="text" class="form-control" value=" {{ $event->titre }}"  name="titre">
                                                 @error('titre')
                                                     <span class="small text-danger"> {{ $message }} </span>
@@ -68,6 +68,14 @@
                                                 <input type="date" class="form-control" value=" {{ $event->start }}"  name="start">
                                                 @error('start')
                                                     <span class="small text-danger"> {{ $message }} </span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label><strong> Meta Description :</strong></label>
+                                                <textarea class=" form-control" name="meta_description" value ="{{ $event->meta_description }}"></textarea>
+                                                @error('meta_description')
+                                                    <span class="text-danger small"> {{ $message }} </span>
                                                 @enderror
                                             </div>
                                            {{--  <div class="mb-3">

@@ -53,6 +53,8 @@ Route::get('/fetch-group', [ContactController::class, 'fetchGroup'])->name('fetc
 
 
 Route::get('evenements', [EventController::class, 'evenements'])->name("evenements");
+//Route::get('/details-news/{id}', [EventController::class, 'details'])->name('details-news');
+Route::get('/details-news/{id}/{slug}', [EventController::class, 'details'])->name('details-news');
 /////temoignages
 Route::resource('testimonial', TestimonialController::class);
 

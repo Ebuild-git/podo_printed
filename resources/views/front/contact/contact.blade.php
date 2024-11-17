@@ -10,125 +10,161 @@
 
 
 
+	<!-- Page Header Start -->
+	<div class="page-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- Page Header Box Start -->
+					<div class="page-header-box">
+						<h1 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</h1>
+						<nav class="wow fadeInUp">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#">{{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+								<li class="breadcrumb-item active" aria-current="page">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</li>
+							</ol>
+						</nav>
+					</div>
+					<!-- Page Header Box End -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Page Header End -->
 
-<style>
-    .rs-breadcrumbs .breadcrumbs-wrap {
-    background-image: url('{{ asset('assets/contact/1.png') }}');
-    background-size: contain; /* Ajuste l'image pour qu'elle soit entièrement visible sans la découper */
-    background-repeat: no-repeat; /* Empêche l'image de se répéter */
-    background-position: center; /* Centre l'image dans l'élément */
-    height: 300px; /* Ajustez cette valeur pour réduire la hauteur du conteneur */
-    width: 100%; /* Assurez que l'élément prend toute la largeur disponible */
-}
+	<!-- Page Contact Start -->
+	<div class="page-contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+				
+					<div class="contact-info-item wow fadeInUp">
+					
+						 <div class="icon-box">
+							<img src="images/icon-green-location.svg" alt="">
+						 </div>
+					
+					
+						<div class="contact-info-content">
+							<h3>{{ \App\Helpers\TranslationHelper::TranslateText('Location') }}</h3>
+							<p>{{ \App\Helpers\TranslationHelper::TranslateText($config->addresse ?? ' ') }}</p>
+						</div>
+                      
+					
+					</div>
+					
+				</div>
 
-</style>
-<div class="rs-breadcrumbs">
-    <div class="breadcrumbs-wrap">
-        <img src="assets/contact/2.png"  height="1920" width="520"  alt="Breadcrumbs Image">
-        <div class="breadcrumbs-inner">
-            <div class="container">
-                <div class="breadcrumbs-text">
-                    <h1 class="breadcrumbs-title mb-17">Contact</h1>
-                    <div class="categories">
-                        <ul>
-                            <li><a href="{{  route('home') }}">Accueil</a></li>
-                            <li class="active">Contact</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>                
-</div>
-        <!-- Breadcrumbs Section End -->
+				<div class="col-lg-3 col-md-6">
+					
+					<div class="contact-info-item wow fadeInUp" data-wow-delay="0.25s">
+						
+						 <div class="icon-box">
+							<img src="images/icon-green-mail.svg" alt="">
+						 </div>
+					
 
-        <!-- Contact Section Start -->
-        <div class="rs-contact ">
-            <!-- Contact Icon Start -->
-      <style>
-        .single-icon {
-    background-image: url('/assets/counter/2.png');
-    background-size: cover; /* Assure que l'image couvre toute la zone */
-    background-position: center; /* Centre l'image dans l'élément */
-}
+						
+						<div class="contact-info-content">
+							<h3>{{ \App\Helpers\TranslationHelper::TranslateText('Email') }}</h3>
+							<p>{{ $config->email ?? ' ' }}</p>
+							
+						</div>
+					
+					</div>
+				
+				</div>
 
-      </style>
-            <div class="rs-contact-icon pt-50 pb-50 md-pb-40 md-pt-40" style="margin-top: 0; margin-bottom: 0;">
-                <div class="container" style="padding: 0;">
-                    <div class="row justify-flex" style="margin: 0;">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 md-mb-30">
-                            <div class="single-icon text-center custom-background">
-                                <div class="icon-part">
-                                    <i class="flaticon-phone"></i>
-                                </div>
-                                <div class="icon-text justify-text">
-                                    <h3 class="icon-title">Téléphone</h3>
-                                    <br>
-                                    <a class="icon-info" href="#">{{ $config->telephone }}</a>
-                                </div>
-                            </div>
+				<div class="col-lg-3 col-md-6">
+			
+					<div class="contact-info-item wow fadeInUp" data-wow-delay="0.5s">
+						
+						 <div class="icon-box">
+							<img src="images/icon-green-phone.svg" alt="">
+						 </div>
+				
+
+				
+						<div class="contact-info-content">
+							<h3>{{ \App\Helpers\TranslationHelper::TranslateText('Téléphone') }}</h3>
+							<p>{{ $config->telephone ?? ' ' }}</p>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+
+				<div class="col-lg-3 col-md-6">
+					
+					<div class="contact-info-item wow fadeInUp" data-wow-delay="0.75s">
+					
+						 <div class="icon-box">
+							<img src="images/icon-green-hour.svg" alt="">
+						 </div>
+					
+
+				
+						<div class="contact-info-content">
+							<h3>{{ \App\Helpers\TranslationHelper::TranslateText('Horaires de travail') }}</h3>
+							<p>
+                                {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 10:00 à 18:00') }}
+                            </p>
+							<p>  {{ \App\Helpers\TranslationHelper::TranslateText('Samedi : 10:00 à 15:00') }}</p>
+						</div>
+					
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	 </div>
+	<!-- Page Contact End -->
+
+	<!-- Contact Form Start -->
+	<div class="contact-us-form">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6">
+					<!-- Contact Us Image Start -->
+					 <div class="contact-us-img">
+						<figure class="reveal image-anime">
+							<img src="{{ Storage::url($config->logocontact) }}" alt="Image" width="636" height="644">
+						</figure>
+					 </div>
+					 <style>
+						.contact-us-img img {
+							height: 600px;
+							width: 500%;
+							object-fit: cover;
+						}
+
+						.carousel-item {
+							text-align: center;
+							background-color: #f8f9fa;
+						}
+
+					</style>
+
+					 
+					<!-- Contact Us Image End -->
+				</div>
+				<div class="col-lg-6">
+					<div class="contact-form">
+						<!-- Section Title Start -->
+						<div class="section-title">
+                            <h3 class="wow fadeInUp">  {{ \App\Helpers\TranslationHelper::TranslateText('Contactez') }}</h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">  {{ \App\Helpers\TranslationHelper::TranslateText('Contactez-nous') }}</h2>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 md-mb-30">
-                            <div class="single-icon text-center">
-                                <div class="icon-part">
-                                    <i class="flaticon-email"></i>
-                                </div>
-                                <div class="icon-text">
-                                    <h3 class="icon-title">E-mail</h3>
-                                    <br>
-                                    <a class="icon-info" href="mailto:support@rstheme.com">{{ $config->email }}</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-icon text-center">
-                                <div class="icon-part">
-                                    <i class="flaticon-location"></i>
-                                </div>
-                                <div class="icon-text after-none">
-                                    <h3 class="icon-title">Addresse</h3>
-                                    <span>{{ $config->addresse }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
-            <!-- Contact Icon End -->
+                        <!-- Section Title End -->
 
-            <!-- Contact Form And Map Start -->
-            <div class="contact-part sec-bg pt-100 pb-100 md-pt-80 md-pb-80">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 md-mb-30">
-                            <div class="g-map">
-                                <img src="{{ Storage::url($config->logocontact) }}" alt="">
-
-                            </div>
-                        </div>
-                        <div class="col-lg-6 pl-50 md-pl-15">
-                            <div class="contact-area">
-                                <div class="title-style mb-50">
-                                    <h2 class="margin-0 uppercase">Entrez en contact avec nous</h2>
-                                    <span class="line-bg left-line pt-10 y-b"></span>
-                                </div>
-                                <div id="form-messages"></div>
-                                @livewire('Front.ContactForm')
-
-                         
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Contact Form And Map End -->
-
-
-        </div>
-        <!-- Contact Section End -->
-
+                        @livewire('Front.ContactForm')
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Contact Form End -->
 
 
     </main>

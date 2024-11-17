@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
+use App\Models\{Event, config};
+
+
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 use Illuminate\Support\Facades\Storage;
@@ -20,11 +22,19 @@ class EventController extends Controller
 }
 
 public function evenements(){
-    $events = Event::all();
+ //   $events = Event::all();
+    $events = Event::select('*')
+               
+               ->paginate(15);
     $lastevents = Event::latest()->take(8)->get();
     return view('front.evenements.evenement', compact('events', 'lastevents') );
 }
 
+public function details($id){
+    $event =Event:: findOrFail($id);
+    $configs= config::all();
+    return view('front.evenements.details', compact('event','configs'));
+}
 public function calendar(){
     $events = Event::all();
     return view('admin.evenements.calendar', compact('events') );
@@ -72,7 +82,10 @@ public function calendar(){
         // Validation des données
         $validator = Validator::make($request->all(), [
            // 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-           'image' => 'nullable|image|max:4048',
+           'image' => 'nullable|image|max:40048',
+            'description' => 'nullable|string|max:400255',
+           'meta_description' => 'nullable|string|max:400255',
+         
             'titre' => 'required|string|max:255',
             'start' => 'nullable',
             'end' => 'nullable',
@@ -108,6 +121,7 @@ public function calendar(){
         
         $sponsor->titre = $request->input('titre');
         $sponsor->description = $request->input('description');
+        $sponsor->meta_description = $request->input('meta_description');
      /////   $sponsor->start = $request->input('start');
      //   $sponsor->end = $request->input('end');
 

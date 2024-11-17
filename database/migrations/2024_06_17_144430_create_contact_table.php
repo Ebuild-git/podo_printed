@@ -19,19 +19,19 @@ return new class extends Migration
             $table->string('lastName')->nullable();
             $table->string('telephone')->nullable();
             $table->string('sujet')->nullable();
-            $table->integer("age")->nullable();
+           // $table->integer("age")->nullable();
           // $table->text('group')->nullable()->default(null);
-            $table->enum("group",["externe","interne"])->default("interne");
-            $table->text('designation')->nullable()->default(null);
-            $table->unsignedBigInteger('group_id')->nullable();
+          //  $table->enum("group",["externe","interne"])->default("interne");
+           // $table->text('designation')->nullable()->default(null);
+          //  $table->unsignedBigInteger('group_id')->nullable();
 
            
-            $table->enum("gender",["FEMALE","MALE"])->default("MALE");
+          //  $table->enum("gender",["FEMALE","MALE"])->default("MALE");
             $table->string('email');
             $table->text('message')->nullable();
-            $table->string('ville')->nullable();
-            $table->integer("cin")->nullable();
-            $table->date("birthdate")->nullable();
+        //    $table->string('ville')->nullable();
+         //   $table->integer("cin")->nullable();
+          //  $table->date("birthdate")->nullable();
 
             $table->timestamps();
         });

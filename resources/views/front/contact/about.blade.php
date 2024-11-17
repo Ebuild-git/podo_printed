@@ -1,99 +1,205 @@
 @extends('front.fixe')
 @section('titre', 'Contact')
 @section('body')
-    <main>
+<main>
 
-        @php
-            $config = DB::table('configs')->first();
+    @php
+    $config = DB::table('configs')->first();
 
-        @endphp
+    @endphp
 
 
-        <!-- Breadcrumbs Section Start -->
-        {{--    <div class="rs-breadcrumbs">
-            <div class="breadcrumbs-wrap">
-                <img src="images/breadcrumbs/inner4.jpg" alt="Breadcrumbs Image">
-                <div class="breadcrumbs-inner">
-                    <div class="container">
-                        <div class="breadcrumbs-text">
-                            <h1 class="breadcrumbs-title mb-17">A propos de nous</h1>
-                            <div class="categories">
-                                <ul>
-                                    <li><a href="{{ route('home') }}">Accueil</a></li>
-                                    <li class="active">Contact</li>
-                                </ul>
-                            </div>
-                        </div>
+    <!-- Page Header Start -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Page Header Box Start -->
+                    <div class="page-header-box">
+                        <h1 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h1>
+                        <nav class="wow fadeInUp">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">{{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</li>
+                            </ol>
+                        </nav>
                     </div>
+
                 </div>
             </div>
-        </div> --}}
-        <!-- Breadcrumbs Section End -->
+        </div>
+    </div>
+    <!-- Page Header End -->
 
-        <!-- Contact Section Start -->
-        <div class="rs-contact">
-
-
-            <!-- About Us Section Start -->
-            <div class="rs-about pt-92 pb-78 md-pt-64 md-pb-58">
-                <div class="container">
-                    <div class="row rs-vertical-middle">
-                        <div class="col-lg-5 pl-40 col-padding-md md-mb-25">
-                            <div class="contant-part">
-                                <div class="title-style mb-14">
-                                    <div class="sub-title black-color mb-10">Bienvenu a Sport Divers</div>
-                                    <h2 class="margin-0 uppercase">{{ $config->titre_apropos }}</h2>
-                                </div>
-                                <div class="description">
-                                    {{ $config->des_apropos }}
-                                </div>
-
-                                <div class="read-btn mt-39">
-                                    <a class="readon" href="{{ route('contact') }}">Contact</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-7 margin-0 pl-50 col-padding-md">
-
-                            <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="3000">
-                                <div class="carousel-inner">
+    <!-- About Us Start -->
+    <div class="about-us page-about-us">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- About Image Start -->
+                    <div class="about-us-image">
+                        <div class="about-img">
+                           
+                            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                               
+                                <div class="carousel-indicators">
                                     @if ($config && $config->photos)
-                                        @foreach (json_decode($config->photos, true) as $index => $photo)
-                                            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                                <img src="{{ Storage::url($photo) }}" class="d-block " alt="Image">
-                                            </div>
-                                        @endforeach
-                                    @else
-                                        <div class="carousel-item active">
-                                            <p class="text-center">Aucune image disponible</p>
-                                        </div>
+                                    @foreach (json_decode($config->photos, true) as $index => $photo)
+                                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="{{ $index }}" class="{{ $loop->first ? 'active' : '' }}" aria-current="{{ $loop->first ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                                    @endforeach
                                     @endif
                                 </div>
-                                <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+
+                          
+                                <div class="carousel-inner">
+                                    @if ($config && $config->photos)
+                                    @foreach (json_decode($config->photos, true) as $index => $photo)
+                                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                        <img src="{{ Storage::url($photo) }}" class="d-block w-100" alt="Image">
+                                    </div>
+                                    @endforeach
+                                    @else
+                                    <div class="carousel-item active">
+                                        <p class="text-center">Aucune image disponible</p>
+                                    </div>
+                                    @endif
+                                </div>
+
+                                <!-- Contrôles -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Précédent</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                                    <span class="visually-hidden">Précédent</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Suivant</span>
-                                </a>
+                                    <span class="visually-hidden">Suivant</span>
+                                </button>
                             </div>
+                            <style>
+                                .carousel-inner img {
+                                    height: 500px;
+                                    object-fit: cover;
+                                }
 
+                                .carousel-item {
+                                    text-align: center;
+                                    background-color: #f8f9fa;
+                                }
 
+                            </style>
+
+                            <!-- Company Experience Box Start -->
+                           {{--  <div class="company-experience">
+                                <div class="icon-box">
+                                    <img src="images/icon-experience.svg" alt="">
+                                </div>
+                                <div class="company-experience-content">
+                                    <h3><span class="counter">15</span>+</h3>
+                                    <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos5  ?? '' ) }}</p>
+                                </div>
+                            </div> --}}
+                            <!-- Company Experience Box End -->
                         </div>
                     </div>
+                    <!-- About Image End -->
                 </div>
+                <div class="col-lg-6">
+                    <!-- About Us Content Start -->
+                    <div class="about-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos) }}</h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.25s"> {{ \App\Helpers\TranslationHelper::TranslateText($config->des_apropos) }}
 
 
+                            </p>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- About Us Body Start -->
+                        <div class="about-us-body">
+                            <!-- About List Item Start -->
+                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="icon-box">
+                                    <img src="{{ Storage::url($config->image_apropos1 ?? ' ') }}" alt="">
+                                </div>
+                                <div class="about-list-content">
+                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3>
+                                </div>
+                            </div>
+                            <!-- About List Item End -->
+
+                            <!-- About List Item Start -->
+                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="icon-box">
+                                    <img src="{{ Storage::url($config->image_apropos2 ?? ' ') }}" alt="">
+                                </div>
+                                <div class="about-list-content">
+                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3>
+                                </div>
+                            </div>
+                            <!-- About List Item End -->
+
+                            <!-- About List Item Start -->
+                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
+                                <div class="icon-box">
+                                    <img src="{{ Storage::url($config->image_apropos3 ?? ' ') }}" alt="">
+                                </div>
+                                <div class="about-list-content">
+                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos3 ?? ' ') }}</h3>
+                                </div>
+                            </div>
+                            <!-- About List Item End -->
+
+                            <!-- About List Item Start -->
+                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
+                                <div class="icon-box">
+                                    <img src="{{ Storage::url($config->image_apropos4 ?? ' ') }}" alt="">
+                                </div>
+                                <div class="about-list-content">
+                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos4 ??  ' ') }}</h3>
+                                </div>
+                            </div>
+                            <!-- About List Item End -->
+                        </div>
+                        <!-- About Us Body End -->
+
+                        <!-- About Us Footer Start -->
+                        <div class="about-us-footer">
+                            <!-- Doctor Info Start -->
+                            {{-- <div class="doctor-info wow fadeInUp" data-wow-delay="1s">
+                            <div class="doctor-info-item">
+                                <div class="image-box">
+                                    <figure class="image-anime">
+                                        <img src="images/about-doctor-img.jpg" alt="">
+                                    </figure>
+                                </div>
+                                <div class="doctor-info-content">
+                                    <h3>dr. jamie smith</h3>
+                                    <p>Physiotherapy</p>
+                                </div>
+                            </div>
+                        </div> --}}
+                            <!-- Doctor Info End -->
+
+                            <!-- Appointment Button Start -->
+                            {{-- <div class="appointment-btn wow fadeInUp" data-wow-delay="1s">
+                            <a href="#" class="btn-default">Make an appointment</a>
+                        </div> --}}
+                            <!-- Appointment Button End -->
+                        </div>
+                        <!-- About Us Footer End -->
+                    </div>
+                    <!-- About Us Content End -->
+                </div>
             </div>
-
-
         </div>
+    </div>
+    <!--  About Us End -->
 
 
 
 
-
-
-    </main>
+</main>
 @endsection

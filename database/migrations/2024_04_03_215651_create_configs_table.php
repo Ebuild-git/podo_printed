@@ -20,10 +20,6 @@ return new class extends Migration
             $table->string('email')->nullable()->default(null);
             $table->text('description')->nullable()->default(null);
 
-            $table->text('group')->nullable()->default(null);
-            $table->unsignedBigInteger('group_id')->nullable();
-           
-
             $table->string('icon')->nullable()->default(null);
             $table->string('logo')->nullable()->default(null);
 
@@ -58,6 +54,29 @@ return new class extends Migration
 
             $table->text('titre_apropos4')->nullable();
             $table->string('image_apropos4')->nullable();
+
+
+
+            $table->text('titre_sta1')->nullable();
+            $table->integer('number_sta1')->nullable();
+            $table->string('icon_sta1')->nullable();
+
+            $table->text('titre_sta2')->nullable();
+            $table->integer('number_sta2')->nullable();
+            $table->string('icon_sta2')->nullable();
+
+            $table->text('titre_sta3')->nullable();
+            $table->integer('number_sta3')->nullable();
+            $table->string('icon_sta3')->nullable();
+
+            $table->text('titre_sta4')->nullable();
+            $table->integer('number_sta4')->nullable();
+            $table->string('icon_sta4')->nullable();
+
+            $table->text('titre_sta5')->nullable();
+            $table->integer('number_sta5')->nullable();
+            $table->string('icon_sta5')->nullable();
+            
 
 
             $table->timestamps();

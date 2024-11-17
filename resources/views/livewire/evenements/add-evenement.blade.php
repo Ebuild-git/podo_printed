@@ -33,6 +33,14 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="mb-3">
+                        <label><strong> Meta Description :</strong></label>
+                        <textarea class=" form-control" name="meta_description" wire:model="meta_description"></textarea>
+                        @error('meta_description')
+                            <span class="text-danger small"> {{ $message }} </span>
+                        @enderror
+                    </div>
+        
                  
 
                     <div class="col-sm-6">

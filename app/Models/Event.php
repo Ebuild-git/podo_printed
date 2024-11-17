@@ -16,6 +16,7 @@ class Event extends Model
         'limit',
         'description',
         'image',
+        'meta_description',
     ];
    
 
