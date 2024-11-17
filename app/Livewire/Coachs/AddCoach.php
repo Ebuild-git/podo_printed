@@ -118,7 +118,7 @@ public function create()
      //dispach event
      $this->dispatch('coachAdded');
 
-     return redirect()->route('coachs');
+     return redirect()->route('doctors');
 
    //  $this->emit('coachAdded');
   
