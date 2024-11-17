@@ -11,112 +11,57 @@
     @endphp
 
 
+<div class="container-fluid px-0 mb-1">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @foreach ($banners as $key => $banner)
+            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                <img class="d-block w-100" src="{{ Storage::url($banner->image) }}" alt="Image">
 
-    <!-- Hero Section Start -->
-    <div class="hero bg-image hero-video">
-        <!-- Video Start -->
-        <div class="hero-bg-video">
-            <!-- Selfhosted Video Start -->
-            <video autoplay muted loop id="myVideo">
-                <source src="images/hero-bg-video.mp4" type="video/mp4"></video>
-            <!-- Selfhosted Video End -->
 
-            <!-- Youtube Video Start -->
-            <!-- <div id="herovideo" class="player" data-property="{videoURL:'74DWwSxsVSs',containment:'.hero-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> -->
-            <!-- Youtube Video End -->
-        </div>
-        <!-- Video End -->
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <!-- Hero Content Start -->
-                    <div class="hero-content">
-                        <!-- Section Title Start -->
-                        <div class="section-title">
-                            <h3 class="wow fadeInUp">welcome to physiocare</h3>
-                            <h1 class="text-anime-style-2" data-cursor="-opaque"><span>Destination</span> For Relief & Wellness</h1>
-                            <p class="wow fadeInUp" data-wow-delay="0.25s">It is a long established fact that a reader will be distracted the readable content of a page when looking at layout the point of using lorem the Ipsum less normal distribution of letters.</p>
-                        </div>
-                        <!-- Section Title End -->
-
-                        <!-- Hero Content Body Start -->
-                        <div class="hero-content-body wow fadeInUp" data-wow-delay="0.5s">
-                            <a href="#" class="btn-default">explore services</a>
-                            <a href="#" class="btn-default btn-highlighted">book appointment</a>
-                        </div>
-                        <!-- Hero Content Body End -->
-                    </div>
-                    <!-- Hero Content End -->
-                </div>
+              
             </div>
+            @endforeach
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <!-- Hero Section End -->
+</div>
 
-    <!-- Home Contact Us Start -->
-    <div class="home-contact-us">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <!-- Contact Item Start -->
-                    <div class="home-contact-item wow fadeInUp">
-                        <!-- Icon Box Start -->
-                        <div class="icon-box">
-                            <img src="images/icon-home-contact-us-1.svg" alt="">
-                        </div>
-                        <!-- Icon Box End -->
+<style>
+    .carousel-item img {
+    height: 500px;
+    object-fit: cover; /* Permet d'adapter l'image sans la déformer */
+}
+.carousel-item img {
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    object-fit: cover;
+}
+.carousel {
+    height: 70vh; /* 70% de la hauteur de la fenêtre */
+}
 
-                        <!-- Home Contact Content Start -->
-                        <div class="home-contact-content">
-                            <h3>expert therapists</h3>
-                            <p>Our team of licensed and certified physiotherapists</p>
-                        </div>
-                        <!-- Home Contact Content End -->
-                    </div>
-                    <!-- Contact Item End -->
-                </div>
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px; /* Hauteur spécifique pour les petits écrans */
+    }
+}
 
-                <div class="col-lg-4 col-md-6">
-                    <!-- Contact Item Start -->
-                    <div class="home-contact-item wow fadeInUp" data-wow-delay="0.25s">
-                        <!-- Icon Box Start -->
-                        <div class="icon-box">
-                            <img src="images/icon-home-contact-us-2.svg" alt="">
-                        </div>
-                        <!-- Icon Box End -->
+@media (min-width: 769px) {
+    .carousel-item img {
+        height: 500px;
+    }
+}
 
-                        <!-- Home Contact Content Start -->
-                        <div class="home-contact-content">
-                            <h3>emergency service</h3>
-                            <p>Our emergency physiotherapy services are designed to address</p>
-                        </div>
-                        <!-- Home Contact Content End -->
-                    </div>
-                    <!-- Contact Item End -->
-                </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <!-- Contact Item Start -->
-                    <div class="home-contact-item wow fadeInUp" data-wow-delay="0.5s">
-                        <!-- Icon Box Start -->
-                        <div class="icon-box">
-                            <img src="images/icon-home-contact-us-3.svg" alt="">
-                        </div>
-                        <!-- Icon Box End -->
+</style>
 
-                        <!-- Home Contact Content Start -->
-                        <div class="home-contact-content">
-                            <h3>free consultant</h3>
-                            <p>Our mission is to enhance the quality of life of our patients</p>
-                        </div>
-                        <!-- Home Contact Content End -->
-                    </div>
-                    <!-- Contact Item End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Home Contact Us End -->
 
     <!-- About Us Start -->
     <div class="about-us">
@@ -448,7 +393,7 @@
                 <div class="col-lg-3">
                     <!-- Section Button Start -->
                     <div class="section-btn wow fadeInUp" data-wow-delay="0.25s">
-                        <a href="#" class="btn-default">{{ \App\Helpers\TranslationHelper::TranslateText('Voir tout') }}</a>
+                        <a href="{{ route('all_doctors') }}" class="btn-default">{{ \App\Helpers\TranslationHelper::TranslateText('Voir tout') }}</a>
                     </div>
                     <!-- Section Button End -->
                 </div>
@@ -492,16 +437,15 @@
                             </div>
                             <!-- Team Social Icon End -->
                         </div>
-                        <!-- Team Image End -->
+                       
 
-                        <!-- Team Content Start -->
                         <div class="team-content">
                             <h3>{{ $coach->prenom  ??  ''}} {{ $coach->nom ?? '' }}</h3>
                             <p>senior physiotherapist</p>
                         </div>
-                        <!-- Team Content End -->
+                       
                     </div>
-                    <!-- Team Member Item End -->
+                   
                 </div>
                 @endif
                 @endforeach
@@ -520,8 +464,8 @@
                 <div class="col-lg-12">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp">review</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>What</span> Our Client Say</h2>
+                        <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('Les retours de nos clients') }}</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Ce que') }}</span> {{ \App\Helpers\TranslationHelper::TranslateText('nos clients pensent') }}</h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -529,11 +473,15 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <!-- Testimonial Slider Start -->
-                    <div class="testimonial-slider">
+                   
+                         <div class="testimonial-slider">
                         <div class="swiper">
                             <div class="swiper-wrapper" data-cursor-text="Drag">
-                                <!-- Testimonial Slide Start -->
+                               
+                                @if ($testimonials->isEmpty())
+                                <p> {{ \App\Helpers\TranslationHelper::TranslateText('Aucun témoignage disponible') }}.</p>
+                                @else
+                                @foreach ($testimonials as $testimonial)
                                 <div class="swiper-slide">
                                     <div class="testimonial-item">
                                         <div class="testimonial-header">
@@ -545,113 +493,32 @@
                                                 <i class="fa-solid fa-star"></i>
                                             </div>
                                             <div class="testimonial-content">
-                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>
-                                            </div>
+                                                <p>“
+                                                    {!! \App\Helpers\TranslationHelper::TranslateText($testimonial->message) !!}
+                                                    “</p>
+                                              </div>
                                         </div>
                                         <div class="testimonial-body">
                                             <div class="author-image">
                                                 <figure class="image-anime">
+                                                    @if ($testimonial->photo)
+                                                    <img src="{{ asset('uploads/testimonials/' . $testimonial->photo) }}" alt="Photo Témoignage" width="100" height="100">
+                                                    @else
                                                     <img src="images/author-1.jpg" alt="">
+                                                    @endif
                                                 </figure>
                                             </div>
                                             <div class="author-content">
-                                                <h3>johan duo</h3>
-                                                <p>professional athlete</p>
+                                                <h3> <span class="designation">{{ $testimonial->name }}</span></h3>
+                                              
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Testimonial Slide End -->
+                                @endforeach
+                                @endif
+                              
 
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-header">
-                                            <div class="testimonial-rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-body">
-                                            <div class="author-image">
-                                                <figure class="image-anime">
-                                                    <img src="images/author-2.jpg" alt="">
-                                                </figure>
-                                            </div>
-                                            <div class="author-content">
-                                                <h3>jane smith</h3>
-                                                <p>retired teacher</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-header">
-                                            <div class="testimonial-rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-body">
-                                            <div class="author-image">
-                                                <figure class="image-anime">
-                                                    <img src="images/author-3.jpg" alt="">
-                                                </figure>
-                                            </div>
-                                            <div class="author-content">
-                                                <h3>robert lee</h3>
-                                                <p>construction worker</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-                                <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <div class="testimonial-header">
-                                            <div class="testimonial-rating">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <p>We understand that injuries and acute pain can happen unexpectedly. Our emergency physiotherapy services are designed to provide prompt.</p>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-body">
-                                            <div class="author-image">
-                                                <figure class="image-anime">
-                                                    <img src="images/author-4.jpg" alt="">
-                                                </figure>
-                                            </div>
-                                            <div class="author-content">
-                                                <h3>banson doe</h3>
-                                                <p>marathon runner</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Testimonial Slide End -->
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
@@ -672,7 +539,7 @@
                     <div id="successMessage" class="alert alert-success" style="display:none;"></div>
                     <div id="errorMessage" class="alert alert-danger" style="display:none;"></div>
 
-                    <!-- Testimonial Slider End -->
+                   
                 </div>
             </div>
         </div>
@@ -786,18 +653,19 @@
     <script>
         $(document).ready(function() {
             $('#testimonialForm').on('submit', function(e) {
-                e.preventDefault(); // Empêcher l'envoi classique du formulaire
+                e.preventDefault(); 
 
                 $.ajax({
                     url: $(this).attr('action')
                     , method: $(this).attr('method')
                     , data: $(this).serialize()
                     , success: function(response) {
-                        // Afficher le message de succès
-                        $('#testimonialModal').modal('hide'); // Fermer le modal
+                        
+                        $('#testimonialModal').modal('hide'); 
 
                         $('#successMessage').text(
                             'Témoignage créé avec succès! Il sera valide après confirmation des administrateurs'
+                            
 
                         ).show();
 
@@ -806,9 +674,9 @@
                         }, 5000);
                     }
                     , error: function(response) {
-                        // Afficher un message d'erreur si nécessaire
+                     
                         $('#errorMessage').text('Une erreur est survenue.')
-                            .show(); // Afficher le message d'erreur
+                            .show(); 
                     }
                 });
             });

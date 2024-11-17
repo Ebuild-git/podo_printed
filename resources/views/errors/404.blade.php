@@ -2,53 +2,50 @@
 
 @section('body')
     <main>
-        {{-- <div class="breadcrumb">
-            <div class="container">
-                <h2>Page introuvable</h2>
+    <!-- Page Header Start -->
+	<div class="page-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- Page Header Box Start -->
+					<div class="page-header-box">
+						<h1 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText('Page introuvable') }}</h1>
+						<nav class="wow fadeInUp">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="{{ route('home') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+								<li class="breadcrumb-item active" aria-current="page">{{ \App\Helpers\TranslationHelper::TranslateText('Erreur 404') }}</li>
+							</ol>
+						</nav>
+					</div>
+					<!-- Page Header Box End -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Page Header End -->
 
-            </div>
-        </div> --}}
-        <!-- error area start -->
-        <div class="tp-error-area pt-150 pb-150">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="tp-error-content-box text-center">
-                            <div class="tp-error-thumb-box pb-95">
-                                <img src="assets/images/404/404.png" width="50" height="200" class="img">
-
-
-                            </div>
-                            <style>
-                                @media (max-width: 767px) {
-                                    .tp-error-content {
-                                        font-size: 30px;
-                                        text-align: center;
-                                    }
-                                }
-                            </style>
-                            <div class="tp-error-content" style=" font-size: 18px;">
-                                <h4 class="tp-section-title pb-10">Désolé, page introuvable</h4>
-                                <p class="mb-45">La page que vous recherchez ne se ferme pas. Veuillez l'essayer.</p>
-                                <a class="tp-btn-theme" href="{{ route('home') }}">
-                                    <span>
-                                        Retour a l'Accueil
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
+     <!-- error section start -->
+     <div class="error-page">
+        <div class="container">
+            <div class="row">
+                <div class="error-page-image wow fadeInUp" data-wow-delay="0.25s">
+                    <img src="images/404-error-img.png" alt="">
+                </div>
+                <div class="error-page-content">
+                    <div class="error-page-content-heading">
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Oops!</span> {{ \App\Helpers\TranslationHelper::TranslateText('Page introuvable') }}</h2>
+                    </div>
+                    <div class="error-page-content-body">
+                        <p class="wow fadeInUp" data-wow-delay="0.5s">
+                            {{ \App\Helpers\TranslationHelper::TranslateText('La page que vous êtes entrain de chercher n\'existe pas') }}
+                        </p>
+                        <a class="btn-default wow fadeInUp" data-wow-delay="0.75s"  href="{{ route('home') }}" >{{ \App\Helpers\TranslationHelper::TranslateText('Retournez à la page d\'accueil') }}</a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- error area end -->
+    </div>
     </main>
 
 
-    <style>
-        .img {
-            max-width: 100%;
-            width: 500px;
-        }
-    </style>
 @endsection

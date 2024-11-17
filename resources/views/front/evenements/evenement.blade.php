@@ -42,13 +42,26 @@
                     <div class="blog-item wow fadeInUp">
                         <!-- Post Featured Image Start-->
                         <div class="post-featured-image" data-cursor-text="View">
-                            <figure>
+                            <figure class="image-anime">
                                 <a    href="{{ route('details-news', ['id' => $event->id, 'slug' => Str::slug(Str::limit($event->titre, 10))]) }}" class="image-anime">
                                     <img src="{{ Storage::url($event->image ?? ' ') }}" alt="">
                                 </a>
                             </figure>
+                            <style>
+                                .image-anime img {
+                                    height: 300px;
+                                    object-fit: cover;
+                                }
 
-                            post-featured-image
+                                .carousel-item {
+                                    text-align: center;
+                                    background-color: #f8f9fa;
+                                }
+
+                            </style>
+
+
+                          
                         </div>
                         <!-- Post Featured Image End -->
 

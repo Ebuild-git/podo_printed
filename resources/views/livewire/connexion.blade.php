@@ -16,11 +16,11 @@
                 <img
                                 src="{{ Storage::url($config->logo ?? ' ') }}" alt="Logo" height="80" width="80" />
              
-                <span class="app-brand-text demo text-heading fw-bold">Sport Divers</span>
+                <span class="app-brand-text demo text-heading fw-bold">PODO PRINTED</span>
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-1">Bienvenue sur Sport Divers! 👋</h4>
+            <h4 class="mb-1">Bienvenue sur PODO PRINTED! 👋</h4>
           
             @if (session()->has('error'))
             <div class="alert alert-danger p-3 small">

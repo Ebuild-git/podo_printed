@@ -11,7 +11,7 @@ class StoreTestimonialRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,9 @@ class StoreTestimonialRequest extends FormRequest
     {
         return [
             //
+            'message' => 'nullable|max:1000',
+            'email' =>'nullables',
+            'user_id' => 'nullable',
         ];
     }
 }

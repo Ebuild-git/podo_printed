@@ -18,6 +18,7 @@ use App\Models\domaines;
 use App\Models\Sponsor;
 use App\Models\Event;
 use App\Models\Image;
+use App\Models\Coach;
 use App\Models\Video;
 use App\Models\notifications;
 use App\Models\templates;
@@ -153,7 +154,7 @@ public function testimonials()
             ->orderBy('views_count', 'desc')
             ->get();
         $totalEvents = Event::count();
-        $totalSponsors = Sponsor::count();
+        $totalSponsors = Coach::count();
        /*  return view('admin.index')
             ->with("totalUser", $totalUser)
             ->with("topUsers " , $topUsers )

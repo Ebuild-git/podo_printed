@@ -120,6 +120,11 @@
                                                             <i class="fas fa-trash-alt"></i>
                                                         </button> --}}
 
+                                                        <a href="{{ route('testimonials.edit', $cat->id) }}" class="btn btn-info btn-sm">
+                                                            <i class="fas fa-edit"></i> Modifier
+                                                        </a>
+                        
+
                                                     </div>
                                                     @if ($cat->active)
                                                         <button class="btn btn-warning btn-sm"

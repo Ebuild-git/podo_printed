@@ -17,7 +17,13 @@ class CoachController extends Controller
     /**
      * Display a listing of the resource.
      */
+public function all_doctors() {
 
+        $doctors = Coach::select('*')
+               
+        ->paginate(15);
+        return view('front.doctors.index', compact('doctors') );
+}
      
     public function coachs()
     {

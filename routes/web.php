@@ -58,7 +58,7 @@ Route::get('/details-news/{id}/{slug}', [EventController::class, 'details'])->na
 /////temoignages
 Route::resource('testimonial', TestimonialController::class);
 
-
+Route::get('all_doctors', [CoachController::class, 'all_doctors'])->name("all_doctors");
 
 Route::resource('contacts', ContactController::class, ['only' => ['create', 'store']]);
 Route::get('forgot-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forgot-password');
