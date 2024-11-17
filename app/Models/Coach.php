@@ -18,6 +18,7 @@ class Coach extends Model
             'email',
             'photo',
             'group',
+            'poste'
 
     ];
    

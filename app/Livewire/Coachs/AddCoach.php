@@ -20,7 +20,7 @@ class AddCoach extends Component
 
     use WithFileUploads;
 
-    public $nom, $prenom, $email, $phone, $photo , $photo2,$adresse, $coach;
+    public $nom, $prenom, $email, $phone, $photo , $photo2,$adresse, $coach,$poste;
     public $updateMode = false;
     public $group; // To bind the selected group value
   // public $groups = []; 
@@ -47,6 +47,7 @@ class AddCoach extends Component
             $this->photo = $coach->photo;
             $this->photo2 = $coach->photo;
             $this->adresse = $coach->adresse;
+            $this->poste = $coach->poste;
           
           
         }
@@ -62,6 +63,7 @@ private function resetInputFields(){
     $this->photo2 = '';
     $this->adresse = '';
     $this->group = '';
+    $this->poste = '';
 
 
 }
@@ -100,6 +102,7 @@ public function create()
       $coach->email = $this->email;
       $coach->phone = $this->phone;
       $coach->adresse = $this->adresse;
+      $coach->poste = $this->poste;
       $coach->photo = $this->photo->store('coachs', 'public');
 
       
@@ -137,6 +140,7 @@ public function edit($id)
         $this->adresse = $coach->adresse;
         $this->image = $coach->image;
         $this->group = $coach->group;
+        $this->poste = $coach->poste;
     }
 
     public function update()
@@ -157,6 +161,7 @@ public function edit($id)
         $coach->phone = $data['phone'];
         $coach->adresse = $data['adresse'];
         $coach->group = $data['group'];
+        $coach->poste = $data['poste'];
         $coach->image = $this->image->store('coachs', 'public');
 
         if (isset($data['newImage'])) {

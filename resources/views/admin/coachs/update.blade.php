@@ -85,6 +85,14 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
+
+                                            <div class="mb-3">
+                                                <label for="adresse">Poste</label>
+                                                <input type="text" id="adresse" value="{{ $coach->poste }}" name="poste" class="form-control">
+                                                @error('poste')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
                             {{-- 
                                             <div class="mb-3">
                                                 <label for="description">Description</label>

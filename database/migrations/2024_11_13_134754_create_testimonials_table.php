@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->nullable();
             $table->text('message');
+            
             $table->string('photo')->nullable();
             $table->boolean('active')->default(false);
             $table->boolean('is_read')->default(false);

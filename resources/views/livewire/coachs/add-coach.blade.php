@@ -59,6 +59,18 @@
                         @enderror
                     </div>
                 </div>
+
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">
+                            Poste
+                        </label>
+                        <input type="tel" class="form-control" wire:model="poste">
+                        @error('poste')
+                            <span class="text-danger small"> {{ $message }} </span>
+                        @enderror
+                    </div>
+                </div>
                  <div class="col-sm-6">
                     <div class="mb-3">
                         <label for="photo" class="form-label">

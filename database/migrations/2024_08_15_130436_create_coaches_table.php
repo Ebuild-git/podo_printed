@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('photo')->nullable();
+            $table->string('poste')->nullable();
         //    $table->enum("group",["externe","interne"])->default("interne");
 
             $table->timestamps();
