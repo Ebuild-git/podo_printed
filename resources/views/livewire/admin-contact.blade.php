@@ -213,7 +213,7 @@
             </div>
             <div class="row g-6">
                 <div class="col-md-12">
-                    <label class="form-label" for="multicol-first-name">Addresse</label>
+                    <label class="form-label" for="multicol-first-name">Adresse</label>
                     <input type="text" wire:model="addresse" id="multicol-first-name" class="form-control" placeholder="Addresse" />
                     @error('addresse')
                     <span class="text-danger small"> {{ $message }} </span>
