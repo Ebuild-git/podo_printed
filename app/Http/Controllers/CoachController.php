@@ -52,6 +52,7 @@ public function all_doctors() {
             'email' => 'required|email|unique:coaches,email,'.$id,
             'phone' => 'required|string|max:20',
             'adresse' => 'required|string|max:255',
+            'poste' => 'nullable|string|max:2000',
         ]);
     
         if ($validator->fails()) {
@@ -79,6 +80,8 @@ public function all_doctors() {
         $coach->email = $request->input('email');
         $coach->phone = $request->input('phone');
         $coach->adresse = $request->input('adresse');
+        $coach->poste = $request->input('poste');
+
         $coach->save();
     
         return redirect()->back()->with('success', 'Docteur mis à jour avec succès !');
