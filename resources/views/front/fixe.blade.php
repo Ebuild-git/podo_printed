@@ -40,9 +40,9 @@ $produit = DB::table('produits')->get();
     <!-- Main Custom Css -->
     <link href="/css/custom.css" rel="stylesheet" media="screen">
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+{{--     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     
-
+ --}}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
