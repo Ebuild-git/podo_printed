@@ -40,4 +40,10 @@ class BotManController extends Controller
             $this->say('Nice to meet you '.$name);
         });
     }
+
+    public function chat()
+{
+    // Exemple simple pour répondre à une requête
+    return response()->json(['message' => 'Chatbot is ready!']);
+}
 }

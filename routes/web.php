@@ -41,6 +41,7 @@ use App\Http\Controllers\BotManController;
 
 
 Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle'])->middleware('api');
+Route::match(['get', 'post'], '/botman/chat', [BotManController::class, 'chat'])->middleware('api');
 //Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 Route::post('/locale', [LocaleController::class ,'change'])->name("locale.change");
 Route::get('/video/{id}', [VideoController::class, 'play'])->name('video.play');
