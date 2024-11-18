@@ -120,74 +120,23 @@
                         <!-- About Us Body Start -->
                         <div class="about-us-body">
                             <!-- About List Item Start -->
-                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="icon-box">
-                                    <img src="{{ Storage::url($config->image_apropos1 ?? ' ') }}" alt="">
-                                </div>
-                                <div class="about-list-content">
-                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3>
-                                </div>
+                            <div class="solution-plan-body wow fadeInUp"  data-wow-delay="0.5s">
+                                <ul>
+                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3></li>
+                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3></li>
+                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos3 ?? ' ') }}</h3></li>
+                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos4 ?? ' ') }}</h3></li>
+                             
+                                </ul>
                             </div>
-                            <!-- About List Item End -->
-
-                            <!-- About List Item Start -->
-                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="icon-box">
-                                    <img src="{{ Storage::url($config->image_apropos2 ?? ' ') }}" alt="">
-                                </div>
-                                <div class="about-list-content">
-                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3>
-                                </div>
-                            </div>
-                            <!-- About List Item End -->
-
-                            <!-- About List Item Start -->
-                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
-                                <div class="icon-box">
-                                    <img src="{{ Storage::url($config->image_apropos3 ?? ' ') }}" alt="">
-                                </div>
-                                <div class="about-list-content">
-                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos3 ?? ' ') }}</h3>
-                                </div>
-                            </div>
-                            <!-- About List Item End -->
-
-                            <!-- About List Item Start -->
-                            <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
-                                <div class="icon-box">
-                                    <img src="{{ Storage::url($config->image_apropos4 ?? ' ') }}" alt="">
-                                </div>
-                                <div class="about-list-content">
-                                    <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos4 ??  ' ') }}</h3>
-                                </div>
-                            </div>
+                            
                             <!-- About List Item End -->
                         </div>
                         <!-- About Us Body End -->
 
                         <!-- About Us Footer Start -->
                         <div class="about-us-footer">
-                            <!-- Doctor Info Start -->
-                            {{-- <div class="doctor-info wow fadeInUp" data-wow-delay="1s">
-                            <div class="doctor-info-item">
-                                <div class="image-box">
-                                    <figure class="image-anime">
-                                        <img src="images/about-doctor-img.jpg" alt="">
-                                    </figure>
-                                </div>
-                                <div class="doctor-info-content">
-                                    <h3>dr. jamie smith</h3>
-                                    <p>Physiotherapy</p>
-                                </div>
-                            </div>
-                        </div> --}}
-                            <!-- Doctor Info End -->
-
-                            <!-- Appointment Button Start -->
-                            {{-- <div class="appointment-btn wow fadeInUp" data-wow-delay="1s">
-                            <a href="#" class="btn-default">Make an appointment</a>
-                        </div> --}}
-                            <!-- Appointment Button End -->
+                     
                         </div>
                         <!-- About Us Footer End -->
                     </div>

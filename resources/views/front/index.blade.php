@@ -131,36 +131,32 @@
                             </style>
 
 
-                            <!-- Company Experience Box Start -->
-                            {{-- <div class="company-experience">
-                                <div class="icon-box">
-                                    <img src="images/icon-experience.svg" alt="">
-                                </div>
-                                <div class="company-experience-content">
-                                    <h3><span class="counter">15</span>+</h3>
-                                    <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos5 ?? ' ') }}</p>
-                                </div>
-                            </div> --}}
-                            <!-- Company Experience Box End -->
                         </div>
                     </div>
-                    <!-- About Image End -->
+                
                 </div>
                 <div class="col-lg-6">
-                    <!-- About Us Content Start -->
+                    
                     <div class="about-content">
-                        <!-- Section Title Start -->
+                      
                         <div class="section-title">
                             <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h3>
                             <h2 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos) }}</h2>
                             <p class="wow fadeInUp" data-wow-delay="0.25s"> {{ \App\Helpers\TranslationHelper::TranslateText($config->des_apropos) }}
 
                               </div>
-                        <!-- Section Title End -->
-
-                        <!-- About Us Body Start -->
+                      
                         <div class="about-us-body">
-                            <!-- About List Item Start -->
+
+                            <div class="solution-plan-body wow fadeInUp"  data-wow-delay="0.5s">
+                                <ul>
+                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3></li>
+                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3></li>
+                                           
+                                </ul>
+                            </div>
+                        
+                        {{-- 
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image_apropos1 ?? ' ') }}" alt="">
@@ -169,9 +165,7 @@
                                     <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3>
                                 </div>
                             </div>
-                            <!-- About List Item End -->
-
-                            <!-- About List Item Start -->
+                          
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image_apropos2 ?? ' ') }}" alt="">
@@ -180,9 +174,7 @@
                                     <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3>
                                 </div>
                             </div>
-                            <!-- About List Item End -->
-
-                            <!-- About List Item Start -->
+                       
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image_apropos3 ?? ' ') }}" alt="">
@@ -191,9 +183,9 @@
                                     <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos3 ?? ' ') }}</h3>
                                 </div>
                             </div>
-                            <!-- About List Item End -->
+                          
 
-                            <!-- About List Item Start -->
+                         
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image_apropos4 ?? ' ') }}" alt="">
@@ -201,38 +193,17 @@
                                 <div class="about-list-content">
                                     <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos4 ?? '') }}</h3>
                                 </div>
-                            </div>
-                            <!-- About List Item End -->
+                            </div> --}}
+                            
                         </div>
-                        <!-- About Us Body End -->
+                        
 
-                        <!-- About Us Footer Start -->
                         <div class="about-us-footer">
-                            <!-- Doctor Info Start -->
-                            {{-- <div class="doctor-info wow fadeInUp" data-wow-delay="1s">
-                                <div class="doctor-info-item">
-                                    <div class="image-box">
-                                        <figure class="image-anime">
-                                            <img src="images/about-doctor-img.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="doctor-info-content">
-                                        <h3>dr. jamie smith</h3>
-                                        <p>Physiotherapy</p>
-                                    </div>
-                                </div>
-                            </div> --}}
-                            <!-- Doctor Info End -->
-
-                            <!-- Appointment Button Start -->
-                           {{--  <div class="appointment-btn wow fadeInUp" data-wow-delay="1s">
-                                <a href="#" class="btn-default">Make an appointment</a>
-                            </div> --}}
-                            <!-- Appointment Button End -->
+                        
                         </div>
-                        <!-- About Us Footer End -->
+              
                     </div>
-                    <!-- About Us Content End -->
+                  
                 </div>
             </div>
         </div>
@@ -828,14 +799,13 @@
         var botmanWidget = {
             aboutText: 'ssdsd',
             introMessage: "✋ Hi! I'm form PODO PRINTED",
-             chatServer: '/botman', 
+            chatServer: '/botman', 
             csrfToken: "{{ csrf_token() }}",
-            chatInput: '#message',
-            chatOutput: '#messages',
-            sendButton: '#send',
-            conversationControl: '#conversationControl',
-            botAvatar: 'https://botman-demo.s3.amazonaws.com/botman-logo.png',
-            
+         
+            //conversationControl: '#conversationControl',
+        //    botAvatar: 'https://botman-demo.s3.amazonaws.com/botman-logo.png',
+         //    chatServer: 'https://php-uk-conference-2018.marcelpociot.de/botman',
+           // frameEndpoint: 'chat.html'
 
             
         };
