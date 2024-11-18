@@ -279,8 +279,8 @@ $produit = DB::table('produits')->get();
 	        aboutText: 'ssdsd',
 	        introMessage: "✋ Hi! I'm form PODO PRINTED"
 
-          /*   chatServer: '/botman', 
-            csrfToken: "{{ csrf_token() }}"  */
+             chatServer: '/botman', 
+            csrfToken: "{{ csrf_token() }}"  
 	    };
     </script>
   
