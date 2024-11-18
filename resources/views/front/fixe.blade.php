@@ -270,21 +270,21 @@ $produit = DB::table('produits')->get();
         @yield('body')
 
 
-
+        <script>
+            var botmanWidget = {
+                aboutText: 'ssdsd',
+                introMessage: "✋ Hi! I'm form PODO PRINTED"
+    
+                
+            };
+        </script>
+      
+        <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+          
 
     </main>
    
-    <script>
-	    var botmanWidget = {
-	        aboutText: 'ssdsd',
-	        introMessage: "✋ Hi! I'm form PODO PRINTED"
 
-            
-	    };
-    </script>
-  
-    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-      
     <!-- Footer Start -->
     <footer class="main-footer">
         <div class="container">
