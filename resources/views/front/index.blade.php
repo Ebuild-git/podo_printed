@@ -10,6 +10,13 @@
 
     @endphp
 
+<head>
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+  
+</head>
+
 
 <div class="container-fluid px-0 mb-1">
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -234,7 +241,7 @@
 
 
     <!-- Company Counter Start -->
-    <div class="company-counter">
+    <div class="company-counter" style=" background-color: #9fc52e;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -783,10 +790,51 @@
     <!-- Scrolling Ticker Section End -->
 
 
+   
+   
 
+   {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
+    <script>
+	    var botmanWidget = {
+	        aboutText: 'ssdsd',
+	        introMessage: "✋ Hi! I'm form PODO PRINTED"
+	    };
+    </script>
+  
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>  --}}
+    
+{{--     <div id="chatbox">
+        <div id="messages"></div>
+        <input type="text" id="message" placeholder="Type your message here...">
+        <button id="send">Send</button>
+    </div> --}}
+{{-- 
+    <script>
+        $(document).ready(function() {
+            $('#send').click(function() {
+                var message = $('#message').val();
+                $('#messages').append('<div>You: ' + message + '</div>');
+                $.post('/botman', { message: message }, function(data) {
+                    $('#messages').append('<div>Bot: ' + data + '</div>');
+                });
+                $('#message').val('');
+            });
+        });
+    </script>  --}}
 
+  {{--   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css"> --}}
+    <script>
+	    var botmanWidget = {
+	        aboutText: 'ssdsd',
+	        introMessage: "✋ Hi! I'm form PODO PRINTED"
 
-
+          /*   chatServer: '/botman', 
+            csrfToken: "{{ csrf_token() }}"  */
+	    };
+    </script>
+  
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+      
 </main>
 
 

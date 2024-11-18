@@ -24,6 +24,8 @@ use App\Http\Controllers\Front\{
 use App\Http\Controllers\panier_client;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\BotManController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +38,10 @@ use App\Http\Controllers\LocaleController;
 */
 // Dans routes/web.php
 
+
+
+Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle'])->middleware('api');
+//Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 Route::post('/locale', [LocaleController::class ,'change'])->name("locale.change");
 Route::get('/video/{id}', [VideoController::class, 'play'])->name('video.play');
 Route::post('/video/view/{id}', [VideoController::class, 'incrementViewCount'])->name('video.incrementViewCount');

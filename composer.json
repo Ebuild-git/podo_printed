@@ -9,6 +9,7 @@
         "astrotomic/laravel-translatable": "^11.15",
         "barryvdh/laravel-dompdf": "^2.1",
         "botman/botman": "^2.8",
+        "botman/driver-web": "^1.5",
         "cagilo/cagilo": "^3.3",
         "darryldecode/cart": "^4.2",
         "intervention/image": "^3.5",

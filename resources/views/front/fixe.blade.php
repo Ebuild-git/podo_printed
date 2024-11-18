@@ -40,6 +40,9 @@ $produit = DB::table('produits')->get();
     <!-- Main Custom Css -->
     <link href="/css/custom.css" rel="stylesheet" media="screen">
 
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -66,7 +69,7 @@ $produit = DB::table('produits')->get();
                   
                    
                 }
-        
+       
             
 
     </style>
@@ -81,10 +84,10 @@ $produit = DB::table('produits')->get();
     <!-- Preloader End -->
 
     <!-- Topbar Section Start -->
-    <div class="topbar">
+    <div class="topbar" style=" background-color: #9fc52e;">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-9 col-md-12">
+                <div class="col-lg-9 col-md-12" >
                     <!-- Topbar Contact Information Start -->
                     <div class="topbar-contact-info">
                         <ul>
@@ -450,5 +453,6 @@ $produit = DB::table('produits')->get();
     <script src="/js/wow.js"></script>
     <!-- Main Custom js file -->
     <script src="/js/function.js"></script>
+  {{--   <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> --}}
 </body>
 </html>
