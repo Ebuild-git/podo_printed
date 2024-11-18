@@ -41,9 +41,5 @@ class BotManController extends Controller
         });
     }
 
-    public function chat()
-{
-    // Exemple simple pour répondre à une requête
-    return response()->json(['message' => 'Chatbot is ready!']);
-}
+
 }
