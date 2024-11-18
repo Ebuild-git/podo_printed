@@ -808,7 +808,7 @@
         <input type="text" id="message" placeholder="Type your message here...">
         <button id="send">Send</button>
     </div> --}}
-{{-- 
+
     <script>
         $(document).ready(function() {
             $('#send').click(function() {
@@ -820,7 +820,7 @@
                 $('#message').val('');
             });
         });
-    </script>  --}}
+    </script>  
 
   {{--   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css"> --}}
   {{--   <script>
@@ -835,6 +835,19 @@
   
     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
        --}}
+
+{{-- 
+       <script>
+        var botmanWidget = {
+            aboutText: 'ssdsd',
+            introMessage: "✋ Hi! I'm form PODO PRINTED"
+
+            
+        };
+    </script> --}}
+  
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+      
 </main>
 
 
