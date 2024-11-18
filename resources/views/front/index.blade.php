@@ -820,6 +820,22 @@
                 $('#message').val('');
             });
         });
+
+
+        var botmanWidget = {
+    chatServer: '/botman',
+    frameEndpoint: '/botman/chat',
+    // Assurez-vous que les chemins vers les fichiers sont corrects
+    cssFile: '/botman/css/all.css',
+    images: {
+        phoneIcon: '/botman/images/icon-phone.svg',
+        emailIcon: '/botman/images/icon-mail.svg',
+        locationIcon: '/botman/images/icon-location.svg',
+        errorImage: '/botman/images/404-error-img.png',
+    },
+    // Autres configurations...
+};
+
     </script>  
 
   {{--   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css"> --}}
