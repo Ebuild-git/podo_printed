@@ -827,7 +827,15 @@
        <script>
         var botmanWidget = {
             aboutText: 'ssdsd',
-            introMessage: "✋ Hi! I'm form PODO PRINTED"
+            introMessage: "✋ Hi! I'm form PODO PRINTED",
+             chatServer: '/botman', 
+            csrfToken: "{{ csrf_token() }}",
+            chatInput: '#message',
+            chatOutput: '#messages',
+            sendButton: '#send',
+            conversationControl: '#conversationControl',
+            botAvatar: 'https://botman-demo.s3.amazonaws.com/botman-logo.png',
+            
 
             
         };
