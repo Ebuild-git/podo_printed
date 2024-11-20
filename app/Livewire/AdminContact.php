@@ -18,14 +18,41 @@ class AdminContact extends Component
       $image_apropos1, $image_apropos12, $image_apropos2, $image_apropos22, $image_apropos3,$image_apropos32 ,$image_apropos4, $image_apropos42, $image_apropos5 , $image_apropos52,
       $titre_sta1, $titre_sta2, $titre_sta3, $titre_sta4, $titre_sta5,
       $number_sta1, $number_sta2, $number_sta3, $number_sta4, $number_sta5,
-      $icon_sta1, $icon_sta12, $icon_sta2, $icon_sta22, $icon_sta3 ,$icon_sta32 , $icon_sta4 ,$icon_sta42 , $icon_sta5, $icon_sta52; 
+      $icon_sta1, $icon_sta12, $icon_sta2, $icon_sta22, $icon_sta3 ,$icon_sta32 , $icon_sta4 ,$icon_sta42 , $icon_sta5, $icon_sta52,
+      $titre1_processus,  $titre2_processus,
+      $desc1_processus,
+      $desc2_processus,
+      $image_processus, $image_processus2,
+      $image1_processus , $image12_processus,
+      $image2_processus , $image22_processus,
+    
+
+      $titre1_impression,
+      $titre2_impression,
+      $titre3_impression,
+      $titre4_impression,
+      $titre5_impression,
+      $titre6_impression,
+
+      $desc1_impression,
+      $desc2_impression,
+      $desc3_impression,
+      $desc4_impression,
+      $desc5_impression,
+      $desc6_impression,
+
+      $image_impression ,$image_impression2,
+      $image1_impression ,$image12_impression,
+      $image2_impression, $image22_impression,
+      $image3_impression, $image32_impression,
+      $image4_impression ,$image42_impression,
+      $image5_impression, $image52_impression,
+      $image6_impression, $image62_impression,
 
 
-
-
-
-
-
+      $image1_avantage ,$image12_avantage,
+      $image2_avantage ,$image22_avantage;
+      
        
     
     public function mount(){
@@ -40,6 +67,40 @@ class AdminContact extends Component
         $this->image_apropos32 =$config->image_apropos3;
         $this->image_apropos42 =$config->image_apropos4;
         $this->image_apropos52 =$config->image_apropos5;
+        $this->image_processus2 =$config->image_processus;
+        $this->image12_processus =$config->image1_processus;
+        $this->image22_processus =$config->image2_processus;
+
+
+
+
+        $this->image_impression =$config->image_impression2;
+        $this->titre1_impression =$config->titre1_impression;
+        $this->titre2_impression =$config->titre2_impression;
+        $this->titre3_impression =$config->titre3_impression;
+        $this->titre4_impression =$config->titre4_impression;
+        $this->titre5_impression =$config->titre5_impression;
+        $this->titre6_impression =$config->titre6_impression;
+
+        $this->desc1_impression =$config->desc1_impression;
+        $this->desc2_impression =$config->desc2_impression;
+        $this->desc3_impression =$config->desc3_impression;
+        $this->desc4_impression =$config->desc4_impression;
+        $this->desc5_impression =$config->desc5_impression;
+        $this->desc6_impression =$config->desc6_impression;
+
+        $this->titre1_processus =$config->titre1_processus;
+        $this->titre2_processus =$config->titre2_processus;
+
+        $this->desc1_processus =$config->desc1_processus;
+        $this->desc2_processus =$config->desc2_processus;
+
+        $this->image12_avantage = $config->image1_avantage;
+        $this->image22_avantage = $config->image2_avantage;
+
+
+
+
 
         $this->icon_sta12 =$config->icon_sta1;
         $this->icon_sta22 =$config->icon_sta2;
@@ -88,7 +149,7 @@ class AdminContact extends Component
         $this->seance=$config->seance;
         $this->adherent=$config->adherent;
         $this->tounoir=$config->tounoir;
-       
+     
 
 
 
@@ -236,6 +297,105 @@ class AdminContact extends Component
             $config->image_apropos5= $this->image_apropos5->store('image', 'public');
         }
 
+        if($this->image_processus){
+            //delete old logo
+            if ($this->image_processus2) {
+                Storage::disk('public')->delete($this->image_processus2);
+            }
+            $config->image_processus= $this->image_processus->store('image', 'public');
+        }
+
+        if($this->image1_processus){
+            //delete old logo
+            if ($this->image12_processus) {
+                Storage::disk('public')->delete($this->image12_processus);
+            }
+            $config->image1_processus= $this->image1_processus->store('image', 'public');
+        }
+
+        if($this->image2_processus){
+            //delete old logo
+            if ($this->image22_processus) {
+                Storage::disk('public')->delete($this->image22_processus);
+            }
+            $config->image2_processus= $this->image2_processus->store('image', 'public');
+        }
+
+
+        if($this->image_impression){
+            //delete old logo
+            if ($this->image_impression2) {
+                Storage::disk('public')->delete($this->image_impression2);
+            }
+            $config->image_impression= $this->image_impression->store('image', 'public');
+        }
+
+        if($this->image1_impression){
+            //delete old logo
+            if ($this->image12_impression) {
+                Storage::disk('public')->delete($this->image12_impression);
+            }
+            $config->image1_impression= $this->image1_impression->store('image', 'public');
+        }
+
+        if($this->image2_impression){
+            //delete old logo
+            if ($this->image22_impression) {
+                Storage::disk('public')->delete($this->image22_impression);
+            }
+            $config->image2_impression= $this->image2_impression->store('image', 'public');
+        }
+
+        if($this->image3_impression){
+            //delete old logo
+            if ($this->image32_impression) {
+                Storage::disk('public')->delete($this->image32_impression);
+            }
+            $config->image3_impression= $this->image3_impression->store('image', 'public');
+        }
+
+        if($this->image4_impression){
+            //delete old logo
+            if ($this->image42_impression) {
+                Storage::disk('public')->delete($this->image42_impression);
+            }
+            $config->image4_impression= $this->image4_impression->store('image', 'public');
+        }
+
+        if($this->image5_impression){
+            //delete old logo
+            if ($this->image52_impression) {
+                Storage::disk('public')->delete($this->image52_impression);
+            }
+            $config->image5_impression= $this->image5_impression->store('image', 'public');
+        }
+
+        if($this->image6_impression){
+            //delete old logo
+            if ($this->image62_impression) {
+                Storage::disk('public')->delete($this->image62_impression);
+            }
+            $config->image6_impression= $this->image6_impression->store('image', 'public');
+        }
+
+        if($this->image1_avantage){
+            //delete old logo
+            if ($this->image12_avantage) {
+                Storage::disk('public')->delete($this->image12_avantage);
+            }
+            $config->image1_avantage= $this->image1_avantage->store('image', 'public');
+        }
+
+        if($this->image2_avantage){
+            //delete old logo
+            if ($this->image22_avantage) {
+                Storage::disk('public')->delete($this->image22_avantage);
+            }
+            $config->image2_avantage= $this->image2_avantage->store('image', 'public');
+        }
+
+       
+       
 
 
 
@@ -305,6 +465,30 @@ class AdminContact extends Component
         $config->number_sta3 = $this->number_sta3;
         $config->number_sta4 = $this->number_sta4;
         $config->number_sta5 = $this->number_sta5;
+
+        $config->titre1_impression = $this->titre1_impression;
+        $config->titre2_impression = $this->titre2_impression;
+        $config->titre3_impression = $this->titre3_impression;
+        $config->titre4_impression = $this->titre4_impression;
+        $config->titre5_impression = $this->titre5_impression;
+        $config->titre6_impression = $this->titre6_impression;
+
+        $config->desc1_impression = $this->desc1_impression;
+        $config->desc2_impression = $this->desc2_impression;
+        $config->desc3_impression = $this->desc3_impression;
+        $config->desc4_impression = $this->desc4_impression;
+        $config->desc5_impression = $this->desc5_impression;
+        $config->desc6_impression = $this->desc6_impression;
+
+        $config->titre1_processus = $this->titre1_processus;
+        $config->titre2_processus = $this->titre2_processus;
+        $config->desc1_processus = $this->desc1_processus;
+        $config->desc2_processus = $this->desc2_processus;
+       // $config->titre3_processus = $this->titre3_processus;
+       // $config->titre4_processus = $this->titre4_processus;
+      //  $config->titre5_processus = $this->titre5_processus;
+      
+
 
 
 

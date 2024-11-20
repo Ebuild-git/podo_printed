@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\commandes;
 use App\Models\config;
 use App\Models\historiques_connexion;
-use App\Models\{produits, Category,Marque, Contact, favoris, Service, Testimonial};
+use App\Models\{produits, Category,Marque, Contact, favoris, Service, Testimonial, Avantage};
 use App\Models\User;
 use App\Models\views;
 use Illuminate\Http\Request;
@@ -255,6 +255,14 @@ public function sponsor_update($id){
     } 
     
     return view('admin.sponsors.update', compact('sponsor'));
+}
+
+///////////////////Avantages/////////////
+
+public function avantage()
+{
+    $avantages = Avantage::all();
+    return view('admin.avantages.list', compact('avantages') );
 }
 
 

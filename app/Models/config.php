@@ -70,6 +70,46 @@ class config extends Model
          'titre_sta5',
         'number_sta5',
         'icon_sta5',
+
+
+
+        'titre1_processus',
+        'titre2_processus',
+
+        'desc1_processus',
+        'desc2_processus',
+
+        'image_processus',
+        'image1_processus',
+        'image2_processus',
+
+      
+
+        'titre1_impression',
+        'titre2_impression',
+        'titre3_impression',
+        'titre4_impression',
+        'titre5_impression',
+        'titre6_impression',
+
+        'desc1_impression',
+        'desc2_impression',
+        'desc3_impression',
+        'desc4_impression',
+        'desc5_impression',
+        'desc6_impression',
+
+        'image_impression',
+        'image1_impression',
+        'image2_impression',
+        'image3_impression',
+        'image4_impression',
+        'image5_impression',
+        'image6_impression',
+
+
+        'image1_avantage',
+        'image2_avantage',
         
         
     ];

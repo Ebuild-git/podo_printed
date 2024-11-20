@@ -135,6 +135,12 @@ $produit = DB::table('produits')->get();
 
                                 </li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('impressions') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Impressions 3D') }}</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('processus') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Processus') }}</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('avantages') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Avantages') }}</a></li>
+
+
+
                                 <li class="nav-item"><a class="nav-link" href="{{ route('evenements') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Actualités') }}</a></li>
 
                                 <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>

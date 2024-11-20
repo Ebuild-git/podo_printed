@@ -76,6 +76,46 @@ return new class extends Migration
             $table->text('titre_sta5')->nullable();
             $table->integer('number_sta5')->nullable();
             $table->string('icon_sta5')->nullable();
+
+
+
+            $table->text('titre1_processus')->nullable();
+            $table->text('titre2_processus')->nullable();
+
+            $table->text('desc1_processus')->nullable();
+            $table->text('desc2_processus')->nullable();
+
+            $table->string('image_processus')->nullable();
+            $table->string('image1_processus')->nullable();
+            $table->string('image2_processus')->nullable();
+
+          
+
+            $table->text('titre1_impression')->nullable();
+            $table->text('titre2_impression')->nullable();
+            $table->text('titre3_impression')->nullable();
+            $table->text('titre4_impression')->nullable();
+            $table->text('titre5_impression')->nullable();
+            $table->text('titre6_impression')->nullable();
+
+            $table->text('desc1_impression')->nullable();
+            $table->text('desc2_impression')->nullable();
+            $table->text('desc3_impression')->nullable();
+            $table->text('desc4_impression')->nullable();
+            $table->text('desc5_impression')->nullable();
+            $table->text('desc6_impression')->nullable();
+
+            $table->string('image_impression')->nullable();
+            $table->string('image1_impression')->nullable();
+            $table->string('image2_impression')->nullable();
+            $table->string('image3_impression')->nullable();
+            $table->string('image4_impression')->nullable();
+            $table->string('image5_impression')->nullable();
+            $table->string('image6_impression')->nullable();
+
+
+            $table->string('image1_avantage')->nullable();
+            $table->string('image2_avantage')->nullable();
             
 
 

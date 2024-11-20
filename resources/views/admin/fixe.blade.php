@@ -215,22 +215,22 @@
                         <span class="menu-header-text" data-i18n="Actualités & Sponsors">Actualités</span>
                     </li>
                     <!-- Cards -->
-                {{--     <li class="menu-item">
+                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-id"></i>
-                            <div data-i18n="Gestion des Sponsors">Gestion des sponsors</div>
+                            <div data-i18n="Les avantages">Les avantages</div>
                             <div class="badge bg-primary rounded-pill ms-auto"></div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('sponsors') }}" class="menu-link">
-                                    <div data-i18n="Liste des sponsors">Liste des sponsors</div>
+                                <a href="{{ route('avantage') }}" class="menu-link">
+                                    <div data-i18n="Liste des avantages">Liste des avantages</div>
                                 </a>
                             </li>
 
 
                         </ul>
-                    </li> --}}
+                    </li> 
                     <!-- User interface -->
                     <li class="menu-item">
                         <a href="javascript:void(0)" class="menu-link menu-toggle">

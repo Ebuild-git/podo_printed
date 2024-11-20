@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Front\ContactRequest;
-use App\Models\{config, Contact};
+use App\Models\{config, Contact,Avantage};
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -16,6 +16,28 @@ class ContactController extends Controller
         $configs= config::firstOrFail();
         return view('front.contact.contact', compact('configs'));
     }
+
+    public function impressions()
+    {
+        $configs= config::firstOrFail();
+        return view('front.impressions.index', compact('configs'));
+    }
+
+
+    public function avantages()
+    {
+        $configs= config::firstOrFail();
+        $avantages = Avantage::all();
+        return view('front.avantages.index', compact('configs','avantages'));
+    }
+    public function processus()
+    {
+        $configs= config::firstOrFail();
+        $avantages = Avantage::all();
+        return view('front.processus.index', compact('configs', 'avantages'));
+    }
+
+
 
     public function conditions(){
         return view('front.contact.conditions');

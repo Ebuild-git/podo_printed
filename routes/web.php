@@ -52,6 +52,10 @@ Route::post('/video/view/{id}', [VideoController::class, 'incrementViewCount'])-
 Route::get('contact', [ContactController::class, 'contact'])->name("contact");
 Route::get('about', [ContactController::class, 'about'])->name("about");
 Route::get('conditions', [ContactController::class, 'conditions'])->name("conditions");
+Route::get('impressions', [ContactController::class, 'impressions'])->name("impressions");
+Route::get('avantages', [ContactController::class, 'avantages'])->name("avantages");
+Route::get('processus', [ContactController::class, 'processus'])->name("processus");
+
 
 Route::get('inscription', [ContactController::class, 'inscription'])->name("inscription");
 Route::get('/fetch-group', [ContactController::class, 'fetchGroup'])->name('fetch.group');
@@ -159,7 +163,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/category/{id}/update', [AdminController::class, 'categories_update'])
         ->name('categories.update')
         ->middleware('permission:category_edit');
-
+//////////////////////Les avantages////////////////////////////
+    Route::get('/admin/avantage', [AdminController::class, 'avantage'])
+        ->name('avantage');
+       
+    Route::get('/admin/avantage/add', [AdminController::class, 'avantage_add'])
+        ->name('avantage.add');
+        Route::get('/admin/avantage/{id}', [AdminController::class, 'avantage_update'])
+        ->name('avantage.update');
 
     ///////////////Les services/////////////////////////////////
 
