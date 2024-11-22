@@ -16,11 +16,11 @@
                 <div class="col-lg-12">
                     <!-- Page Header Box Start -->
                     <div class="page-header-box">
-                        <h1 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h1>
+                        <h1 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h1>
                         <nav class="wow fadeInUp">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</li>
+                                <li class="breadcrumb-item"><a href="{{ route('home') }}"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</li>
                             </ol>
                         </nav>
                     </div>
@@ -59,7 +59,7 @@
                                     </div>
                                     @endforeach
                                     @else
-                                    <div class="carousel-item active">
+                                    <div class="carousel-item active"  style="color: #119093">
                                         <p class="text-center">Aucune image disponible</p>
                                     </div>
                                     @endif
@@ -108,9 +108,9 @@
                     <div class="about-content">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos) }}</h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.25s"> {{ \App\Helpers\TranslationHelper::TranslateText($config->des_apropos) }}
+                            <h3 class="wow fadeInUp" style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos) }}</h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.25s"  style="color: #119093"> {{ \App\Helpers\TranslationHelper::TranslateText($config->des_apropos) }}
 
 
                             </p>
@@ -122,10 +122,10 @@
                             <!-- About List Item Start -->
                             <div class="solution-plan-body wow fadeInUp"  data-wow-delay="0.5s">
                                 <ul>
-                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3></li>
-                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3></li>
-                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos3 ?? ' ') }}</h3></li>
-                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos4 ?? ' ') }}</h3></li>
+                                    <li>  <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3></li>
+                                    <li>  <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3></li>
+                                    <li>  <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos3 ?? ' ') }}</h3></li>
+                                    <li>  <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos4 ?? ' ') }}</h3></li>
                              
                                 </ul>
                             </div>

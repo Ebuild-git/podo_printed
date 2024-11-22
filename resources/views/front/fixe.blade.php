@@ -44,6 +44,8 @@ $produit = DB::table('produits')->get();
     
  --}}
 
+ <link rel="stylesheet" href="/public/botman/css/all.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/Script.js"></script>
@@ -87,19 +89,20 @@ $produit = DB::table('produits')->get();
     <div class="topbar" style=" background-color: #9fc52e;">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-9 col-md-12" >
+                <div class="col-lg-10 col-md-12" >
                     <!-- Topbar Contact Information Start -->
                     <div class="topbar-contact-info">
                         <ul>
                             <li><a href="#"><img src="images/icon-phone.svg" alt=""> {{ $config->telephone ?? '' }}</a></li>
                             <li><a href="#"><img src="images/icon-mail.svg" alt=""> {{ $config->email ?? ' ' }}</a></li>
-                            <li class="hide-mobile"><a href="#"><img src="images/icon-location.svg" alt=""> {{ $config->addresse ?? ' ' }}</a></li>
+                            <li class="hide-mobile " style="background-color: #119093"><a href="#"><img src="images/icon-location.svg" alt=""> {{ $config->addresse ?? ' ' }}</a></li>
                         </ul>
                     </div>
                     <!-- Topbar Contact Information End -->
                 </div>
+                
 
-                <div class="col-lg-3 col-md-0">
+                <div class="col-lg-2 col-md-0">
                     <!-- Topbar Social Links Start -->
                     <div class="topbar-social-links">
                         <ul>
@@ -245,19 +248,6 @@ $produit = DB::table('produits')->get();
 
 
 
-                        {{-- <form action="{{ route('locale.change') }}" method="POST">
-                        @csrf
-                        <select name="locale" onchange="this.form.submit()">
-                            <option value="fr" {{ app()->getLocale() == 'fr' ? ' selected' : '' }}>Français</option>
-                            <option value="en" {{ app()->getLocale() == 'en' ? ' selected' : '' }}>
-
-                                Anglais</option>
-                            <option value="ar" {{ app()->getLocale() == 'ar' ? ' selected' : '' }}>Arabe</option>
-
-                        </select>
-                        </form> --}}
-
-                        <!-- Let’s Start Button End -->
                     </div>
                     <!-- Main Menu End -->
                     <div class="navbar-toggle"></div>

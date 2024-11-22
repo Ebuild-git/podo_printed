@@ -17,11 +17,11 @@
 				<div class="col-lg-12">
 					<!-- Page Header Box Start -->
 					<div class="page-header-box">
-						<h1 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</h1>
+						<h1 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</h1>
 						<nav class="wow fadeInUp">
 							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="{{ route('home') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
-								<li class="breadcrumb-item active" aria-current="page">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</li>
+								<li class="breadcrumb-item"><a href="{{ route('home') }}"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+								<li class="breadcrumb-item active" aria-current="page"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</li>
 							</ol>
 						</nav>
 					</div>
@@ -40,7 +40,7 @@
 				
 					<div class="contact-info-item wow fadeInUp">
 					
-						 <div class="icon-box">
+						 <div class="icon-box"  style="color: #119093">
 							<img src="images/icon-green-location.svg" alt="">
 						 </div>
 					
@@ -153,8 +153,8 @@
 					<div class="contact-form">
 						<!-- Section Title Start -->
 						<div class="section-title">
-                            <h3 class="wow fadeInUp">  {{ \App\Helpers\TranslationHelper::TranslateText('Contactez') }}</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">  {{ \App\Helpers\TranslationHelper::TranslateText('Contactez-nous') }}</h2>
+                            <h3 class="wow fadeInUp"  style="color: #119093">  {{ \App\Helpers\TranslationHelper::TranslateText('Contactez') }}</h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093">  {{ \App\Helpers\TranslationHelper::TranslateText('Contactez-nous') }}</h2>
                         </div>
                         <!-- Section Title End -->
 

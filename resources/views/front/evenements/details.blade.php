@@ -28,11 +28,11 @@
 				<div class="col-lg-12">
 					<!-- Page Header Box Start -->
 					<div class="page-header-box">
-						<h1 class="text-anime-style-3" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText($event->titre) }}</h1>
+						<h1 class="text-anime-style-3" data-cursor="-opaque"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($event->titre) }}</h1>
 						<div class="post-single-meta wow fadeInUp">
 							<ol class="breadcrumb">
                                
-								<li class="breadcrumb-item"><i class="fa-regular fa-clock"></i> 
+								<li class="breadcrumb-item"  style="color: #119093"><i class="fa-regular fa-clock"></i> 
                                     <span class="month-day">{{ $event->created_at->format('d') }}</span>
                                     <span
                                         class="month-name">{{ $event->created_at->translatedFormat('F') }}</span>

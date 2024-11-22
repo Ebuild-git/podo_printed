@@ -36,8 +36,8 @@
             <div class="row section-row">
                 <!-- Section Title Start -->
                 <div class="section-title">
-                    <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('Pourquoi nous') }}</h3>
-                    <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Excellence en') }}</span>  {{ \App\Helpers\TranslationHelper::TranslateText('Soins et réadaptation') }}</h2>
+                    <h3 class="wow fadeInUp"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Pourquoi nous') }}</h3>
+                    <h2 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Excellence en') }}</span>  {{ \App\Helpers\TranslationHelper::TranslateText('Soins et réadaptation') }}</h2>
                     </div>
                 <!-- Section Title End -->
             </div>

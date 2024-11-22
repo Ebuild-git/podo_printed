@@ -127,7 +127,7 @@
         }
 
         // Exécuter la fonction toutes les 5 secondes
-        setInterval(fetchNotificationsAndUpdateComponent, 6000);
+        setInterval(fetchNotificationsAndUpdateComponent, 5000);
     </script>
 
 <style>
@@ -601,7 +601,7 @@
                                                             class="rounded-circle" /> --}}
                                                      {{--    <img src="{{ asset('public/avatars/' . Auth::user()->avatar) }}"
                                                             alt class="rounded-circle"> --}}
-  <img src="{{ Storage::url(Auth::user()->avatar) }}"  alt class="rounded-circle" style="width: 50px; height: 50px;">
+  <img src="{{ Storage::url($config->icon) }}" alt class="rounded-circle" style="width: 50px; height: 50px;">
 
 
 

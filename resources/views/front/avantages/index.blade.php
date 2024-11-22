@@ -14,11 +14,11 @@
 				<div class="col-lg-12">
 					<!-- Page Header Box Start -->
 					<div class="page-header-box">
-						<h1 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText('Les avantages') }}</h1>
+						<h1 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Les avantages') }}</h1>
 						<nav class="wow fadeInUp">
 							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="{{ route('home') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
-								<li class="breadcrumb-item active" aria-current="page">{{ \App\Helpers\TranslationHelper::TranslateText('Avantages') }}</li>
+								<li class="breadcrumb-item"><a href="{{ route('home') }}"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+								<li class="breadcrumb-item active" aria-current="page"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Avantages') }}</li>
 							</ol>
 						</nav>
 					</div>
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="row">
                 @if ($avantages->isEmpty())
-                <p> {{ \App\Helpers\TranslationHelper::TranslateText('Aucun avantage disponible') }}.</p>
+                <p  style="color: #119093"> {{ \App\Helpers\TranslationHelper::TranslateText('Aucun avantage disponible') }}.</p>
                 @else
                 @foreach ($avantages as $avantage)
                 <div class="col-lg-3 col-md-6">
@@ -55,10 +55,10 @@
                         <!-- Service Body End -->
 
                         <!-- Service Footer Start -->
-                        <div class="service-footer">
+                        {{-- <div class="service-footer">
                             <a href="#" class="service-btn"><img src="images/arrow-white.svg" alt="">
                             </a>
-                        </div>
+                        </div> --}}
                         <!-- Service Footer End -->
                     </div>
                     <!-- Service Item End -->

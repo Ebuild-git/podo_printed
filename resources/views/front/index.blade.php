@@ -140,8 +140,8 @@
                     <div class="about-content">
                       
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos) }}</h2>
+                            <h3 class="wow fadeInUp" style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h3>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque" style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos) }}</h2>
                             <p class="wow fadeInUp" data-wow-delay="0.25s"> {{ \App\Helpers\TranslationHelper::TranslateText($config->des_apropos) }}
 
                               </div>
@@ -150,8 +150,8 @@
 
                             <div class="solution-plan-body wow fadeInUp"  data-wow-delay="0.5s">
                                 <ul>
-                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3></li>
-                                    <li>  <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3></li>
+                                    <li>  <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3></li>
+                                    <li>  <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3></li>
                                            
                                 </ul>
                             </div>
@@ -226,7 +226,7 @@
 
                         <!-- Company Counter Content Start -->
                         <div class="company-counter-content">
-                            <h3><span class="counter">{{ $config->number_sta1 ?? ' ' }}</span></h3>
+                            {{-- <h3><span class="counter">{{ $config->number_sta1 ?? ' ' }}</span></h3> --}}
                             <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta1 ?? '') }}</p>
                         </div>
                         <!-- Company Counter Content End -->
@@ -245,7 +245,7 @@
 
                         <!-- Company Counter Content Start -->
                         <div class="company-counter-content">
-                            <h3><span class="counter">{{ $config->number_sta2 ?? ' ' }}</span></h3>
+                           {{--  <h3><span class="counter">{{ $config->number_sta2 ?? ' ' }}</span></h3> --}}
                             <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta2 ?? '') }}</p>
                         </div>
                         <!-- Company Counter Content End -->
@@ -264,7 +264,7 @@
 
                         <!-- Company Counter Content Start -->
                         <div class="company-counter-content">
-                            <h3><span class="counter">{{ $config->number_sta3 ?? ' ' }}</span></h3>
+                           {{--  <h3><span class="counter">{{ $config->number_sta3 ?? ' ' }}</span></h3> --}}
                             <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta3 ?? '') }}</p>
                         </div>
                         <!-- Company Counter Content End -->
@@ -283,7 +283,7 @@
 
                         <!-- Company Counter Content Start -->
                         <div class="company-counter-content">
-                            <h3><span class="counter">{{ $config->number_sta4 ?? ' '  }}</span></h3>
+                            {{-- <h3><span class="counter">{{ $config->number_sta4 ?? ' '  }}</span></h3> --}}
                             <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta4 ?? '') }}</p>
                         </div>
                         <!-- Company Counter Content End -->
@@ -363,8 +363,8 @@
                 <div class="col-lg-9">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('Equipe des docteurs') }}</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Notre équipe de docteurs dévoués') }}</span> & {{ \App\Helpers\TranslationHelper::TranslateText('expérimentés') }}</h2>
+                        <h3 class="wow fadeInUp"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Equipe des docteurs') }}</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Notre équipe de docteurs dévoués') }}</span> & {{ \App\Helpers\TranslationHelper::TranslateText('expérimentés') }}</h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -443,8 +443,8 @@
                 <div class="col-lg-12">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp">{{ \App\Helpers\TranslationHelper::TranslateText('Les retours de nos clients') }}</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Ce que') }}</span> {{ \App\Helpers\TranslationHelper::TranslateText('nos clients pensent') }}</h2>
+                        <h3 class="wow fadeInUp"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Les retours de nos clients') }}</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Ce que') }}</span> {{ \App\Helpers\TranslationHelper::TranslateText('nos clients pensent') }}</h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -458,7 +458,7 @@
                             <div class="swiper-wrapper" data-cursor-text="Drag">
                                
                                 @if ($testimonials->isEmpty())
-                                <p> {{ \App\Helpers\TranslationHelper::TranslateText('Aucun témoignage disponible') }}.</p>
+                                <p  style="color: #119093"> {{ \App\Helpers\TranslationHelper::TranslateText('Aucun témoignage disponible') }}.</p>
                                 @else
                                 @foreach ($testimonials as $testimonial)
                                 <div class="swiper-slide">
@@ -488,7 +488,7 @@
                                                 </figure>
                                             </div>
                                             <div class="author-content">
-                                                <h3> <span class="designation">{{ $testimonial->name }}</span></h3>
+                                                <h3> <span class="designation"  style="color: #119093">{{ $testimonial->name }}</span></h3>
                                               
                                             </div>
                                         </div>

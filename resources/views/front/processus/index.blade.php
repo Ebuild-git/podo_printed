@@ -14,11 +14,11 @@
 				<div class="col-lg-12">
 					<!-- Page Header Box Start -->
 					<div class="page-header-box">
-						<h1 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText('Nos processus') }}</h1>
+						<h1 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Nos processus') }}</h1>
 						<nav class="wow fadeInUp">
 							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="{{ route('home') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
-								<li class="breadcrumb-item active" aria-current="page">{{ \App\Helpers\TranslationHelper::TranslateText('Processus') }}</li>
+								<li class="breadcrumb-item"><a href="{{ route('home') }}"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+								<li class="breadcrumb-item active" aria-current="page"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Processus') }}</li>
 							</ol>
 						</nav>
 					</div>
@@ -136,27 +136,27 @@
                     <div class="service-sidebar">
                      
                         <div class="service-catagery-list wow fadeInUp">
-                            <h3>{{ \App\Helpers\TranslationHelper::TranslateText('Avantages') }}</h3>
+                            <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Avantages') }}</h3>
                             <ul>
                                 @foreach ($avantages as $avantage )
-                                <li><a href="#">{{ \App\Helpers\TranslationHelper::TranslateText($avantage->titre ?? '') }}</a></li>
+                                <li  style="color: #119093"><a href="#"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($avantage->titre ?? '') }}</a></li>
                                 @endforeach
                                 
                             </ul>
                         </div>
                         
                         <div class="opening-hour-section wow fadeInUp" data-wow-delay="0.25s">
-                            <h3>{{ \App\Helpers\TranslationHelper::TranslateText('Horaires de travail') }}</h3>
+                            <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Horaires de travail') }}</h3>
                             <ul>
-                                <li style="font-size: 12px;">
+                                <li style="font-size: 12px;color: #119093">
                                     {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 10:00 à 18:00') }}
                                 </li>
-                                <li style="font-size: 12px;">
+                                <li style="font-size: 12px; color:#119093">
     
                                     {{ \App\Helpers\TranslationHelper::TranslateText('Samedi : 10:00 à 15:00') }}
     
                                 </li>
-                                <li>
+                                <li  style="color: #119093">
                                     <p>{{ \App\Helpers\TranslationHelper::TranslateText('Dimanche : Fermé') }}</p>
                                 </li>
                             </ul>
