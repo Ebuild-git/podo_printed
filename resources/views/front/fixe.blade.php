@@ -95,7 +95,7 @@ $produit = DB::table('produits')->get();
                         <ul>
                             <li><a href="#"><img src="images/icon-phone.svg" alt=""> {{ $config->telephone ?? '' }}</a></li>
                             <li><a href="#"><img src="images/icon-mail.svg" alt=""> {{ $config->email ?? ' ' }}</a></li>
-                            <li class="hide-mobile " style="background-color: #119093"><a href="#"><img src="images/icon-location.svg" alt=""> {{ $config->addresse ?? ' ' }}</a></li>
+                            <li class="hide-mobile "><a href="#"><img src="images/icon-location.svg" alt=""> {{ $config->addresse ?? ' ' }}</a></li>
                         </ul>
                     </div>
                     <!-- Topbar Contact Information End -->
