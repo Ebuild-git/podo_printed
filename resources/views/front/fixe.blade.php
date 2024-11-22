@@ -80,7 +80,7 @@ $produit = DB::table('produits')->get();
     <div class="preloader">
         <div class="loading-container">
             <div class="loading"></div>
-            <div id="loading-icon"><img src="{{ Storage::url($config->logo) }}" width="100" height="100" alt=""></div>
+            <div id="loading-icon"><img src="{{ Storage::url($config->logo) }}"  alt=""></div>
         </div>
     </div>
     <!-- Preloader End -->
