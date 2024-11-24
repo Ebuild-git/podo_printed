@@ -271,6 +271,20 @@ $produit = DB::table('produits')->get();
     </main>
    
 
+    <script>
+        var botmanWidget = {
+            aboutText: 'ssdsd',
+            introMessage: "✋ Hi! I'm form PODO PRINTED",
+            chatServer: '/botman', 
+            csrfToken: "{{ csrf_token() }}",
+         
+            
+        };
+    </script> 
+  
+     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> 
+
+      
     <!-- Footer Start -->
     <footer class="main-footer">
         <div class="container">

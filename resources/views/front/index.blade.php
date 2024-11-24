@@ -794,7 +794,7 @@
     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
        --}}
 
-
+{{-- 
        <script>
         var botmanWidget = {
             aboutText: 'ssdsd',
@@ -802,18 +802,13 @@
             chatServer: '/botman', 
             csrfToken: "{{ csrf_token() }}",
          
-            //conversationControl: '#conversationControl',
-        //    botAvatar: 'https://botman-demo.s3.amazonaws.com/botman-logo.png',
-         //    chatServer: 'https://php-uk-conference-2018.marcelpociot.de/botman',
-           // frameEndpoint: 'chat.html'
-
             
         };
     </script> 
   
      <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> 
 
-      
+       --}}
 </main>
 
 
