@@ -275,7 +275,7 @@ $produit = DB::table('produits')->get();
         var botmanWidget = {
             aboutText: 'ssdsd',
             introMessage: "✋ Hi! I'm form PODO PRINTED",
-            chatServer: '/botman', 
+            chatServer: '/botman/chat', 
             csrfToken: "{{ csrf_token() }}",
          
             
