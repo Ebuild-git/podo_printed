@@ -1,11 +1,12 @@
 @include('sweetalert::alert')
 @php
-$config = DB::table('configs')->first();
-$service = DB::table('services')->get();
-$produit = DB::table('produits')->get();
+    $config = DB::table('configs')->first();
+    $service = DB::table('services')->get();
+    $produit = DB::table('produits')->get();
 @endphp
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
     <!-- Meta -->
     <meta charset="utf-8">
@@ -22,7 +23,9 @@ $produit = DB::table('produits')->get();
     <!-- Google Fonts Css-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
     <!-- Bootstrap Css -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- SlickNav Css -->
@@ -40,11 +43,14 @@ $produit = DB::table('produits')->get();
     <!-- Main Custom Css -->
     <link href="/css/custom.css" rel="stylesheet" media="screen">
 
-{{--     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('botman/css/all.css') }}">
+
+
+    {{--     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     
  --}}
 
- <link rel="stylesheet" href="/public/botman/css/all.css">
+    <link rel="stylesheet" href="/public/botman/css/all.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -53,6 +59,7 @@ $produit = DB::table('produits')->get();
     @yield('header')
 
 </head>
+
 <body>
 
     <style>
@@ -65,22 +72,19 @@ $produit = DB::table('produits')->get();
             text-decoration: none;
         }
 
-       
-                .btn-default {
-                    background-color: #9fc52e;
-                  
-                   
-                }
-       
-            
 
+        .btn-default {
+            background-color: #9fc52e;
+
+
+        }
     </style>
 
     <!-- Preloader Start -->
     <div class="preloader">
         <div class="loading-container">
             <div class="loading"></div>
-            <div id="loading-icon"><img src="{{ Storage::url($config->logo) }}"  alt=""></div>
+            <div id="loading-icon"><img src="{{ Storage::url($config->logo) }}" alt=""></div>
         </div>
     </div>
     <!-- Preloader End -->
@@ -89,25 +93,30 @@ $produit = DB::table('produits')->get();
     <div class="topbar" style=" background-color: #9fc52e;">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-10 col-md-12" >
+                <div class="col-lg-10 col-md-12">
                     <!-- Topbar Contact Information Start -->
                     <div class="topbar-contact-info">
                         <ul>
-                            <li><a href="#"><img src="images/icon-phone.svg" alt=""> {{ $config->telephone ?? '' }}</a></li>
-                            <li><a href="#"><img src="images/icon-mail.svg" alt=""> {{ $config->email ?? ' ' }}</a></li>
-                            <li class="hide-mobile "><a href="#"><img src="images/icon-location.svg" alt=""> {{ $config->addresse ?? ' ' }}</a></li>
+                            <li><a href="#"><img src="images/icon-phone.svg" alt="">
+                                    {{ $config->telephone ?? '' }}</a></li>
+                            <li><a href="#"><img src="images/icon-mail.svg" alt="">
+                                    {{ $config->email ?? ' ' }}</a></li>
+                            <li class="hide-mobile "><a href="#"><img src="images/icon-location.svg"
+                                        alt=""> {{ $config->addresse ?? ' ' }}</a></li>
                         </ul>
                     </div>
                     <!-- Topbar Contact Information End -->
                 </div>
-                
+
 
                 <div class="col-lg-2 col-md-0">
                     <!-- Topbar Social Links Start -->
                     <div class="topbar-social-links">
                         <ul>
-                            <li><a href="{{ $config->facebook  ?? ' '}}"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="{{ $config->instagram ?? ' ' }}"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="{{ $config->facebook ?? ' ' }}"><i class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                            <li><a href="{{ $config->instagram ?? ' ' }}"><i class="fa-brands fa-instagram"></i></a>
+                            </li>
 
                             <li><a href="{{ $config->linkedin ?? ' ' }}"><i class="fa-brands fa-linkedin"></i></a></li>
                         </ul>
@@ -134,19 +143,32 @@ $produit = DB::table('produits')->get();
                     <div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">{{ __('accueil') }}</a>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="{{ route('home') }}">{{ __('accueil') }}</a>
 
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('impressions') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Impressions 3D') }}</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('processus') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Processus') }}</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('avantages') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Avantages') }}</a></li>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="{{ route('about') }}">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="{{ route('impressions') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Impressions 3D') }}</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="{{ route('processus') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Processus') }}</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="{{ route('avantages') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Avantages') }}</a>
+                                </li>
 
 
 
-                                <li class="nav-item"><a class="nav-link" href="{{ route('evenements') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Actualités') }}</a></li>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="{{ route('evenements') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Actualités') }}</a>
+                                </li>
 
-                                <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="{{ route('contact') }}">{{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a>
+                                </li>
 
 
 
@@ -221,7 +243,6 @@ $produit = DB::table('produits')->get();
                             .dropdown:hover .dropdown-content {
                                 display: block;
                             }
-
                         </style>
 
 
@@ -234,11 +255,13 @@ $produit = DB::table('produits')->get();
                                     </button>
                                     <div class="dropdown-content">
                                         <button type="submit" name="locale" value="fr" class="dropdown-item">
-                                            <img src="https://img.icons8.com/color/20/france-circular.png" alt="fr">
+                                            <img src="https://img.icons8.com/color/20/france-circular.png"
+                                                alt="fr">
                                             Français
                                         </button>
                                         <button type="submit" name="locale" value="en" class="dropdown-item">
-                                            <img src="https://img.icons8.com/color/20/great-britain-circular.png" alt="en">
+                                            <img src="https://img.icons8.com/color/20/great-britain-circular.png"
+                                                alt="en">
                                             English
                                         </button>
                                     </div>
@@ -266,32 +289,31 @@ $produit = DB::table('produits')->get();
         @yield('body')
 
 
-        
+
 
     </main>
-   
+
 
     <script>
         var botmanWidget = {
-            aboutText: 'ssdsd',
-            introMessage: "✋ Hi! I'm form PODO PRINTED",
         
+            introMessage: "✋ Hi! I'm form PODO PRINTED",
+
             frameEnpoint: '/botman/chat/',
-            botmanUrl: '/botman',
-      title: 'Podo Printed',
-            botman: null,
-            botmanSocket: null,
+
+            title: 'Podo Printed',
+         
             botmanSocketConnected: false,
 
             csrfToken: "{{ csrf_token() }}",
-         
-            
-        };
-    </script> 
-  
-     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> 
 
-      
+
+        };
+    </script>
+
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+
+
     <!-- Footer Start -->
     <footer class="main-footer">
         <div class="container">
@@ -301,7 +323,8 @@ $produit = DB::table('produits')->get();
                     <div class="about-footer">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo">
-                            <img src="{{ Storage::url($config->logo ?? ' ') }}" width="100" height="100" alt="">
+                            <img src="{{ Storage::url($config->logo ?? ' ') }}" width="100" height="100"
+                                alt="">
                         </div>
                         <!-- Footer Logo End -->
 
@@ -312,10 +335,13 @@ $produit = DB::table('produits')->get();
                         <!-- Footer Social Links Start -->
                         <div class="footer-social-links">
                             <ul>
-                                <li><a href="{{ $config->facebook ?? ' ' }}"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="{{ $config->instagram ?? ' ' }}"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="{{ $config->facebook ?? ' ' }}"><i
+                                            class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="{{ $config->instagram ?? ' ' }}"><i
+                                            class="fa-brands fa-instagram"></i></a></li>
 
-                                <li><a href="{{ $config->linkedin ?? ' ' }}"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="{{ $config->linkedin ?? ' ' }}"><i
+                                            class="fa-brands fa-linkedin-in"></i></a></li>
                             </ul>
                         </div>
                         <!-- Footer Social Links End -->
@@ -350,10 +376,14 @@ $produit = DB::table('produits')->get();
                     <div class="about-service-list">
                         <h3>{{ \App\Helpers\TranslationHelper::TranslateText(' Pages') }}</h3>
                         <ul>
-                            <li><a href="{{ route('home') }}"> {{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
-                            <li><a href="{{ route('about') }}"> {{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
-                            <li><a href="{{ route('contact') }}"> {{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
-                            <li><a href="{{ route('evenements') }}"> {{ \App\Helpers\TranslationHelper::TranslateText('Actualités') }}</a></li>
+                            <li><a href="{{ route('home') }}">
+                                    {{ \App\Helpers\TranslationHelper::TranslateText('Accueil') }}</a></li>
+                            <li><a href="{{ route('about') }}">
+                                    {{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</a></li>
+                            <li><a href="{{ route('contact') }}">
+                                    {{ \App\Helpers\TranslationHelper::TranslateText('Contact') }}</a></li>
+                            <li><a href="{{ route('evenements') }}">
+                                    {{ \App\Helpers\TranslationHelper::TranslateText('Actualités') }}</a></li>
 
                         </ul>
                     </div>
@@ -415,7 +445,8 @@ $produit = DB::table('produits')->get();
                     <div class="col-lg-4 col-md-6">
                         <!-- Footer Copyright Start -->
                         <div class="footer-copyright-text">
-                            <p>Copyright {{ date('Y') }} PODO PRINTED | Design By <a href="https://www.e-build.tn" style="color: #c71f17;">
+                            <p>Copyright {{ date('Y') }} PODO PRINTED | Design By <a href="https://www.e-build.tn"
+                                    style="color: #c71f17;">
                                     <b> E-build </b>
                                 </a>.</p>
                         </div>
@@ -433,10 +464,10 @@ $produit = DB::table('produits')->get();
                         </ul>
                     </div> --}}
 
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Footer Copyright Section End -->
+            <!-- Footer Copyright Section End -->
         </div>
     </footer>
     <!-- Footer End -->
@@ -472,6 +503,7 @@ $produit = DB::table('produits')->get();
     <script src="/js/wow.js"></script>
     <!-- Main Custom js file -->
     <script src="/js/function.js"></script>
-  {{--   <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> --}}
+    {{--   <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> --}}
 </body>
+
 </html>
