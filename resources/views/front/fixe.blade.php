@@ -16,7 +16,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="Awaiken">
     <!-- Page Title -->
-    <title>PODO-PRINTED</title>
+    <title>PODOPRINTED</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ Storage::url($config->icon ?? ' ') }}">
