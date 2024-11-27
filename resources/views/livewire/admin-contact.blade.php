@@ -621,7 +621,7 @@
     </div>
 
 </div>
-<div class="row">
+{{-- <div class="row">
 
     <div class="col-md-3">
         <label class="form-label" for="multicol-first-name">Numbre</label>
@@ -656,7 +656,7 @@
     </div>
 
 </div>
-
+ --}}
 <div class="row">
     <div class="col-md-3">
         <label class="form-label" for="multicol-username">Icon</label>

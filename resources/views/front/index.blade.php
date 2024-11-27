@@ -227,7 +227,7 @@
                         <!-- Company Counter Content Start -->
                         <div class="company-counter-content">
                             {{-- <h3><span class="counter">{{ $config->number_sta1 ?? ' ' }}</span></h3> --}}
-                            <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta1 ?? '') }}</p>
+                            <p style="color: white;">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta1 ?? '') }}</p>
                         </div>
                         <!-- Company Counter Content End -->
                     </div>
@@ -245,8 +245,8 @@
 
                         <!-- Company Counter Content Start -->
                         <div class="company-counter-content">
-                           {{--  <h3><span class="counter">{{ $config->number_sta2 ?? ' ' }}</span></h3> --}}
-                            <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta2 ?? '') }}</p>
+                        
+                            <p style="color: white;">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta2 ?? '') }}</p>
                         </div>
                         <!-- Company Counter Content End -->
                     </div>
@@ -265,7 +265,7 @@
                         <!-- Company Counter Content Start -->
                         <div class="company-counter-content">
                            {{--  <h3><span class="counter">{{ $config->number_sta3 ?? ' ' }}</span></h3> --}}
-                            <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta3 ?? '') }}</p>
+                            <p style="color: white;" >{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta3 ?? '') }}</p>
                         </div>
                         <!-- Company Counter Content End -->
                     </div>
@@ -284,7 +284,7 @@
                         <!-- Company Counter Content Start -->
                         <div class="company-counter-content">
                             {{-- <h3><span class="counter">{{ $config->number_sta4 ?? ' '  }}</span></h3> --}}
-                            <p>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta4 ?? '') }}</p>
+                            <p style="color: white;">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta4 ?? '') }}</p>
                         </div>
                         <!-- Company Counter Content End -->
                     </div>
