@@ -187,7 +187,7 @@
                         <!-- Why Choose Image Start -->
                         <div class="why-choose-image">
                             <img src="{{ Storage::url($config->image_impression ?? ' ') }}"  
-                            style="transform: rotate(350deg); width: 300px; height: 400px; object-fit: cover;" 
+                            style="transform: rotate(350deg); width: 300px; height: 400px;hover:-translate-y-50 object-fit: cover;" 
                             alt="">
                         </div>
                         <!-- Why Choose Image End -->
