@@ -112,6 +112,7 @@ return new class extends Migration
             $table->string('image4_impression')->nullable();
             $table->string('image5_impression')->nullable();
             $table->string('image6_impression')->nullable();
+            $table->string('image_entete_impression')->nullable();
 
 
             $table->string('image1_avantage')->nullable();

@@ -106,6 +106,7 @@ class config extends Model
         'image4_impression',
         'image5_impression',
         'image6_impression',
+        'image_entete_impression',
 
 
         'image1_avantage',

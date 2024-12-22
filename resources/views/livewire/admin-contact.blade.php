@@ -293,6 +293,16 @@
         @enderror
     </div>
 
+
+    <div class="col-md-6">
+        <label class="form-label" for="multicol-username">Image entete(300*300)</label>
+
+        <input type="file" wire:model="image_entete_impression" accept="image/*" placeholder="votre image entete" class="form-control">
+        @error('image_entete_impression')
+        <span class="text-danger small"> {{ $message }} </span>
+        @enderror
+    </div>
+
    
 
     <div class="row">

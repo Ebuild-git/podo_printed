@@ -48,6 +48,7 @@ class AdminContact extends Component
       $image4_impression ,$image42_impression,
       $image5_impression, $image52_impression,
       $image6_impression, $image62_impression,
+      $image_entete_impression, $image_entete2_impression,
 
 
       $image1_avantage ,$image12_avantage,
@@ -75,12 +76,14 @@ class AdminContact extends Component
 
 
         $this->image_impression =$config->image_impression2;
+        $this->image_entete_impression =$config->image2_entete_impression;
         $this->titre1_impression =$config->titre1_impression;
         $this->titre2_impression =$config->titre2_impression;
         $this->titre3_impression =$config->titre3_impression;
         $this->titre4_impression =$config->titre4_impression;
         $this->titre5_impression =$config->titre5_impression;
         $this->titre6_impression =$config->titre6_impression;
+        
 
         $this->desc1_impression =$config->desc1_impression;
         $this->desc2_impression =$config->desc2_impression;
@@ -344,6 +347,14 @@ class AdminContact extends Component
                 Storage::disk('public')->delete($this->image22_impression);
             }
             $config->image2_impression= $this->image2_impression->store('image', 'public');
+        }
+
+        if ($this->image_entete_impression) {
+            if ($this->image_entete2_impression) {
+                Storage::disk('public')->delete($this->image_entete2_impression);
+            }
+            $config->image_entete_impression= $this->image_entete_impression->store('image', 'public');
+
         }
 
         if($this->image3_impression){

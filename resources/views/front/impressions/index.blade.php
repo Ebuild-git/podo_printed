@@ -11,7 +11,12 @@
 	<div class="page-header">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <!-- Page Header Box Start -->
+                     
+                    </div>
+                    <!-- Page Header Box Start -->
+				<div class="col-lg-4">
 					<!-- Page Header Box Start -->
 					<div class="page-header-box">
 						<h1 class="text-anime-style-2" data-cursor="-opaque">{{ \App\Helpers\TranslationHelper::TranslateText('Impressions 3D') }}</h1>
@@ -22,8 +27,15 @@
 							</ol>
 						</nav>
 					</div>
+                   
 					<!-- Page Header Box End -->
 				</div>
+
+                <div class="col-lg-4">
+                    <img src="{{ Storage::url($config->image_entete_impression) }}"  alt="Impressions 3D" width="200" height="300" class="img-fluid">
+                </div>
+
+                
 			</div>
 		</div>
 	</div>
