@@ -20,11 +20,11 @@ class CoachController extends Controller
 public function all_doctors() {
 
         $doctors = Coach::select('*')
-               
+
         ->paginate(15);
         return view('front.doctors.index', compact('doctors') );
 }
-     
+
     public function coachs()
     {
         $coachs = Coach::all();
@@ -36,8 +36,8 @@ public function all_doctors() {
        if (!$coach) {
             $message = "Coach non disponible !";
             abort(404, $message);
-        } 
-        
+        }
+
        // dd($coach);
         return view('admin.coachs.update', compact('coach'));
     }
@@ -53,27 +53,28 @@ public function all_doctors() {
             'phone' => 'required|string|max:20',
             'adresse' => 'required|string|max:255',
             'poste' => 'nullable|string|max:2000',
+            'description' => 'nullable|string'
         ]);
-    
+
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-    
+
         // Trouver le coach
         $coach = Coach::findOrFail($id);
-    
+
         // Traitement de la photo
         if ($request->hasFile('photo')) {
             // Supprimer l'ancienne photo si nécessaire
             if ($coach->photo) {
                 Storage::delete($coach->photo);
             }
-    
+
             // Stocker la nouvelle photo
             $path = $request->file('photo')->store('coachs', 'public');
             $coach->photo = $path;
         }
-    
+
         // Mise à jour des autres champs
         $coach->nom = $request->input('nom');
         $coach->prenom = $request->input('prenom');
@@ -81,17 +82,18 @@ public function all_doctors() {
         $coach->phone = $request->input('phone');
         $coach->adresse = $request->input('adresse');
         $coach->poste = $request->input('poste');
+        $coach->description = $request->input('description');
 
         $coach->save();
-    
+
         return redirect()->back()->with('success', 'Docteur mis à jour avec succès !');
     }
-    
 
 
 
-  
-   
+
+
+
     public function destroy($id)
     {
        $coach = Coach::find($id);
@@ -99,13 +101,13 @@ public function all_doctors() {
        if ($coach) {
            // Supprimer l'photo si elle existe
            if($coach->photo ?? ''){
-               Storage::disk('public')->delete($coach->photo ??' '); 
+               Storage::disk('public')->delete($coach->photo ??' ');
            }
 
            // Supprimer le coach
            $coach->delete();
 
-        
+
        return redirect()->back()
        ->with('success', 'Docteur supprimé avec succès, ainsi que son photo.');
        } else {

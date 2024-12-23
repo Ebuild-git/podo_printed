@@ -33,7 +33,7 @@
                                     @method('PUT')
                                     <div class="row">
                                         <div class="col-sm-6">
-                                        
+
                                            <img src="{{ Storage::url($coach->photo) }}"  width="400 " height="400 "
                                            class="rounded shadow" alt="">
                                         </div>
@@ -77,7 +77,7 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            
+
                                             <div class="mb-3">
                                                 <label for="adresse">Adresse</label>
                                                 <input type="text" id="adresse" value="{{ $coach->adresse }}" name="adresse" class="form-control">
@@ -93,19 +93,17 @@
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                            {{-- 
+
                                             <div class="mb-3">
                                                 <label for="description">Description</label>
                                                 <textarea rows="5" id="description" value={{ $coach->description }} name="description" class="form-control">{{ old('description', $coach->description) }}</textarea>
                                                 @error('description')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
-                                            </div> --}}
-                            
-                            
-                            
+                                            </div>
+
                                             @include('components.alert')
-                            
+
                                             <div class="modal-footer">
                                                 <button class="btn bg-primary2 btn-sm px-5" type="submit" wire:loading.attr="disabled">
                                                     {{-- <span wire:loading>
@@ -116,10 +114,10 @@
                                                 &nbsp; &nbsp;
                                               {{--   <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fermer</button> --}}
                                                 <a class="btn btn-sm btn-secondary"  href="{{ route('doctors') }}">Renourner à la liste</a>
-                                                
+
                                             </div>
-                                           
-                            
+
+
                                         </div>
                                     </div>
                                 </form>

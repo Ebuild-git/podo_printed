@@ -24,9 +24,6 @@
             @foreach ($banners as $key => $banner)
             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                 <img class="d-block w-100" src="{{ Storage::url($banner->image) }}" alt="Image">
-
-
-
             </div>
             @endforeach
         </div>
@@ -364,7 +361,7 @@
                     <!-- Section Title Start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Equipe des docteurs') }}</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Notre équipe de docteurs dévoués') }}</span> & {{ \App\Helpers\TranslationHelper::TranslateText('expérimentés') }}</h2>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Mots de notre directeur') }}</span></h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -389,7 +386,6 @@
                             <figure class="image-anime">
                                 <img src="{{ Storage::url($coach->photo ?? ' ') }}" alt="">
                             </figure>
-
                             <style>
                                 .image-anime img {
                                     height: 300px;
@@ -402,9 +398,6 @@
                                 }
 
                             </style>
-
-
-
                             <!-- Team Social Icon Start -->
                             <div class="team-social-icon">
                                 <ul>
@@ -416,19 +409,19 @@
                             </div>
                             <!-- Team Social Icon End -->
                         </div>
-
-
                         <div class="team-content">
                             <h3>{{ $coach->prenom  ??  ''}} {{ $coach->nom ?? '' }}</h3>
                             <p>{{ \App\Helpers\TranslationHelper::TranslateText($coach->poste ?? ' ') }}</p>
                         </div>
-
                     </div>
-
+                </div>
+                <div class="col-lg-9 col-md-12">
+                    <div class="coach-description">
+                        <p>{{ $coach->description ?? 'Aucune mot disponible.' }}</p>
+                    </div>
                 </div>
                 @endif
                 @endforeach
-
             </div>
         </div>
     </div>

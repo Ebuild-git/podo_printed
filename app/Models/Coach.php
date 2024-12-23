@@ -11,15 +11,16 @@ class Coach extends Model
 
     protected $fillable = [
         'nom',
-          'prenom',
-           'date_naissance',
-           'adresse',
-           'phone',
-            'email',
-            'photo',
-            'group',
-            'poste'
+        'prenom',
+        'date_naissance',
+        'adresse',
+        'phone',
+        'email',
+        'photo',
+        'group',
+        'poste',
+        'description'
 
     ];
-   
+
 }

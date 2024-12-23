@@ -11,23 +11,8 @@
 
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
-
-
-
-
-
-
-
-
-
-
             <div class="content-wrapper">
-
-
                 <div class="container-xxl flex-grow-1 container-p-y">
-
-
-
                     <div class="container-xxl flex-grow-1 container-p-y">
                         <div class="row mb-3">
                             <div class="col-12">
@@ -60,12 +45,6 @@
                                         </h5>
                                     </div>
                                     <div>
-                                        {{-- <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
-                                          data-bs-target="#import">
-                                          <i class="ri-user-add-line"></i>
-                                          Importer fiche exel
-                                      </button> --}}
-
 
                                         <button type="button" class="btn btn-sm bg-primary2" data-bs-toggle="modal"
                                             data-bs-target="#add">
@@ -83,13 +62,10 @@
                                             <tr>
                                                 <th>Photo</th>
                                                 <th>Nom</th>
-                                                 <th>prenom</th>
-                                               
-
-
+                                                <th>prenom</th>
                                                 <th>Email</th>
                                                 <th>Téléphone</th>
-                                              
+                                                <th>Mots</th>
                                                 <th scope="col" width="15%">Actions</th>
 
                                                 <th style="text-align: right;">
@@ -105,33 +81,25 @@
 
                                         <tbody>
                                             @if($coachs)
-                                         
+
                                             @foreach  ($coachs as $coach)
-                                          
-                                                
-                                         
+
                                                 <tr>
                                                     <td>
                                                         <img src="{{ Storage::url($coach->photo ?? ' ') }}" width="40 "
                                                             height="40 " class="rounded shadow" alt="">
                                                     </td>
                                                     <td>
-                                                        {{ $coach->nom }} 
+                                                        {{ $coach->nom }}
                                                     </td>
                                                     <td>
-                                                         {{ $coach->prenom }} 
+                                                         {{ $coach->prenom }}
                                                     </td>
-
-                                                  
-                                                     
-
-
 
                                                     <td>{{ $coach->email }} </td>
                                                     <td>{{ $coach->phone }}</td>
-                                                    
+                                                    <td>{{ $coach->description }}</td>
                                                     <td>
-
                                                         <div class="row">
                                                             <div class="col">
                                                                 <form action="{{ route('doctors.destroy',$coach->id) }}" method="POST">
@@ -146,7 +114,7 @@
                                                                             d="M6.45455 19L2 22.5V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V18C22 18.5523 21.5523 19 21 19H6.45455ZM13.4142 11L15.8891 8.52513L14.4749 7.11091L12 9.58579L9.52513 7.11091L8.11091 8.52513L10.5858 11L8.11091 13.4749L9.52513 14.8891L12 12.4142L14.4749 14.8891L15.8891 13.4749L13.4142 11Z">
                                                                         </path>
                                                                     </svg></button>
-                                                
+
                                                                     </form>
                                                             </div>
                                                                 <div class="col">
@@ -158,20 +126,11 @@
                                                                             d="M16.7574 2.99677L9.29145 10.4627L9.29886 14.7098L13.537 14.7024L21 7.23941V19.9968C21 20.5491 20.5523 20.9968 20 20.9968H4C3.44772 20.9968 3 20.5491 3 19.9968V3.99677C3 3.44448 3.44772 2.99677 4 2.99677H16.7574ZM20.4853 2.09727L21.8995 3.51149L12.7071 12.7039L11.2954 12.7063L11.2929 11.2897L20.4853 2.09727Z">
                                                                         </path>
                                                                     </svg>
-                                                                  </a> 
+                                                                  </a>
                                                                 </div>
-
                                                         </div>
-
-
                                                     </td>
-
-
-
-
                                                 </tr>
-                                              
-                                                
                                             @endforeach
 
                                             @else
@@ -179,32 +138,15 @@
                                                 <td colspan="9" class="text-center">Aucun docteur trouvé</td>
                                             </tr>
                                             @endif
-                                           
-
-                                          
 
                                         </tbody>
-
-
                                     </table>
                                 </div>
-
-
                             </div>
                         </div>
-
-
                     </div>
-
-
-
                 </div>
-
             </div>
-
-
-
-
         </div>
     </div>
     <!-- Center modal content -->
@@ -215,7 +157,7 @@
                 <style>
                      .modal-title {
         background-color: #9fc52e;
-    
+
     }
                 </style>
                 <div class="modal-header">
@@ -224,7 +166,7 @@
                     </h6>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                 @livewire('coachs.AddCoach', ['coach' => null]) 
+                 @livewire('coachs.AddCoach', ['coach' => null])
 
 
 

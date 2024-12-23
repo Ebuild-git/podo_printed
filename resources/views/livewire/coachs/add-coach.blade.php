@@ -81,40 +81,19 @@
                             <span class="text-danger small"> {{ $message }} </span>
                         @enderror
                     </div>
-                </div> 
-             {{--    <div class="col-sm-12">
+                </div>
+                <div class="col-sm-6">
                     <div class="mb-3">
-                        <label for="name" class="form-label">
-                            Mot de passe *
+                        <label for="description" class="form-label">
+                            Description
                         </label>
-                        <div class="form-control d-flex justify-content-between">
-                            <div>
-                                <i class="ri-lock-line"></i> [ Par défaut : ]
-                                <b> <span id="spanContent"> 123456789 </span> </b>
-                                <input type="hidden" id="inputContent" value="123456789">
-                            </div>
-                            <div>
-                                <button class="btn btn-sm" type="button" id="btnCopy">
-                                    <i class="ri-file-copy-2-line"></i> copier
-                                </button>
-                            </div>
-                        </div>
+                        <textarea class="form-control" id="description" wire:model="description" rows="5"></textarea>
+                        @error('description')
+                            <span class="text-danger small"> {{ $message }} </span>
+                        @enderror
                     </div>
-                </div> --}}
+                </div>
 
-           {{--      <div class="col-sm-6">
-                    <div class="mb-3">
-                        <div class="form-group">
-                        
-                            <select wire:model="group" class="form-control" required>
-                                <option value="">Sellectionnez le groupe</option>
-                                @foreach ($groups as $group)
-                                    <option value="{{ $group['designation'] }}">{{ $group['designation'] }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
         <div class="modal-footer">

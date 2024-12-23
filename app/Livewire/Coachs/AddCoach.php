@@ -20,10 +20,10 @@ class AddCoach extends Component
 
     use WithFileUploads;
 
-    public $nom, $prenom, $email, $phone, $photo , $photo2,$adresse, $coach,$poste;
+    public $nom, $prenom, $email, $phone, $photo , $photo2,$adresse, $coach,$poste, $description;
     public $updateMode = false;
     public $group; // To bind the selected group value
-  // public $groups = []; 
+  // public $groups = [];
 
   public $groupId;  // This will store the group's ID
     public $groupDesignation; // This will store the group's designation
@@ -31,29 +31,30 @@ class AddCoach extends Component
     public $group_interne = false;
     public $group_externe = false;
     public $selected_group;
-    
+
     protected $listeners = ['coachAdded' => 'render'];
 
     public function mount($coach){
         if($coach){
             $this->coach = $coach;
-          
+
             $this->nom = $coach->nom;
             $this->prenom = $coach->prenom;
             $this ->group = $coach->group;
-            
+
             $this->email = $coach->email;
             $this->phone = $coach->phone;
             $this->photo = $coach->photo;
             $this->photo2 = $coach->photo;
             $this->adresse = $coach->adresse;
             $this->poste = $coach->poste;
-          
-          
+            $this->description = $coach->description;
+
+
         }
     }
 
-    
+
 private function resetInputFields(){
     $this->nom = '';
     $this->prenom = '';
@@ -64,7 +65,7 @@ private function resetInputFields(){
     $this->adresse = '';
     $this->group = '';
     $this->poste = '';
-
+    $this->description = '';
 
 }
 
@@ -75,7 +76,7 @@ public function updatedGroupId($value)
     $this->groupDesignation = $selectedGroup['designation'] ?? '';
 }
 
-    
+
 public function create()
 {
     $this->validate([
@@ -85,14 +86,17 @@ public function create()
         'phone' =>'nullable|numeric',
         'adresse' =>'nullable|string',
         'photo' =>'nullable|image|max:4048',
+        'description' =>'nullable|string',
+        // 'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+       // 'photo2' =>'nullable|image|mimes:jpeg,png,jpg|max:2048',
        // 'image' => 'required|image|max:4048',
         //'photo2' =>'required|image|mimes:jpeg,png,jpg|max:2048',
      //   'group' => 'required|exists:groups,id',
-       
-     
+
+
     ]);
     ;[
-        
+
       ];
       $coach = new coach();
       $coach->nom = $this->nom;
@@ -104,27 +108,15 @@ public function create()
       $coach->adresse = $this->adresse;
       $coach->poste = $this->poste;
       $coach->photo = $this->photo->store('coachs', 'public');
-
-      
-      
-     
-      
-     /// ($coach);
+      $coach->description = $this->description;
       $coach->save();
-    /*   $this->resetInputFields(); */
 
-    session()->flash('success', 'coach ajouté avec succès');
-    // reset input
-   // $this->reset();
-  
+        session()->flash('success', 'coach ajouté avec succès');
 
-     //dispach event
-     $this->dispatch('coachAdded');
+        $this->dispatch('coachAdded');
 
-     return redirect()->route('doctors');
+        return redirect()->route('doctors');
 
-   //  $this->emit('coachAdded');
-  
 }
 
 
@@ -141,6 +133,7 @@ public function edit($id)
         $this->image = $coach->image;
         $this->group = $coach->group;
         $this->poste = $coach->poste;
+        $this->description = $coach->description;
     }
 
     public function update()
@@ -152,6 +145,8 @@ public function edit($id)
             'telephone' => 'nullable|numeric',
             'adresse' => 'nullable|string|max:260',
             'newImage' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+            'description' =>'nullable|string',
+
         ]);
 
         $coach = coach::findOrFail($this->coachId);
@@ -159,6 +154,7 @@ public function edit($id)
         $coach->description = $data['description'];
         $coach->email = $data['email'];
         $coach->phone = $data['phone'];
+        $coach->description = $data['description'];
         $coach->adresse = $data['adresse'];
         $coach->group = $data['group'];
         $coach->poste = $data['poste'];
@@ -174,12 +170,10 @@ public function edit($id)
         $this->reset();
 
         $this->emit('coachUpdated');
-       // return view('livewire.coachs.list'); 
-         
-   // return view('admin.coachs.list');
+
     }
 
-public function delete($id)
+    public function delete($id)
     {
         $coach = coach::find($id);
 
@@ -191,19 +185,15 @@ public function delete($id)
         }
     }
 
-
-
     public function render()
     {
-       
-
         $response = http ::get('https://api.sportdivers.tn/api/groups/public/');
 
         if ($response->successful()) {
-           
+
             $groups = $response->json();
          } else {
-           
+
             $data = ['error' => 'Erreur lors de la récupération des groupes'];
          }
 
