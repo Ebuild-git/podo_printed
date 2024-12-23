@@ -538,15 +538,22 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="video-item">
-                        <iframe width="100%" height="315" src="assets/audio/1000035056.mp4" title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <video width="100%" height="315" controls preload="none" poster="assets/audio/cover.jpeg">
+                            <source src="assets/audio/1000035056.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="video-item">
-                        <iframe width="100%" height="315" src="assets/audio/insoles5.mp4" title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <video width="100%" height="315" controls preload="none" poster="assets/audio/cover.jpeg">
+                            <source src="assets/audio/insoles5.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
