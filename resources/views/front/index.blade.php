@@ -11,10 +11,10 @@
     @endphp
 
 <head>
-    
-    
+
+
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-  
+
 </head>
 
 
@@ -26,7 +26,7 @@
                 <img class="d-block w-100" src="{{ Storage::url($banner->image) }}" alt="Image">
 
 
-              
+
             </div>
             @endforeach
         </div>
@@ -133,30 +133,30 @@
 
                         </div>
                     </div>
-                
+
                 </div>
                 <div class="col-lg-6">
-                    
+
                     <div class="about-content">
-                      
+
                         <div class="section-title">
                             <h3 class="wow fadeInUp" style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque" style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos) }}</h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.25s"> {{ \App\Helpers\TranslationHelper::TranslateText($config->des_apropos) }}
+                            {{-- <h2 class="text-anime-style-2" data-cursor="-opaque" style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos) }}</h2> --}}
+                            {{-- <p class="wow fadeInUp" data-wow-delay="0.25s"> {{ \App\Helpers\TranslationHelper::TranslateText($config->des_apropos) }} --}}
 
                               </div>
-                      
+
                         <div class="about-us-body">
 
                             <div class="solution-plan-body wow fadeInUp"  data-wow-delay="0.5s">
                                 <ul>
                                     <li>  <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3></li>
                                     <li>  <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3></li>
-                                           
+
                                 </ul>
                             </div>
-                        
-                        {{-- 
+
+                        {{--
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image_apropos1 ?? ' ') }}" alt="">
@@ -165,7 +165,7 @@
                                     <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos1 ?? ' ') }}</h3>
                                 </div>
                             </div>
-                          
+
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.5s">
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image_apropos2 ?? ' ') }}" alt="">
@@ -174,7 +174,7 @@
                                     <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3>
                                 </div>
                             </div>
-                       
+
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image_apropos3 ?? ' ') }}" alt="">
@@ -183,9 +183,9 @@
                                     <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos3 ?? ' ') }}</h3>
                                 </div>
                             </div>
-                          
 
-                         
+
+
                             <div class="about-list-item wow fadeInUp" data-wow-delay="0.75s">
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image_apropos4 ?? ' ') }}" alt="">
@@ -194,16 +194,16 @@
                                     <h3>{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos4 ?? '') }}</h3>
                                 </div>
                             </div> --}}
-                            
+
                         </div>
-                        
+
 
                         <div class="about-us-footer">
-                        
+
                         </div>
-              
+
                     </div>
-                  
+
                 </div>
             </div>
         </div>
@@ -245,7 +245,7 @@
 
                         <!-- Company Counter Content Start -->
                         <div class="company-counter-content">
-                        
+
                             <p style="color: white;">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_sta2 ?? '') }}</p>
                         </div>
                         <!-- Company Counter Content End -->
@@ -338,9 +338,9 @@
                                     width: 200%;
                                     object-fit: cover;
                                 }
-        
-                             
-        
+
+
+
                             </style>
 
                         </div>
@@ -403,7 +403,7 @@
 
                             </style>
 
-                           
+
 
                             <!-- Team Social Icon Start -->
                             <div class="team-social-icon">
@@ -416,15 +416,15 @@
                             </div>
                             <!-- Team Social Icon End -->
                         </div>
-                       
+
 
                         <div class="team-content">
                             <h3>{{ $coach->prenom  ??  ''}} {{ $coach->nom ?? '' }}</h3>
                             <p>{{ \App\Helpers\TranslationHelper::TranslateText($coach->poste ?? ' ') }}</p>
                         </div>
-                       
+
                     </div>
-                   
+
                 </div>
                 @endif
                 @endforeach
@@ -452,11 +452,11 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                   
+
                          <div class="testimonial-slider">
                         <div class="swiper">
                             <div class="swiper-wrapper" data-cursor-text="Drag">
-                               
+
                                 @if ($testimonials->isEmpty())
                                 <p  style="color: #119093"> {{ \App\Helpers\TranslationHelper::TranslateText('Aucun témoignage disponible') }}.</p>
                                 @else
@@ -489,14 +489,14 @@
                                             </div>
                                             <div class="author-content">
                                                 <h3> <span class="designation"  style="color: #119093">{{ $testimonial->name }}</span></h3>
-                                              
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 @endforeach
                                 @endif
-                              
+
 
                             </div>
                             <div class="swiper-pagination"></div>
@@ -518,7 +518,7 @@
                     <div id="successMessage" class="alert alert-success" style="display:none;"></div>
                     <div id="errorMessage" class="alert alert-danger" style="display:none;"></div>
 
-                   
+
                 </div>
             </div>
         </div>
@@ -632,19 +632,19 @@
     <script>
         $(document).ready(function() {
             $('#testimonialForm').on('submit', function(e) {
-                e.preventDefault(); 
+                e.preventDefault();
 
                 $.ajax({
                     url: $(this).attr('action')
                     , method: $(this).attr('method')
                     , data: $(this).serialize()
                     , success: function(response) {
-                        
-                        $('#testimonialModal').modal('hide'); 
+
+                        $('#testimonialModal').modal('hide');
 
                         $('#successMessage').text(
                             'Témoignage créé avec succès! Il sera valide après confirmation des administrateurs'
-                            
+
 
                         ).show();
 
@@ -653,9 +653,9 @@
                         }, 5000);
                     }
                     , error: function(response) {
-                     
+
                         $('#errorMessage').text('Une erreur est survenue.')
-                            .show(); 
+                            .show();
                     }
                 });
             });
@@ -761,8 +761,8 @@
     <!-- Scrolling Ticker Section End -->
 
 
-   
-   
+
+
 
    {{--  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
     <script>
@@ -771,9 +771,9 @@
 	        introMessage: "✋ Hi! I'm form PODO PRINTED"
 	    };
     </script>
-  
+
     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>  --}}
-    
+
 {{--     <div id="chatbox">
         <div id="messages"></div>
         <input type="text" id="message" placeholder="Type your message here...">
@@ -786,32 +786,32 @@
 	        aboutText: 'ssdsd',
 	        introMessage: "✋ Hi! I'm form PODO PRINTED"
 
-          /*   chatServer: '/botman', 
+          /*   chatServer: '/botman',
             csrfToken: "{{ csrf_token() }}"  */
 	    };
     </script>
-  
+
     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
        --}}
 
-{{-- 
+{{--
        <script>
         var botmanWidget = {
             aboutText: 'ssdsd',
             introMessage: "✋ Hi! I'm form PODO PRINTED",
-            chatServer: '/botman', 
+            chatServer: '/botman',
             csrfToken: "{{ csrf_token() }}",
-         
-            
+
+
         };
-    </script> 
-  
-     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> 
+    </script>
+
+     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 
        --}}
 
 
-       
+
 </main>
 
 

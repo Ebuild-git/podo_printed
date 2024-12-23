@@ -10,7 +10,7 @@
 02. General css
 03. Header css
 04. Hero css
-05. Home Contact Us css 
+05. Home Contact Us css
 06. About Us css
 07. Gallery Carousel css
 08. Our Services css
@@ -39,7 +39,7 @@
 
 /************************************/
 /*** 	 01. Global Variables	  ***/
-/************************************/	
+/************************************/
 
 :root{
 	--primary-color			: #153C33;
@@ -229,7 +229,7 @@ body{
 	background-color: var(--accent-color);
 }
 
-.btn-default::after{ 
+.btn-default::after{
 	content: '';
     display: block;
     position: absolute;
@@ -421,7 +421,7 @@ body{
 	background-color: var(--primary-color);
 }
 
-.topbar-contact-info{	
+.topbar-contact-info{
 	text-align: left;
 }
 
@@ -853,7 +853,7 @@ header.main-header .header-sticky.active{
 }
 
 .hero.bg-image .hero-content{
-	position: relative;	
+	position: relative;
 	text-align: center;
 	width: 100%;
 	max-width: 680px;
@@ -1775,7 +1775,7 @@ header.main-header .header-sticky.active{
     left: 0;
     right: 0;
     bottom: 0;
-	margin: 0 auto; 
+	margin: 0 auto;
 	transform: translateY(100%);
 	text-align: center;
 	z-index: 1;
@@ -1842,7 +1842,7 @@ header.main-header .header-sticky.active{
 
 .our-testimonial{
 	padding: 100px 0 50px;
-	background: var(--secondary-color) url('../images/testimonial-bg.svg') no-repeat center center; 
+	background: var(--secondary-color) url('../images/testimonial-bg.svg') no-repeat center center;
 	background-size: auto;
 }
 
@@ -2074,7 +2074,7 @@ header.main-header .header-sticky.active{
 
 .main-footer{
 	padding: 100px 0 0;
-	background: var(--primary-color);
+	background: #009196;
 }
 
 .footer-logo{
@@ -2118,7 +2118,7 @@ header.main-header .header-sticky.active{
 .about-working-hour h3,
 .about-service-list h3,
 .footer-contact h3{
-	color: var(--accent-color);
+	color: white;
 	font-size: 22px;
 	font-weight: 600;
 	text-transform: capitalize;
@@ -2934,7 +2934,7 @@ header.main-header .header-sticky.active{
     transition: all 0.3s ease-in-out;
 }
 
-.post-pagination ul li.active a, 
+.post-pagination ul li.active a,
 .post-pagination ul li a:hover{
     background: var(--primary-color);
 	color: var(--white-color);
@@ -3417,7 +3417,7 @@ header.main-header .header-sticky.active{
 	margin-bottom: 15px;
 }
 
-.skillbar .skill-data .skill-title{	
+.skillbar .skill-data .skill-title{
 	font-size: 20px;
 	font-weight: 500;
 	color: var(--primary-color);
@@ -3827,7 +3827,7 @@ header.main-header .header-sticky.active{
 	.navbar{
         padding: 20px 0px;
     }
-	
+
 	.main-menu ul li{
 		margin-left: 0;
 	}
@@ -4019,7 +4019,7 @@ header.main-header .header-sticky.active{
 	.solution-your-plan{
 		padding: 50px 0;
 	}
-	
+
 	.solution-plan-image{
 		justify-content: center;
 		margin-bottom: 30px;
@@ -4119,7 +4119,7 @@ header.main-header .header-sticky.active{
 	.our-scrolling-ticker{
 		padding: 20px 0;
 	}
-	
+
 	.scrolling-content span{
 		font-size: 20px;
 	}
@@ -4131,7 +4131,7 @@ header.main-header .header-sticky.active{
 	.footer-logo{
 		margin-bottom: 20px;
 	}
-	
+
 	.about-footer-content{
 		margin-bottom: 20px;
 	}
@@ -4164,7 +4164,7 @@ header.main-header .header-sticky.active{
 	.page-header{
 		padding: 50px 0;
 	}
-	
+
 	.page-header-box h1{
 		font-size: 44px;
 		margin-bottom: 15px;
@@ -4398,7 +4398,7 @@ header.main-header .header-sticky.active{
 	.page-team{
 		padding: 50px 0 20px;
 	}
-	
+
 	.page-team .team-member-item{
 		height: calc(100% - 30px);
 		margin-bottom: 30px;
@@ -4504,7 +4504,7 @@ header.main-header .header-sticky.active{
 		margin-right: 0;
 		margin-bottom: 20px;
 	}
-	
+
 	.faq-catagery-list{
 		padding: 20px;
 	}
@@ -4526,7 +4526,7 @@ header.main-header .header-sticky.active{
 	.faqs-section-title{
 		margin-bottom: 20px;
 	}
-	
+
 	.faqs-section-title h2{
 		font-size: 28px;
 	}
@@ -4589,7 +4589,7 @@ header.main-header .header-sticky.active{
 	.error-page{
 		padding: 50px 0;
 	}
-	
+
 	.error-page-image{
 		margin-bottom: 20px;
 	}
@@ -4597,10 +4597,10 @@ header.main-header .header-sticky.active{
 	.error-page-content-heading{
 		margin-bottom: 20px;
 	}
-	
+
 	.error-page-content-heading h2{
 		font-size: 44px;
-	}	
+	}
 }
 
 @media only screen and (max-width: 767px){
@@ -4686,7 +4686,7 @@ header.main-header .header-sticky.active{
 		height: calc(100% - 30px);
 		margin-bottom: 30px;
 	}
-	
+
 	.hero-counter-box h3{
 		font-size: 24px;
 	}
@@ -4718,7 +4718,7 @@ header.main-header .header-sticky.active{
 	.hero-appointment-form-title h2{
         font-size: 28px;
     }
-	
+
 	.home-contact-us{
 		padding: 30px 0 0px;
 	}
@@ -4851,7 +4851,7 @@ header.main-header .header-sticky.active{
 	.team-social-icon ul{
 		padding: 12px 24px;
 	}
-	
+
 	.team-social-icon ul li a i{
 		font-size: 20px;
 	}
@@ -4880,7 +4880,7 @@ header.main-header .header-sticky.active{
 	.post-item-body h2{
 		font-size: 18px;
 	}
-	
+
 	.scrolling-content span{
 		font-size: 18px;
 	}
@@ -4919,7 +4919,7 @@ header.main-header .header-sticky.active{
 	.footer-links ul{
 		text-align: center;
 	}
-	
+
 	.page-header-box h1{
 		font-size: 30px;
 	}
@@ -4948,7 +4948,7 @@ header.main-header .header-sticky.active{
 		width: 80px;
 		height: 80px;
 	}
-	
+
 	.therapy-process .col-lg-3:nth-child(odd) .therapy-process-item .icon-box:before{
 		display: none;
 	}
@@ -4995,7 +4995,7 @@ header.main-header .header-sticky.active{
 		background-size: 35px;
 		padding: 55px 20px 20px 20px;
 	}
-	
+
 	.post-entry h2{
 		font-size: 24px;
 	}
@@ -5083,7 +5083,7 @@ header.main-header .header-sticky.active{
 	.page-faqs .faqs-section{
 		margin-bottom: 20px;
 	}
-	
+
 	.faqs-section-title h2{
 		font-size: 24px;
 	}

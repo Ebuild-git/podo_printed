@@ -47,7 +47,7 @@
 
 
     {{--     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    
+
  --}}
 
     <link rel="stylesheet" href="/public/botman/css/all.css">
@@ -135,7 +135,7 @@
                 <div class="container">
                     <!-- Logo Start -->
                     <a class="navbar-brand" href="{{ route('home') }}">
-                        <img src="{{ Storage::url($config->logo) }}" height="50" width="50" alt="Logo">
+                        <img src="{{ Storage::url($config->logo) }}" height="90" width="100" alt="Logo">
                     </a>
                     <!-- Logo End -->
 
@@ -293,16 +293,16 @@
 
     </main>
 
-{{-- 
+{{--
     <script>
         var botmanWidget = {
-        
+
             introMessage: "✋ Hi! I'm form PODO PRINTED",
 
             frameEnpoint: '/botman/chat/',
 
             title: 'Podo Printed',
-         
+
             botmanSocketConnected: false,
 
             csrfToken: "{{ csrf_token() }}",
@@ -343,7 +343,7 @@
                     <div class="about-footer">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo">
-                            <img src="{{ Storage::url($config->logo ?? ' ') }}" width="100" height="100"
+                            <img src="{{ Storage::url($config->logo ?? ' ') }}" width="120" height="100"
                                 alt="">
                         </div>
                         <!-- Footer Logo End -->
