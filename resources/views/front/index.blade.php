@@ -2,21 +2,12 @@
 @section('titre', 'Accueil')
 @section('body')
 <main>
-
-
-
     @php
     $config = DB::table('configs')->first();
-
     @endphp
-
 <head>
-
-
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
 </head>
-
 
 <div class="container-fluid px-0 mb-1">
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -38,33 +29,7 @@
     </div>
 </div>
 
-<style>
-    .carousel-item img {
-    height: 500px;
-    object-fit: cover; /* Permet d'adapter l'image sans la déformer */
-}
-.carousel-item img {
-    height: 100vh; /* Prend toute la hauteur de la fenêtre */
-    object-fit: cover;
-}
-.carousel {
-    height: 70vh; /* 70% de la hauteur de la fenêtre */
-}
 
-@media (max-width: 768px) {
-    .carousel-item img {
-        height: 300px; /* Hauteur spécifique pour les petits écrans */
-    }
-}
-
-@media (min-width: 769px) {
-    .carousel-item img {
-        height: 500px;
-    }
-}
-
-
-</style>
 
 
     <!-- About Us Start -->
