@@ -360,7 +360,6 @@
                 <div class="col-lg-9">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Equipe des docteurs') }}</h3>
                         <h2 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Mots de notre directeur') }}</span></h2>
                     </div>
                     <!-- Section Title End -->
