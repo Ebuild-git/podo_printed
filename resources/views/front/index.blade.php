@@ -39,9 +39,6 @@
     }
 
     /* Set the carousel container to adjust height */
-    .carousel {
-        height: 70vh; /* 70% of viewport height */
-    }
 
     /* For large screens */
     @media (min-width: 769px) {
@@ -55,7 +52,7 @@
     @media (max-width: 768px) {
         .carousel-item img {
             height: auto; /* Automatically adjust height */
-            max-height: 300px; /* Set max height for smaller screens */
+            max-height: 134px; /* Set max height for smaller screens */
         }
     }
 </style>
