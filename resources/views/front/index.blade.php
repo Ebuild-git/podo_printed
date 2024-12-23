@@ -517,15 +517,38 @@
 
                     <div id="successMessage" class="alert alert-success" style="display:none;"></div>
                     <div id="errorMessage" class="alert alert-danger" style="display:none;"></div>
-
-
                 </div>
             </div>
         </div>
     </div>
 
 
+    <!-- New Section for Videos -->
+    <div class="our-videos parallaxie" style="background-color: #f5f5f5; padding: 50px 0;">
+        <div class="container">
+            <div class="row section-row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp" style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('Découvrez nos vidéos') }}</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque" style="color: #119093"><span>{{ \App\Helpers\TranslationHelper::TranslateText('Vidéos') }}</span></h2>
+                    </div>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="video-item">
+                        <iframe width="100%" height="315" src="assets/audio/1000035056.mp4" title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="video-item">
+                        <iframe width="100%" height="315" src="assets/audio/insoles5.mp4" title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
