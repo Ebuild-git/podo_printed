@@ -35,7 +35,6 @@
         width: 100%; /* Full width */
         height: auto; /* Maintain aspect ratio */
         object-fit: cover; /* Maintain cover behavior */
-        max-height: 70vh; /* Max height of 70% of viewport */
     }
 
     /* Set the carousel container to adjust height */
@@ -44,7 +43,6 @@
     @media (min-width: 769px) {
         .carousel-item img {
             height: auto; /* Automatically adjust height */
-            max-height: 500px; /* Set max height for large screens */
         }
     }
 
@@ -109,7 +107,6 @@
                             </div>
                             <style>
                                 .carousel-inner img {
-                                    height: 565px;
                                     object-fit: cover;
                                 }
 
