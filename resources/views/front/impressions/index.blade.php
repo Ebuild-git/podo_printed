@@ -13,7 +13,7 @@
 			<div class="row">
                     <div class="col-lg-4">
                         <!-- Page Header Box Start -->
-                     
+
                     </div>
                     <!-- Page Header Box Start -->
 				<div class="col-lg-4">
@@ -27,7 +27,7 @@
 							</ol>
 						</nav>
 					</div>
-                   
+
 					<!-- Page Header Box End -->
 				</div>
 
@@ -35,13 +35,13 @@
                     <img src="{{ Storage::url($config->image_entete_impression) }}"  alt="Impressions 3D" width="200" height="300" class="img-fluid">
                 </div>
 
-                
+
 			</div>
 		</div>
 	</div>
 	<!-- Page Header End -->
 
- 
+
     <!-- Why Choose Us Start -->
     <div class="why-choose-us">
         <div class="container">
@@ -65,9 +65,9 @@
                                 <!-- Icon Box Start -->
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image1_impression ?? ' ') }}" alt="">
-                                </div>  
+                                </div>
                                 <!-- Icon Box End -->
-    
+
                                 <!-- Why Choose Content Start -->
                                 <div class="why-choose-content">
                                     <h3>
@@ -80,15 +80,15 @@
                                 <!-- Why Choose Content End -->
                             </div>
                             <!-- Why Choose Item End -->
-    
+
                             <!-- Why Choose Item Start -->
                             <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
                                 <!-- Icon Box Start -->
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image2_impression ?? ' ') }}" alt="">
-                                </div>  
+                                </div>
                                 <!-- Icon Box End -->
-    
+
                                 <!-- Why Choose Content Start -->
                                 <div class="why-choose-content">
                                     <h3>
@@ -101,15 +101,15 @@
                                 <!-- Why Choose Content End -->
                             </div>
                             <!-- Why Choose Item End -->
-    
+
                             <!-- Why Choose Item Start -->
                             <div class="why-choose-item wow fadeInUp" data-wow-delay="0.5s">
                                 <!-- Icon Box Start -->
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image3_impression ?? ' ') }}" alt="">
-                                </div>  
+                                </div>
                                 <!-- Icon Box End -->
-    
+
                                 <!-- Why Choose Content Start -->
                                 <div class="why-choose-content">
                                     <h3>
@@ -125,7 +125,7 @@
                         </div>
                         <!-- Why Choose Box End -->
                     </div>
-    
+
                     <div class="col-lg-6">
                         <!-- Why Choose Box Start -->
                         <div class="why-choose-box-2">
@@ -134,9 +134,9 @@
                                 <!-- Icon Box Start -->
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image4_impression ?? ' ') }}" alt="">
-                                </div>  
+                                </div>
                                 <!-- Icon Box End -->
-    
+
                                 <!-- Why Choose Content Start -->
                                 <div class="why-choose-content">
                                     <h3>
@@ -149,15 +149,15 @@
                                 <!-- Why Choose Content End -->
                             </div>
                             <!-- Why Choose Item End -->
-    
+
                             <!-- Why Choose Item Start -->
                             <div class="why-choose-item wow fadeInUp" data-wow-delay="0.25s">
                                 <!-- Icon Box Start -->
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image5_impression ?? ' ') }}" alt="">
-                                </div>  
+                                </div>
                                 <!-- Icon Box End -->
-    
+
                                 <!-- Why Choose Content Start -->
                                 <div class="why-choose-content">
                                     <h3>
@@ -170,15 +170,15 @@
                                 <!-- Why Choose Content End -->
                             </div>
                             <!-- Why Choose Item End -->
-    
+
                             <!-- Why Choose Item Start -->
                             <div class="why-choose-item wow fadeInUp" data-wow-delay="0.5s">
                                 <!-- Icon Box Start -->
                                 <div class="icon-box">
                                     <img src="{{ Storage::url($config->image6_impression ?? ' ') }}" alt="">
-                                </div>  
+                                </div>
                                 <!-- Icon Box End -->
-    
+
                                 <!-- Why Choose Content Start -->
                                 <div class="why-choose-content">
                                     <h3>
@@ -197,10 +197,23 @@
 
                     <div class="col-lg-12">
                         <!-- Why Choose Image Start -->
-                        <div class="why-choose-image">
-                            <img src="{{ Storage::url($config->image_impression ?? ' ') }}"  
-                            style="transform: rotate(350deg); width: 300px; height: 400px;hover:-translate-y-50 object-fit: cover;" 
+                        {{-- <div class="why-choose-image">
+                            <img src="{{ Storage::url($config->image_impression ?? ' ') }}"
+                            style="transform: rotate(350deg); width: 300px; height: 400px;hover:-translate-y-50 object-fit: cover;"
                             alt="">
+                        </div> --}}
+                        <div class="why-choose-image" style="text-align: center; margin-top: 20px;">
+                            <img src="{{ Storage::url($config->image_impression ?? ' ') }}"
+                                 style="
+                                    transform: rotate(350deg);
+                                    width: 300px;
+                                    height: 400px;
+                                    object-fit: cover;
+                                    border-radius: 50%; /* Makes it an oval */
+                                    display: inline-block; /* Centers the image */
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow */
+                                 "
+                                 alt="">
                         </div>
                         <!-- Why Choose Image End -->
                     </div>
