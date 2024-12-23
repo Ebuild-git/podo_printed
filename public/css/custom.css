@@ -5127,28 +5127,4 @@ header.main-header .header-sticky.active{
     margin: 0; /* Remove extra margins */
 }
 
-   /* Ensure the carousel takes full width */
-   .carousel-item img {
-    width: 100%; /* Full width */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Keep the image covering the area */
-}
 
-/* Set the carousel height for different screen sizes */
-.carousel {
-    height: 70vh; /* 70% of viewport height */
-}
-
-/* Larger screens (above 768px) */
-@media (min-width: 769px) {
-    .carousel-item img {
-        height: 500px; /* Fixed height for larger screens */
-    }
-}
-
-/* Smaller screens (below 768px) */
-@media (max-width: 768px) {
-    .carousel-item img {
-        height: 300px; /* Fixed height for smaller screens */
-    }
-}

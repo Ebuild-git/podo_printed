@@ -29,6 +29,37 @@
     </div>
 </div>
 
+<style>
+    /* Ensure the carousel takes full width */
+    .carousel-item img {
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Maintain cover behavior */
+        max-height: 70vh; /* Max height of 70% of viewport */
+    }
+
+    /* Set the carousel container to adjust height */
+    .carousel {
+        height: 70vh; /* 70% of viewport height */
+    }
+
+    /* For large screens */
+    @media (min-width: 769px) {
+        .carousel-item img {
+            height: auto; /* Automatically adjust height */
+            max-height: 500px; /* Set max height for large screens */
+        }
+    }
+
+    /* For small screens */
+    @media (max-width: 768px) {
+        .carousel-item img {
+            height: auto; /* Automatically adjust height */
+            max-height: 300px; /* Set max height for smaller screens */
+        }
+    }
+</style>
+
 
 
 
