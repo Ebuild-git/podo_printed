@@ -57,7 +57,7 @@
             <!-- Why Choose Us Box Start -->
             <div class="why-choose-us-box">
                 <div class="row no-gutters align-items-center">
-                    <img src="{{ Storage::url($config->image_impression ?? ' ') }}">
+                    <img src="{{ Storage::url($config->image_impression ?? ' ') }}" style="border: 3px solid #009196; border-radius: 8px;">
                 </div>
             </div>
             <!-- Why Choose Us Box End -->
