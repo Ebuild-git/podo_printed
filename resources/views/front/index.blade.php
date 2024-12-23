@@ -109,7 +109,7 @@
                             </div>
                             <style>
                                 .carousel-inner img {
-                                    height: 500px;
+                                    height: 565px;
                                     object-fit: cover;
                                 }
 
