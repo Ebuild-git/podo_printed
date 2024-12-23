@@ -285,7 +285,7 @@
 
 <div class="row g-6">
     <div class="col-md-6">
-        <label class="form-label" for="multicol-username">Image principale(368*540)</label>
+        <label class="form-label" for="multicol-username">Image principale(1270*790)</label>
 
         <input type="file" wire:model="image_impression" accept="image/*" placeholder="votre image principale" class="form-control">
         @error('image_impression')
