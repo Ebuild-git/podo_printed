@@ -49,6 +49,7 @@
     <link rel="stylesheet" href="../../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
     <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
 
     <!-- Page CSS -->
 
@@ -61,7 +62,7 @@
 
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../../assets/js/config.js"></script>
-  
+
 
     @yield('header')
 
@@ -133,22 +134,22 @@
 <style>
     .bg-primary2 {
         background-color: #9fc52e;
-    
+
     }
-  
+
                      .modal-title {
         background-color: #9fc52e;
-    
+
     }
-            
-   
+
+
             .btn-default {
                 background-color: #9fc52e;
-              
-               
+
+
             }
-    
-        
+
+
 
 </style>
 
@@ -172,7 +173,7 @@
                         <style>
                             .small-text {
                                 font-size: 12px;
-                                
+
                             }
                         </style>
                     </a>
@@ -189,13 +190,13 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboards -->
                     <li class="menu-item">
-                        
+
 
 
 
                         <a href="{{ route('dashboard') }}" class="menu-link" >
                             <div class="row flex" >
-                                
+
                                 <div class="parent-icon icon-color-1 col-sm-1">
                                     {{-- <img src="/icons/diagramme-circulaire.svg" height="20" width="20"
                                         alt="icon" srcset=""> --}}
@@ -230,7 +231,7 @@
 
 
                         </ul>
-                    </li> 
+                    </li>
                     <!-- User interface -->
                     <li class="menu-item">
                         <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -273,10 +274,10 @@
                                     <div data-i18n="Liste des images">Liste des images</div>
                                 </a>
                             </li>
-                           
-                           
+
+
                         </ul>
-                    </li> 
+                    </li>
                     <!-- User interface -->
           {{--           <li class="menu-item">
                         <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -302,14 +303,14 @@
                             <div data-i18n="Liste témoignages">    Témoignages</div>
                         </a>
                     </li>
-                 
+
 
                     <!-- Forms & Tables -->
                     <li class="menu-header small">
                         <span class="menu-header-text" data-i18n="Utilisateurs">Utilisateurs</span>
                     </li>
 
-                  
+
                     <!-- Forms -->
 
 
@@ -318,7 +319,7 @@
                             <i class="menu-icon tf-icons ti ti-users"></i>
                             <div data-i18n="Gestion  des Docteurs">Gestion des Docteurs</div>
                         </a>
-                    
+
 
                         <ul class="menu-sub">
                             <li class="menu-item">
@@ -330,7 +331,7 @@
                         </ul>
 
 
-                      
+
                     </li>
 
                     <li class="menu-item">
@@ -338,9 +339,9 @@
                             <i class="menu-icon tf-icons ti ti-users"></i>
                             <div data-i18n="Contacts">Contacts</div>
                         </a>
-                      
 
-                       
+
+
                         <ul class="menu-sub">
                             <li class="menu-item">
                                 <a href="{{ route('admin_contact_form') }}" class="menu-link">
@@ -361,8 +362,8 @@
 
                     </li>
 
-                    
-              
+
+
 
                     <!-- Charts & Maps -->
                     <li class="menu-header small">
@@ -483,7 +484,7 @@
 
                             <!-- Notification -->
                            {{--  <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
-                        
+
                                 <a class="nav-link btn btn-text-secondary btn-icon rounded-pill dropdown-toggle hide-arrow"
                                 href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                                 aria-expanded="false">
@@ -617,7 +618,7 @@
                                     <li>
                                         <div class="dropdown-divider my-1 mx-n2"></div>
                                     </li>
-                                  
+
                                     <li>
                                         <a class="dropdown-item"href="{{ route('parametres') }}">
                                             <i class="ti ti-settings me-3 ti-md"></i><span
@@ -779,6 +780,47 @@
             });
         </script>
     @endif
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script>
+    document.addEventListener('livewire:init', function () {
+        var quill = new Quill('#editor', {
+            theme: 'snow',
+            modules: {
+                toolbar: [
+                    [{ 'font': ['serif', 'monospace', 'roboto', 'arial'] }],
+                    [{ 'header': [1, 2, false] }],
+                    ['bold', 'italic', 'underline'],
+                    [{ 'color': [] }, { 'background': [] }],
+                    ['link', 'image', 'code-block'],
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }]
+                ]
+            }
+        });
+        // Livewire.on('loadDescription', function (des_apropos) {
+        //     quill.root.innerHTML = des_apropos;
+        // });
+
+        // document.querySelector('form').onsubmit = function () {
+        //     document.querySelector('#des_apropos').value = quill.root.innerHTML;
+        //     document.querySelector('#des_apropos').dispatchEvent(new Event('input'));
+        // };
+        Livewire.on('loadDescription', function (des_apropos) {
+            quill.root.innerHTML = des_apropos;
+        });
+
+        quill.on('text-change', function () {
+            var content = quill.root.innerHTML;
+            document.querySelector('#des_apropos').value = content;
+            document.querySelector('#des_apropos').dispatchEvent(new Event('input')); // Notify Livewire of the change
+        });
+
+        document.querySelector('form').onsubmit = function () {
+            document.querySelector('#des_apropos').value = quill.root.innerHTML;
+        };
+    });
+    </script>
+
 </body>
 
 </html>

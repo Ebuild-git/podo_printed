@@ -39,9 +39,9 @@
                     <!-- About Image Start -->
                     <div class="about-us-image">
                         <div class="about-img">
-                           
+
                             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                               
+
                                 <div class="carousel-indicators">
                                     @if ($config && $config->photos)
                                     @foreach (json_decode($config->photos, true) as $index => $photo)
@@ -50,7 +50,7 @@
                                     @endif
                                 </div>
 
-                          
+
                                 <div class="carousel-inner">
                                     @if ($config && $config->photos)
                                     @foreach (json_decode($config->photos, true) as $index => $photo)
@@ -110,7 +110,7 @@
                         <div class="section-title">
                             <h3 class="wow fadeInUp" style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText('A propos de nous') }}</h3>
                             <h2 class="text-anime-style-2" data-cursor="-opaque"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos) }}</h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.25s"  style="color: #119093"> {{ \App\Helpers\TranslationHelper::TranslateText($config->des_apropos) }}
+                            <p class="wow fadeInUp" data-wow-delay="0.25s"  style="color: #119093"> {!! \App\Helpers\TranslationHelper::TranslateText($config->des_apropos) !!}
 
 
                             </p>
@@ -126,17 +126,17 @@
                                     <li>  <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos2 ?? ' ') }}</h3></li>
                                     <li>  <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos3 ?? ' ') }}</h3></li>
                                     <li>  <h3  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($config->titre_apropos4 ?? ' ') }}</h3></li>
-                             
+
                                 </ul>
                             </div>
-                            
+
                             <!-- About List Item End -->
                         </div>
                         <!-- About Us Body End -->
 
                         <!-- About Us Footer Start -->
                         <div class="about-us-footer">
-                     
+
                         </div>
                         <!-- About Us Footer End -->
                     </div>

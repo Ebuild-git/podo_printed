@@ -25,7 +25,7 @@ class AdminContact extends Component
       $image_processus, $image_processus2,
       $image1_processus , $image12_processus,
       $image2_processus , $image22_processus,
-    
+
 
       $titre1_impression,
       $titre2_impression,
@@ -53,9 +53,9 @@ class AdminContact extends Component
 
       $image1_avantage ,$image12_avantage,
       $image2_avantage ,$image22_avantage;
-      
-       
-    
+
+
+
     public function mount(){
        $config = config::first()  ?? new Config;;
        // $this->config = Config::first() ?? new Config;
@@ -83,7 +83,7 @@ class AdminContact extends Component
         $this->titre4_impression =$config->titre4_impression;
         $this->titre5_impression =$config->titre5_impression;
         $this->titre6_impression =$config->titre6_impression;
-        
+
 
         $this->desc1_impression =$config->desc1_impression;
         $this->desc2_impression =$config->desc2_impression;
@@ -133,7 +133,7 @@ class AdminContact extends Component
 
         $this->titre_apropos = $config->titre_apropos;
         $this->des_apropos = $config->des_apropos;
-       
+
         //$this->logocontact= $config->logocontact;
         $this->logocontact2= $config->logocontact;
         $this->logoHeader2= $config->logoHeader;
@@ -152,9 +152,9 @@ class AdminContact extends Component
         $this->seance=$config->seance;
         $this->adherent=$config->adherent;
         $this->tounoir=$config->tounoir;
-     
 
 
+        $this->dispatch('loadDescription', $this->des_apropos ?? '');
 
     }
 
@@ -171,7 +171,7 @@ class AdminContact extends Component
             'logoHeader' =>  'image|nullable|max:20024',   // 1MB Max
         'logocontact'=> 'nullable', // 1MB Max
             'icon' =>  'image|nullable',//
-           
+
             'telephone' => 'nullable|numeric',
             'email' => 'nullable',
             'addresse' => 'nullable|string',
@@ -211,7 +211,7 @@ class AdminContact extends Component
         }
 
         if($this->icon){
-          
+
             if ($this->icon2) {
                 Storage::disk('public')->delete($this->icon2);
             }
@@ -219,7 +219,7 @@ class AdminContact extends Component
         }
 
         if($this->icon_sta1){
-          
+
             if ($this->icon_sta12) {
                 Storage::disk('public')->delete($this->icon_sta12);
             }
@@ -258,7 +258,7 @@ class AdminContact extends Component
             $config->icon_sta5= $this->icon_sta5->store('icon', 'public');
         }
 
-      
+
 
         if($this->image_apropos1){
             //delete old logo
@@ -405,12 +405,12 @@ class AdminContact extends Component
             $config->image2_avantage= $this->image2_avantage->store('image', 'public');
         }
 
-       
-       
 
 
 
-        
+
+
+
 
 
 
@@ -422,13 +422,13 @@ class AdminContact extends Component
             }
             $config->logocontact= $this->logocontact->store('logocontact', 'public');
         }
-/* 
+/*
         if ($this->photos) {
             $photosPaths = [];
             foreach ($this->photos as $photo) {
                 $photosPaths[] = $photo->store('produits', 'public');
             }
-          
+
 
             $this->config->photos = json_encode($photosPaths);
         }  */
@@ -440,7 +440,7 @@ class AdminContact extends Component
             }
             $config->photos = json_encode($photosPaths);
         }
-    
+
         $config->telephone = $this->telephone;
         $config->fax = $this->fax;
         $config->email = $this->email;
@@ -498,7 +498,7 @@ class AdminContact extends Component
        // $config->titre3_processus = $this->titre3_processus;
        // $config->titre4_processus = $this->titre4_processus;
       //  $config->titre5_processus = $this->titre5_processus;
-      
+
 
 
 

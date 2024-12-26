@@ -404,11 +404,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-12">
+                {{-- <div class="col-lg-9 col-md-12">
                     <div class="coach-description">
                         <p>{{ $coach->description ?? 'Aucune mot disponible.' }}</p>
                     </div>
-                </div>
+                </div> --}}
                 @endif
                 @endforeach
             </div>

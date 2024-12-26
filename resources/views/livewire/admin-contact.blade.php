@@ -83,15 +83,16 @@
                     @enderror
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-12 mb-10">
                     <label class="form-label" for="multicol-username">Description à propos de nous</label>
-
-                    <textarea type="text" wire:model="des_apropos" placeholder="La description" rows="3" class="form-control"> </textarea>
+                    <div id="editor"></div>
+                    <input type="hidden" id="des_apropos" wire:model="des_apropos" placeholder="La description" class="form-control">
                     @error('des_apropos')
                     <span class="text-danger small"> {{ $message }} </span>
                     @enderror
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-6 mt-20">
                     <label class="form-label" for="multicol-username"> Les Images à propos de nous(600*666) </label>
 
                     <input type="file" wire:model="photos" multiple name="photos" accept="image/*" placeholder="Cargez les images" class="form-control">
@@ -138,73 +139,7 @@
                         @enderror
                     </div>
 
-                    {{--
                 </div>
-
-
-                    <div class="row">
-
-                        <div class="col-md-3">
-                            <label class="form-label" for="multicol-username">Icon sous titre à propos</label>
-
-                            <input type="file" wire:model="image_apropos1" accept="image/*" placeholder="votre icon" class="form-control">
-                            @error('image_apropos1')
-                            <span class="text-danger small"> {{ $message }} </span>
-                    @enderror
-                </div>
-
-                <div class="col-md-3">
-                    <label class="form-label" for="multicol-username">Icon sous titre à propos</label>
-
-                    <input type="file" wire:model="image_apropos2" accept="image/*" placeholder="votre icon" class="form-control">
-                    @error('image_apropos2')
-                    <span class="text-danger small"> {{ $message }} </span>
-                    @enderror
-                </div>
-
-
-                <div class="col-md-3">
-                    <label class="form-label" for="multicol-username">Icon sous titre à propos</label>
-
-                    <input type="file" wire:model="image_apropos3" accept="image/*" placeholder="votre icon" class="form-control">
-                    @error('image_apropos3')
-                    <span class="text-danger small"> {{ $message }} </span>
-                    @enderror
-                </div>
-
-                <div class="col-md-3">
-                    <label class="form-label" for="multicol-username">Icon sous titre à propos</label>
-
-                    <input type="file" wire:model="image_apropos4" accept="image/*" placeholder="votre icon" class="form-control">
-                    @error('image_apropos4')
-                    <span class="text-danger small"> {{ $message }} </span>
-                    @enderror
-                </div>
-
-
-
-
-            </div>
-
-
-
-    </div>
-    --}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
 <hr class="my-6 mx-n4" />
 <div class="text-center bg-primary2 card my-auto p-1 mb-3">
     <h6 class="text-white">
