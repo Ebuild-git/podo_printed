@@ -11,11 +11,11 @@
 
         <meta property="og:image" content="{{ $event->image }}">
         <meta property="og:type" content="event">
-    
+
         <meta name="robots" content="index, follow">
     @endsection
 
-</head> 
+</head>
 
 <main>
 
@@ -29,17 +29,7 @@
 					<!-- Page Header Box Start -->
 					<div class="page-header-box">
 						<h1 class="text-anime-style-3" data-cursor="-opaque"  style="color: #119093">{{ \App\Helpers\TranslationHelper::TranslateText($event->titre) }}</h1>
-						<div class="post-single-meta wow fadeInUp">
-							<ol class="breadcrumb">
-                               
-								<li class="breadcrumb-item"  style="color: #119093"><i class="fa-regular fa-clock"></i> 
-                                    <span class="month-day">{{ $event->created_at->format('d') }}</span>
-                                    <span
-                                        class="month-name">{{ $event->created_at->translatedFormat('F') }}</span>
-                       
-                                </li>
-                            </ol>
-						</div>		
+
 					</div>
 					<!-- Page Header Box End -->
 				</div>
@@ -68,12 +58,12 @@
                             <p class="wow fadeInUp">
                                 {!! \App\Helpers\TranslationHelper::TranslateText($event->description ?? ' ') !!}</p>
 
-                             
+
                             <blockquote class="wow fadeInUp" data-wow-delay="0.4s">
                                 <p> {!! \App\Helpers\TranslationHelper::TranslateText($event->meta_description ?? '') !!} </p>
                             </blockquote>
 
-                          
+
 
                             </div>
                         <!-- Post Entry End -->
@@ -83,7 +73,7 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-8">
                                     <!-- Post Tags Start -->
-                                   
+
                                     <!-- Post Tags End -->
                                 </div>
 
@@ -96,7 +86,7 @@
             </div>
         </div>
     </div>
-    <!-- Page Single Post End -->  
+    <!-- Page Single Post End -->
 
 
 </main>
