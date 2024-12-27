@@ -43,7 +43,7 @@
                         <!-- Post Featured Image Start-->
                         <div class="post-featured-image" data-cursor-text="View">
                             <figure class="image-anime">
-                                <a    href="{{ route('details-news', ['id' => $event->id, 'slug' => Str::slug(Str::limit($event->titre, 10))]) }}" class="image-anime">
+                                <a href="{{ route('details-news', ['id' => $event->id, 'slug' => Str::slug(Str::limit($event->titre, 10))]) }}" class="image-anime">
                                     <img src="{{ Storage::url($event->image ?? ' ') }}" alt="">
                                 </a>
                             </figure>
@@ -61,7 +61,7 @@
                             </style>
 
 
-                          
+
                         </div>
                         <!-- Post Featured Image End -->
 
@@ -86,7 +86,7 @@
                 @endif
                 @endforeach
 
-            
+
             </div>
 
             <div class="row">

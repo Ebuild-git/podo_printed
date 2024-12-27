@@ -8,7 +8,7 @@
         @endif
         <form wire:submit.prevent="create">
             <div class="modal-body">
-                  @include('components.alert') 
+                  @include('components.alert')
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="mb-3">
@@ -40,13 +40,13 @@
                             <span class="text-danger small"> {{ $message }} </span>
                         @enderror
                     </div>
-        
-                 
+
+
 
                     <div class="col-sm-6">
                         <div class="mb-3">
                             <label for="name" class="form-label">
-                                Image(1366*768)
+                                Image(394 * 256)
                             </label>
                             <input type="file" class="form-control" wire:model="image">
                             @error('image')
@@ -71,15 +71,15 @@
                     </div> --}}
 
                     <div wire:ignore class="form-group row">
-                       
+
                         <div class="col-md-12">
                             <textarea  id="description"   wire:model="description" class="form-control"  >Message</textarea>
-                           
+
                         </div>
                     </div>
 
 
-                    
+
 
                 </div>
             </div>
@@ -92,7 +92,7 @@
                 </button>
             </div>
 
-            
+
         </form>
 
 
