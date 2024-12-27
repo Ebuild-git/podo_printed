@@ -376,11 +376,11 @@
                         <h3> {{ \App\Helpers\TranslationHelper::TranslateText('Horaires de travail') }}</h3>
                         <ul>
                             <li style="font-size: 12px;">
-                                {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 10:00 à 18:00') }}
+                                {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 08:30 à 17:30') }}
                             </li>
                             <li style="font-size: 12px;">
 
-                                {{ \App\Helpers\TranslationHelper::TranslateText('Samedi : 10:00 à 15:00') }}
+                                {{ \App\Helpers\TranslationHelper::TranslateText('Samedi : 08:30 à 14:00') }}
 
                             </li>
                             <li>

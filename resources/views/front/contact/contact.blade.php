@@ -37,84 +37,84 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
-				
+
 					<div class="contact-info-item wow fadeInUp">
-					
+
 						 <div class="icon-box"  style="color: #119093">
 							<img src="images/icon-green-location.svg" alt="">
 						 </div>
-					
-					
+
+
 						<div class="contact-info-content">
 							<h3>{{ \App\Helpers\TranslationHelper::TranslateText('Location') }}</h3>
 							<p>{{ \App\Helpers\TranslationHelper::TranslateText($config->addresse ?? ' ') }}</p>
 						</div>
-                      
-					
+
+
 					</div>
-					
+
 				</div>
 
 				<div class="col-lg-3 col-md-6">
-					
+
 					<div class="contact-info-item wow fadeInUp" data-wow-delay="0.25s">
-						
+
 						 <div class="icon-box">
 							<img src="images/icon-green-mail.svg" alt="">
 						 </div>
-					
 
-						
+
+
 						<div class="contact-info-content">
 							<h3>{{ \App\Helpers\TranslationHelper::TranslateText('Email') }}</h3>
 							<p>{{ $config->email ?? ' ' }}</p>
-							
+
 						</div>
-					
+
 					</div>
-				
+
 				</div>
 
 				<div class="col-lg-3 col-md-6">
-			
+
 					<div class="contact-info-item wow fadeInUp" data-wow-delay="0.5s">
-						
+
 						 <div class="icon-box">
 							<img src="images/icon-green-phone.svg" alt="">
 						 </div>
-				
 
-				
+
+
 						<div class="contact-info-content">
 							<h3>{{ \App\Helpers\TranslationHelper::TranslateText('Téléphone') }}</h3>
 							<p>{{ $config->telephone ?? ' ' }}</p>
-							
+
 						</div>
-						
+
 					</div>
-					
+
 				</div>
 
 				<div class="col-lg-3 col-md-6">
-					
+
 					<div class="contact-info-item wow fadeInUp" data-wow-delay="0.75s">
-					
+
 						 <div class="icon-box">
 							<img src="images/icon-green-hour.svg" alt="">
 						 </div>
-					
 
-				
+
+
 						<div class="contact-info-content">
 							<h3>{{ \App\Helpers\TranslationHelper::TranslateText('Horaires de travail') }}</h3>
 							<p>
-                                {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 10:00 à 18:00') }}
+                                {{ \App\Helpers\TranslationHelper::TranslateText('Lundi à Vendredi : 08:30 à 17:30') }}
                             </p>
-							<p>  {{ \App\Helpers\TranslationHelper::TranslateText('Samedi : 10:00 à 15:00') }}</p>
+							<p>  {{ \App\Helpers\TranslationHelper::TranslateText('Samedi : 08:30 à 14:00') }}</p>
 						</div>
-					
+
 					</div>
-				
+
 				</div>
 			</div>
 		</div>
@@ -146,7 +146,7 @@
 
 					</style>
 
-					 
+
 					<!-- Contact Us Image End -->
 				</div>
 				<div class="col-lg-6">
