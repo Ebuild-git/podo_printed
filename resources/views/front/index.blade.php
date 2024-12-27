@@ -555,6 +555,21 @@
                             margin: 1rem auto;
                         }
 
+                        .fixed-image-container {
+                            width: 100%; /* Adjust this based on your layout */
+                            height: 250px; /* Fixed height for all images */
+                            overflow: hidden; /* Ensures no overflow beyond the container */
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .fixed-image-container img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover; /* Ensures the image is cropped and fills the container */
+                        }
+
                     </style>
 
                 </div>
@@ -639,17 +654,14 @@
                 @foreach ($events as $event)
                 @if ($events)
                 <div class="col-lg-4 col-md-6">
-
                     <div class="blog-item wow fadeInUp">
-
                         <div class="post-featured-image" data-cursor-text="View">
-                            <figure>
+                            <figure class="fixed-image-container">
                                 <a href="{{ route('details-news', ['id' => $event->id, 'slug' => Str::slug(Str::limit($event->titre, 10))]) }}"  class="image-anime">
                                     <img src="{{ Storage::url($event->image ?? ' ') }}" alt="">
                                 </a>
                             </figure>
                         </div>
-
                         <div class="post-item-content">
 
                             <div class="post-item-body">
